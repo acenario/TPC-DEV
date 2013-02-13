@@ -1,0 +1,8 @@
+Governor's Academy 
+
+hex #b20838
+
+RGB 
+R 178 
+G 8 
+B 56

@@ -18,6 +18,14 @@
 		DC0CFA2516A6076B00F98CDB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFA2416A6076B00F98CDB /* Default-568h@2x.png */; };
 		DC0CFA2816A6076B00F98CDB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFA2616A6076B00F98CDB /* MainStoryboard.storyboard */; };
 		DC0CFA2B16A6076B00F98CDB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0CFA2A16A6076B00F98CDB /* ViewController.m */; };
+		DC31F2E516CB582C00067E34 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2E216CB582C00067E34 /* ECSlidingViewController.m */; };
+		DC31F2E616CB582C00067E34 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2E416CB582C00067E34 /* UIImage+ImageWithUIView.m */; };
+		DC31F2EA16CB586C00067E34 /* initViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2E916CB586C00067E34 /* initViewController.m */; };
+		DC31F2ED16CB58A500067E34 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2EC16CB58A500067E34 /* MenuViewController.m */; };
+		DC31F2F016CB58D700067E34 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2EF16CB58D700067E34 /* MainViewController.m */; };
+		DC31F2F316CB58EC00067E34 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2F216CB58EC00067E34 /* SecondViewController.m */; };
+		DC31F2FA16CB632700067E34 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2F916CB632700067E34 /* MapViewController.m */; };
+		DC31F2FC16CB662200067E34 /* menuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC31F2FB16CB662200067E34 /* menuButton@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +45,21 @@
 		DC0CFA2716A6076B00F98CDB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DC0CFA2916A6076B00F98CDB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DC0CFA2A16A6076B00F98CDB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DC31F2E116CB582C00067E34 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
+		DC31F2E216CB582C00067E34 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
+		DC31F2E316CB582C00067E34 /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
+		DC31F2E416CB582C00067E34 /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
+		DC31F2E816CB586C00067E34 /* initViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = initViewController.h; sourceTree = "<group>"; };
+		DC31F2E916CB586C00067E34 /* initViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = initViewController.m; sourceTree = "<group>"; };
+		DC31F2EB16CB58A500067E34 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		DC31F2EC16CB58A500067E34 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		DC31F2EE16CB58D700067E34 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		DC31F2EF16CB58D700067E34 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		DC31F2F116CB58EC00067E34 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		DC31F2F216CB58EC00067E34 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		DC31F2F816CB632700067E34 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		DC31F2F916CB632700067E34 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		DC31F2FB16CB662200067E34 /* menuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuButton@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +106,24 @@
 		DC0CFA1416A6076B00F98CDB /* GovsApp */ = {
 			isa = PBXGroup;
 			children = (
+				DC31F2FB16CB662200067E34 /* menuButton@2x.png */,
+				DC31F2E016CB582C00067E34 /* ECSlidingViewController */,
 				DC0CFA1D16A6076B00F98CDB /* AppDelegate.h */,
 				DC0CFA1E16A6076B00F98CDB /* AppDelegate.m */,
 				DC0CFA2616A6076B00F98CDB /* MainStoryboard.storyboard */,
 				DC0CFA2916A6076B00F98CDB /* ViewController.h */,
 				DC0CFA2A16A6076B00F98CDB /* ViewController.m */,
 				DC0CFA1516A6076B00F98CDB /* Supporting Files */,
+				DC31F2E816CB586C00067E34 /* initViewController.h */,
+				DC31F2E916CB586C00067E34 /* initViewController.m */,
+				DC31F2EB16CB58A500067E34 /* MenuViewController.h */,
+				DC31F2EC16CB58A500067E34 /* MenuViewController.m */,
+				DC31F2EE16CB58D700067E34 /* MainViewController.h */,
+				DC31F2EF16CB58D700067E34 /* MainViewController.m */,
+				DC31F2F116CB58EC00067E34 /* SecondViewController.h */,
+				DC31F2F216CB58EC00067E34 /* SecondViewController.m */,
+				DC31F2F816CB632700067E34 /* MapViewController.h */,
+				DC31F2F916CB632700067E34 /* MapViewController.m */,
 			);
 			path = GovsApp;
 			sourceTree = "<group>";
@@ -105,6 +140,17 @@
 				DC0CFA2416A6076B00F98CDB /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC31F2E016CB582C00067E34 /* ECSlidingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DC31F2E116CB582C00067E34 /* ECSlidingViewController.h */,
+				DC31F2E216CB582C00067E34 /* ECSlidingViewController.m */,
+				DC31F2E316CB582C00067E34 /* UIImage+ImageWithUIView.h */,
+				DC31F2E416CB582C00067E34 /* UIImage+ImageWithUIView.m */,
+			);
+			path = ECSlidingViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +209,7 @@
 				DC0CFA2316A6076B00F98CDB /* Default@2x.png in Resources */,
 				DC0CFA2516A6076B00F98CDB /* Default-568h@2x.png in Resources */,
 				DC0CFA2816A6076B00F98CDB /* MainStoryboard.storyboard in Resources */,
+				DC31F2FC16CB662200067E34 /* menuButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +223,13 @@
 				DC0CFA1B16A6076B00F98CDB /* main.m in Sources */,
 				DC0CFA1F16A6076B00F98CDB /* AppDelegate.m in Sources */,
 				DC0CFA2B16A6076B00F98CDB /* ViewController.m in Sources */,
+				DC31F2E516CB582C00067E34 /* ECSlidingViewController.m in Sources */,
+				DC31F2E616CB582C00067E34 /* UIImage+ImageWithUIView.m in Sources */,
+				DC31F2EA16CB586C00067E34 /* initViewController.m in Sources */,
+				DC31F2ED16CB58A500067E34 /* MenuViewController.m in Sources */,
+				DC31F2F016CB58D700067E34 /* MainViewController.m in Sources */,
+				DC31F2F316CB58EC00067E34 /* SecondViewController.m in Sources */,
+				DC31F2FA16CB632700067E34 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +348,7 @@
 				DC0CFA3016A6076B00F98CDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
