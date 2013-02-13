@@ -26,6 +26,23 @@
 		DC31F2F316CB58EC00067E34 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2F216CB58EC00067E34 /* SecondViewController.m */; };
 		DC31F2FA16CB632700067E34 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2F916CB632700067E34 /* MapViewController.m */; };
 		DC31F2FC16CB662200067E34 /* menuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC31F2FB16CB662200067E34 /* menuButton@2x.png */; };
+		DC31F31416CB989F00067E34 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F31316CB989F00067E34 /* Parse.framework */; };
+		DC31F31616CB98CB00067E34 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F31516CB98CB00067E34 /* AudioToolbox.framework */; };
+		DC31F31816CB98D000067E34 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F31716CB98D000067E34 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DC31F31A16CB98D700067E34 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F31916CB98D700067E34 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DC31F31C16CB98DC00067E34 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F31B16CB98DC00067E34 /* CFNetwork.framework */; };
+		DC31F31E16CB98E700067E34 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F31D16CB98E700067E34 /* CoreLocation.framework */; };
+		DC31F32016CB98F200067E34 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F31F16CB98F200067E34 /* libsqlite3.dylib */; };
+		DC31F32216CB990000067E34 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F32116CB990000067E34 /* libz.1.1.3.dylib */; };
+		DC31F32416CB990800067E34 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F32316CB990800067E34 /* MobileCoreServices.framework */; };
+		DC31F32616CB990E00067E34 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F32516CB990D00067E34 /* QuartzCore.framework */; };
+		DC31F32816CB991300067E34 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F32716CB991300067E34 /* Security.framework */; };
+		DC31F32A16CB991800067E34 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F32916CB991800067E34 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DC31F32C16CB991D00067E34 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F32B16CB991D00067E34 /* StoreKit.framework */; };
+		DC31F32E16CB992200067E34 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F32D16CB992200067E34 /* SystemConfiguration.framework */; };
+		DC31F33516CBA02000067E34 /* GovsLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33416CBA02000067E34 /* GovsLoginViewController.m */; };
+		DC31F33716CBA09900067E34 /* govs_dashboard-header@2x_latest.png in Resources */ = {isa = PBXBuildFile; fileRef = DC31F33616CBA09900067E34 /* govs_dashboard-header@2x_latest.png */; };
+		DC31F33A16CBA12F00067E34 /* GovSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +77,25 @@
 		DC31F2F816CB632700067E34 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		DC31F2F916CB632700067E34 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		DC31F2FB16CB662200067E34 /* menuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuButton@2x.png"; sourceTree = "<group>"; };
+		DC31F31316CB989F00067E34 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		DC31F31516CB98CB00067E34 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DC31F31716CB98D000067E34 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		DC31F31916CB98D700067E34 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		DC31F31B16CB98DC00067E34 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		DC31F31D16CB98E700067E34 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DC31F31F16CB98F200067E34 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		DC31F32116CB990000067E34 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		DC31F32316CB990800067E34 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		DC31F32516CB990D00067E34 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DC31F32716CB991300067E34 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DC31F32916CB991800067E34 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		DC31F32B16CB991D00067E34 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		DC31F32D16CB992200067E34 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DC31F33316CBA02000067E34 /* GovsLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GovsLoginViewController.h; sourceTree = "<group>"; };
+		DC31F33416CBA02000067E34 /* GovsLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GovsLoginViewController.m; sourceTree = "<group>"; };
+		DC31F33616CBA09900067E34 /* govs_dashboard-header@2x_latest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "govs_dashboard-header@2x_latest.png"; path = "Govs Photos/Archive/govs_dashboard-header@2x_latest.png"; sourceTree = SOURCE_ROOT; };
+		DC31F33816CBA12F00067E34 /* GovSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GovSignUpViewController.h; sourceTree = "<group>"; };
+		DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GovSignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +103,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC31F32E16CB992200067E34 /* SystemConfiguration.framework in Frameworks */,
+				DC31F32C16CB991D00067E34 /* StoreKit.framework in Frameworks */,
+				DC31F32A16CB991800067E34 /* Social.framework in Frameworks */,
+				DC31F32816CB991300067E34 /* Security.framework in Frameworks */,
+				DC31F32616CB990E00067E34 /* QuartzCore.framework in Frameworks */,
+				DC31F32416CB990800067E34 /* MobileCoreServices.framework in Frameworks */,
+				DC31F32216CB990000067E34 /* libz.1.1.3.dylib in Frameworks */,
+				DC31F32016CB98F200067E34 /* libsqlite3.dylib in Frameworks */,
+				DC31F31E16CB98E700067E34 /* CoreLocation.framework in Frameworks */,
+				DC0CFA1316A6076B00F98CDB /* CoreGraphics.framework in Frameworks */,
+				DC31F31C16CB98DC00067E34 /* CFNetwork.framework in Frameworks */,
+				DC31F31A16CB98D700067E34 /* AdSupport.framework in Frameworks */,
+				DC31F31816CB98D000067E34 /* Accounts.framework in Frameworks */,
+				DC31F31616CB98CB00067E34 /* AudioToolbox.framework in Frameworks */,
 				DC0CFA0F16A6076B00F98CDB /* UIKit.framework in Frameworks */,
 				DC0CFA1116A6076B00F98CDB /* Foundation.framework in Frameworks */,
-				DC0CFA1316A6076B00F98CDB /* CoreGraphics.framework in Frameworks */,
+				DC31F31416CB989F00067E34 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +129,19 @@
 		DC0CF9FF16A6076B00F98CDB = {
 			isa = PBXGroup;
 			children = (
+				DC31F32D16CB992200067E34 /* SystemConfiguration.framework */,
+				DC31F32B16CB991D00067E34 /* StoreKit.framework */,
+				DC31F32916CB991800067E34 /* Social.framework */,
+				DC31F32716CB991300067E34 /* Security.framework */,
+				DC31F32516CB990D00067E34 /* QuartzCore.framework */,
+				DC31F32316CB990800067E34 /* MobileCoreServices.framework */,
+				DC31F32116CB990000067E34 /* libz.1.1.3.dylib */,
+				DC31F31F16CB98F200067E34 /* libsqlite3.dylib */,
+				DC31F31D16CB98E700067E34 /* CoreLocation.framework */,
+				DC31F31B16CB98DC00067E34 /* CFNetwork.framework */,
+				DC31F31916CB98D700067E34 /* AdSupport.framework */,
+				DC31F31716CB98D000067E34 /* Accounts.framework */,
+				DC31F31516CB98CB00067E34 /* AudioToolbox.framework */,
 				DC0CFA1416A6076B00F98CDB /* GovsApp */,
 				DC0CFA0D16A6076B00F98CDB /* Frameworks */,
 				DC0CFA0B16A6076B00F98CDB /* Products */,
@@ -96,6 +159,7 @@
 		DC0CFA0D16A6076B00F98CDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC31F31316CB989F00067E34 /* Parse.framework */,
 				DC0CFA0E16A6076B00F98CDB /* UIKit.framework */,
 				DC0CFA1016A6076B00F98CDB /* Foundation.framework */,
 				DC0CFA1216A6076B00F98CDB /* CoreGraphics.framework */,
@@ -106,6 +170,7 @@
 		DC0CFA1416A6076B00F98CDB /* GovsApp */ = {
 			isa = PBXGroup;
 			children = (
+				DC31F33616CBA09900067E34 /* govs_dashboard-header@2x_latest.png */,
 				DC31F2FB16CB662200067E34 /* menuButton@2x.png */,
 				DC31F2E016CB582C00067E34 /* ECSlidingViewController */,
 				DC0CFA1D16A6076B00F98CDB /* AppDelegate.h */,
@@ -124,6 +189,10 @@
 				DC31F2F216CB58EC00067E34 /* SecondViewController.m */,
 				DC31F2F816CB632700067E34 /* MapViewController.h */,
 				DC31F2F916CB632700067E34 /* MapViewController.m */,
+				DC31F33316CBA02000067E34 /* GovsLoginViewController.h */,
+				DC31F33416CBA02000067E34 /* GovsLoginViewController.m */,
+				DC31F33816CBA12F00067E34 /* GovSignUpViewController.h */,
+				DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */,
 			);
 			path = GovsApp;
 			sourceTree = "<group>";
@@ -210,6 +279,7 @@
 				DC0CFA2516A6076B00F98CDB /* Default-568h@2x.png in Resources */,
 				DC0CFA2816A6076B00F98CDB /* MainStoryboard.storyboard in Resources */,
 				DC31F2FC16CB662200067E34 /* menuButton@2x.png in Resources */,
+				DC31F33716CBA09900067E34 /* govs_dashboard-header@2x_latest.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +300,8 @@
 				DC31F2F016CB58D700067E34 /* MainViewController.m in Sources */,
 				DC31F2F316CB58EC00067E34 /* SecondViewController.m in Sources */,
 				DC31F2FA16CB632700067E34 /* MapViewController.m in Sources */,
+				DC31F33516CBA02000067E34 /* GovsLoginViewController.m in Sources */,
+				DC31F33A16CBA12F00067E34 /* GovSignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +380,10 @@
 		DC0CFA2F16A6076B00F98CDB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GovsApp/GovsApp-Prefix.pch";
 				INFOPLIST_FILE = "GovsApp/GovsApp-Info.plist";
@@ -320,6 +396,10 @@
 		DC0CFA3016A6076B00F98CDB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GovsApp/GovsApp-Prefix.pch";
 				INFOPLIST_FILE = "GovsApp/GovsApp-Info.plist";

@@ -10,6 +10,7 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 
+
 @interface MapViewController ()
 
 @end
@@ -76,6 +77,8 @@
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
     
+    
+    
    
 }
 
@@ -90,5 +93,11 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
+#pragma mark - Logout button handler
+
+- (IBAction)logOutButtonTapAction:(id)sender {
+    [PFUser logOut];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

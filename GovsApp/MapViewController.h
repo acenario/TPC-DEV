@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController 
 
 @property (strong, nonatomic) UIButton *govBtn;
+- (IBAction)logOutButtonTapAction:(id)sender;
 
 @end
