@@ -1,27 +1,22 @@
 //
-//  MapViewController.m
+//  SettingsViewController.m
 //  GovsApp
 //
-//  Created by Arjun Bhatnagar on 2/13/13.
+//  Created by William Nee on 2/15/13.
 //  Copyright (c) 2013 The Productions Club. All rights reserved.
 //
 
-#import "MapViewController.h"
+#import "SettingsViewController.h"
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 
-
-@interface MapViewController ()
+@interface SettingsViewController ()
 
 @end
 
-@implementation MapViewController
+@implementation SettingsViewController
 
 @synthesize govBtn; //Not needed on Mountain Lion
-
-
-
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -80,13 +75,7 @@
     
     
     
-   
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 - (IBAction)revealMenu:(id)sender
@@ -94,11 +83,10 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
-#pragma mark - Logout button handler
-
-- (IBAction)logOutButtonTapAction:(id)sender {
-    [PFUser logOut];
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

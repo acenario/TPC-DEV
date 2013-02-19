@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A508EE0816CEF6B100C43C9C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A508EE0716CEF6B100C43C9C /* SettingsViewController.m */; };
+		A5E545DC16CEFDD300DE9AA5 /* LunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E545DB16CEFDD300DE9AA5 /* LunchViewController.m */; };
+		A5E545DE16CF016200DE9AA5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E545DD16CF016200DE9AA5 /* MapKit.framework */; };
 		DC0CFA0F16A6076B00F98CDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0CFA0E16A6076B00F98CDB /* UIKit.framework */; };
 		DC0CFA1116A6076B00F98CDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0CFA1016A6076B00F98CDB /* Foundation.framework */; };
 		DC0CFA1316A6076B00F98CDB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0CFA1216A6076B00F98CDB /* CoreGraphics.framework */; };
@@ -46,6 +49,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A508EE0616CEF6B100C43C9C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		A508EE0716CEF6B100C43C9C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		A5E545DA16CEFDD300DE9AA5 /* LunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunchViewController.h; sourceTree = "<group>"; };
+		A5E545DB16CEFDD300DE9AA5 /* LunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunchViewController.m; sourceTree = "<group>"; };
+		A5E545DD16CF016200DE9AA5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DC0CFA0A16A6076B00F98CDB /* GovsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0CFA0E16A6076B00F98CDB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DC0CFA1016A6076B00F98CDB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E545DE16CF016200DE9AA5 /* MapKit.framework in Frameworks */,
 				DC31F32E16CB992200067E34 /* SystemConfiguration.framework in Frameworks */,
 				DC31F32C16CB991D00067E34 /* StoreKit.framework in Frameworks */,
 				DC31F32A16CB991800067E34 /* Social.framework in Frameworks */,
@@ -129,6 +138,7 @@
 		DC0CF9FF16A6076B00F98CDB = {
 			isa = PBXGroup;
 			children = (
+				A5E545DD16CF016200DE9AA5 /* MapKit.framework */,
 				DC31F32D16CB992200067E34 /* SystemConfiguration.framework */,
 				DC31F32B16CB991D00067E34 /* StoreKit.framework */,
 				DC31F32916CB991800067E34 /* Social.framework */,
@@ -193,6 +203,10 @@
 				DC31F33416CBA02000067E34 /* GovsLoginViewController.m */,
 				DC31F33816CBA12F00067E34 /* GovSignUpViewController.h */,
 				DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */,
+				A508EE0616CEF6B100C43C9C /* SettingsViewController.h */,
+				A508EE0716CEF6B100C43C9C /* SettingsViewController.m */,
+				A5E545DA16CEFDD300DE9AA5 /* LunchViewController.h */,
+				A5E545DB16CEFDD300DE9AA5 /* LunchViewController.m */,
 			);
 			path = GovsApp;
 			sourceTree = "<group>";
@@ -302,6 +316,8 @@
 				DC31F2FA16CB632700067E34 /* MapViewController.m in Sources */,
 				DC31F33516CBA02000067E34 /* GovsLoginViewController.m in Sources */,
 				DC31F33A16CBA12F00067E34 /* GovSignUpViewController.m in Sources */,
+				A508EE0816CEF6B100C43C9C /* SettingsViewController.m in Sources */,
+				A5E545DC16CEFDD300DE9AA5 /* LunchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +403,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GovsApp/GovsApp-Prefix.pch";
 				INFOPLIST_FILE = "GovsApp/GovsApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -403,7 +419,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GovsApp/GovsApp-Prefix.pch";
 				INFOPLIST_FILE = "GovsApp/GovsApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

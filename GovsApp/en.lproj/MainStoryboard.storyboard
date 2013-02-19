@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Init View Controller - Governor's-->
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="initViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -31,6 +30,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1127" y="56"/>
         </scene>
@@ -118,18 +118,19 @@
                                     <action selector="logOutButtonTapAction:" destination="a0m-DW-5JH" eventType="touchUpInside" id="OdO-mC-NLc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMA-sN-81X">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DNf-dg-auB">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="294" id="0YB-Nc-v4s"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="YMA-sN-81X" firstAttribute="centerX" secondItem="9oi-zP-NeI" secondAttribute="centerX" type="default" id="KWN-1S-69c"/>
+                            <constraint firstItem="GxY-a7-taB" firstAttribute="top" secondItem="DNf-dg-auB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Zte-cT-iXg"/>
+                            <constraint firstItem="DNf-dg-auB" firstAttribute="centerX" secondItem="9oi-zP-NeI" secondAttribute="centerX" type="default" id="agK-HQ-mA1"/>
+                            <constraint firstItem="DNf-dg-auB" firstAttribute="centerY" secondItem="9oi-zP-NeI" secondAttribute="centerY" type="default" id="fqt-6Y-nfr"/>
                             <constraint firstAttribute="trailing" secondItem="GxY-a7-taB" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="oGi-lt-hXU"/>
                             <constraint firstAttribute="bottom" secondItem="GxY-a7-taB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="rtk-Y9-NZ6"/>
-                            <constraint firstItem="YMA-sN-81X" firstAttribute="top" secondItem="9oi-zP-NeI" secondAttribute="top" constant="15" id="swz-ca-z77"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Governor's Map" id="Hiw-6y-uib">
@@ -152,6 +153,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m49-kx-tCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1660" y="344"/>
+        </scene>
+        <!--Lunch View Controller-->
+        <scene sceneID="eHk-xU-eDH">
+            <objects>
+                <viewController storyboardIdentifier="Lunch" id="1K5-XQ-EqI" customClass="LunchViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v2P-Jr-eVY">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gwt-MR-qLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1634" y="2105"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="aXw-io-Cxq">
+            <objects>
+                <viewController storyboardIdentifier="Settings" id="dnP-Nf-msU" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Grp-nh-Lg1">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZH-9d-hlt">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GZH-9d-hlt" firstAttribute="centerX" secondItem="Grp-nh-Lg1" secondAttribute="centerX" type="default" id="fEw-4O-Wmk"/>
+                            <constraint firstItem="GZH-9d-hlt" firstAttribute="top" secondItem="Grp-nh-Lg1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="lR3-vh-wtt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uhx-1G-d8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679" y="1099"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="c8r-b6-kF1">
@@ -177,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAT-nF-uiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="920"/>
+            <point key="canvasLocation" x="2178" y="920"/>
         </scene>
     </scenes>
     <resources>
@@ -187,14 +227,26 @@
         <class className="ECSlidingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
         </class>
+        <class className="LunchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LunchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealMenu:"/>
+            </relationships>
+        </class>
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealMenu:"/>
+            </relationships>
         </class>
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="action" name="logOutButtonTapAction:"/>
                 <relationship kind="action" name="revealMenu:"/>
+                <relationship kind="action" name="showLocations"/>
+                <relationship kind="action" name="showUser"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
         <class className="MenuViewController" superclassName="UITableViewController">
@@ -205,6 +257,16 @@
         </class>
         <class className="SecondViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealMenu:"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="logOutButtonTapAction:"/>
+                <relationship kind="action" name="revealMenu:"/>
+            </relationships>
         </class>
         <class className="initViewController" superclassName="ECSlidingViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/initViewController.h"/>

@@ -1,27 +1,22 @@
 //
-//  MapViewController.m
+//  LunchViewController.m
 //  GovsApp
 //
-//  Created by Arjun Bhatnagar on 2/13/13.
+//  Created by William Nee on 2/15/13.
 //  Copyright (c) 2013 The Productions Club. All rights reserved.
 //
 
-#import "MapViewController.h"
+#import "LunchViewController.h"
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 
-
-@interface MapViewController ()
+@interface LunchViewController ()
 
 @end
 
-@implementation MapViewController
+@implementation LunchViewController
 
-@synthesize govBtn; //Not needed on Mountain Lion
-
-
-
-
+@synthesize govBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,17 +39,18 @@
     
     
     [naviBarObj setTintColor:[UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0]];
+    
     UINavigationItem *navigItem = [[UINavigationItem alloc] initWithTitle:@"Governors"];
     naviBarObj.items = [NSArray arrayWithObjects: navigItem,nil];
     
     self.govBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
     govBtn.frame = CGRectMake(8, 10, 34, 24);
     [govBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
     [govBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:self.govBtn];
 }
-
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     [self screenUpdate];
@@ -80,13 +76,6 @@
     
     
     
-   
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)revealMenu:(id)sender
@@ -94,11 +83,10 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
-#pragma mark - Logout button handler
-
-- (IBAction)logOutButtonTapAction:(id)sender {
-    [PFUser logOut];
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end
