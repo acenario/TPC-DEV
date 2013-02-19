@@ -46,7 +46,6 @@
 		DC31F33516CBA02000067E34 /* GovsLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33416CBA02000067E34 /* GovsLoginViewController.m */; };
 		DC31F33716CBA09900067E34 /* govs_dashboard-header@2x_latest.png in Resources */ = {isa = PBXBuildFile; fileRef = DC31F33616CBA09900067E34 /* govs_dashboard-header@2x_latest.png */; };
 		DC31F33A16CBA12F00067E34 /* GovSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */; };
-		DC31F33D16CEF69A00067E34 /* AdmissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33C16CEF69900067E34 /* AdmissionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,8 +104,6 @@
 		DC31F33616CBA09900067E34 /* govs_dashboard-header@2x_latest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "govs_dashboard-header@2x_latest.png"; path = "Govs Photos/Archive/govs_dashboard-header@2x_latest.png"; sourceTree = SOURCE_ROOT; };
 		DC31F33816CBA12F00067E34 /* GovSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GovSignUpViewController.h; sourceTree = "<group>"; };
 		DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GovSignUpViewController.m; sourceTree = "<group>"; };
-		DC31F33B16CEF69900067E34 /* AdmissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdmissionsViewController.h; sourceTree = "<group>"; };
-		DC31F33C16CEF69900067E34 /* AdmissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdmissionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,15 +203,10 @@
 				DC31F33416CBA02000067E34 /* GovsLoginViewController.m */,
 				DC31F33816CBA12F00067E34 /* GovSignUpViewController.h */,
 				DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */,
-<<<<<<< HEAD
 				A508EE0616CEF6B100C43C9C /* SettingsViewController.h */,
 				A508EE0716CEF6B100C43C9C /* SettingsViewController.m */,
 				A5E545DA16CEFDD300DE9AA5 /* LunchViewController.h */,
 				A5E545DB16CEFDD300DE9AA5 /* LunchViewController.m */,
-=======
-				DC31F33B16CEF69900067E34 /* AdmissionsViewController.h */,
-				DC31F33C16CEF69900067E34 /* AdmissionsViewController.m */,
->>>>>>> Added admission
 			);
 			path = GovsApp;
 			sourceTree = "<group>";
@@ -324,12 +316,8 @@
 				DC31F2FA16CB632700067E34 /* MapViewController.m in Sources */,
 				DC31F33516CBA02000067E34 /* GovsLoginViewController.m in Sources */,
 				DC31F33A16CBA12F00067E34 /* GovSignUpViewController.m in Sources */,
-<<<<<<< HEAD
 				A508EE0816CEF6B100C43C9C /* SettingsViewController.m in Sources */,
 				A5E545DC16CEFDD300DE9AA5 /* LunchViewController.m in Sources */,
-=======
-				DC31F33D16CEF69A00067E34 /* AdmissionsViewController.m in Sources */,
->>>>>>> Added admission
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
