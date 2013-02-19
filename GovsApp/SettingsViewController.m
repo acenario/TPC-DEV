@@ -9,12 +9,13 @@
 #import "SettingsViewController.h"
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
+#import <Parse/Parse.h>
 
 @interface SettingsViewController ()
 
 @end
 
-@implementation SettingsViewController
+@implementation SettingsViewController 
 
 @synthesize govBtn; //Not needed on Mountain Lion
 
@@ -87,6 +88,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Logout button handler
+
+- (IBAction)logOutButtonTapAction:(id)sender {
+    [PFUser logOut];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

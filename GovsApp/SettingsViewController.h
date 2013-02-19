@@ -11,7 +11,8 @@
 @interface SettingsViewController : UIViewController
 
 @property (strong, nonatomic) UIButton *govBtn;
-- (IBAction)logOutButtonTapAction:(id)sender;
+
+-(IBAction)logOutButtonTapAction:(id)sender;
 
 
 @end

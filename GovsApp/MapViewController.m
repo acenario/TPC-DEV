@@ -94,11 +94,13 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
-#pragma mark - Logout button handler
+
+
+/*#pragma mark - Logout button handler
 
 - (IBAction)logOutButtonTapAction:(id)sender {
     [PFUser logOut];
     [self.navigationController popViewControllerAnimated:YES];
-}
+}*/
 
 @end
