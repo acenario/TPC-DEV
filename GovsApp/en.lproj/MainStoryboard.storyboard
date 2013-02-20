@@ -523,7 +523,6 @@
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
-                <relationship kind="action" name="revealMenu:"/>
                 <relationship kind="action" name="searchBtn:"/>
                 <relationship kind="action" name="shieldBtn:"/>
                 <relationship kind="action" name="showLocations"/>
