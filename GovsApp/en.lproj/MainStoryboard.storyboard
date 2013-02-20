@@ -495,62 +495,6 @@
     <resources>
         <image name="menuButton@2x.png" width="68" height="48"/>
     </resources>
-    <classes>
-        <class className="AcademicViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AcademicViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="AthleticsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AthleticsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="ECSlidingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
-        </class>
-        <class className="LunchViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LunchViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-                <relationship kind="action" name="showLocations"/>
-                <relationship kind="action" name="showUser"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="MenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="logOutButtonTapAction:"/>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="UnderRightViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UnderRightViewController.h"/>
-        </class>
-        <class className="initViewController" superclassName="ECSlidingViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/initViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

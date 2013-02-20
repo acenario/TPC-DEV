@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "UnderRightViewController.h"
 
-@class map;
+
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
