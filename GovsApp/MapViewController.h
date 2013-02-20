@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "UnderRightViewController.h"
+
+@class map;
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
@@ -16,6 +19,8 @@
 
 - (IBAction)showUser;
 - (IBAction)showLocations;
+- (IBAction)searchBtn:(id)sender;
+- (IBAction)shieldBtn:(id)sender;
 
 
 @property (strong, nonatomic) UIButton *govBtn;

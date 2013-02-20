@@ -55,9 +55,27 @@
     [self.view addSubview:self.govBtn];
 }
 
+- (void)screenUpdate2 {
+    
+    self.govBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    govBtn.frame = CGRectMake(8, 10, 34, 24);
+    [govBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
+    [govBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:self.govBtn];
+}
+
+
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    [self screenUpdate];
+    //[self screenUpdate2];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    
 }
 
 - (void)viewDidLoad
@@ -65,7 +83,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self screenUpdate];
+    //[self screenUpdate2];
     
     self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;
@@ -73,6 +91,10 @@
     
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+    }
+    
+    if (![self.slidingViewController.underRightViewController isKindOfClass:[UnderRightViewController class]]) {
+        self.slidingViewController.underRightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UnderRight"];
     }
     
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
@@ -91,18 +113,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)revealMenu:(id)sender
+/*- (IBAction)revealMenu:(id)sender
 {
     [self.slidingViewController anchorTopViewTo:ECRight];
+}*/
+
+- (IBAction)searchBtn:(id)sender {
+    [self.slidingViewController anchorTopViewTo:ECLeft];
+    
+}
+
+- (IBAction)shieldBtn:(id)sender {
+    [self.slidingViewController anchorTopViewTo:ECRight];
+    
 }
 
 
 
-/*#pragma mark - Logout button handler
 
-- (IBAction)logOutButtonTapAction:(id)sender {
-    [PFUser logOut];
-    [self.navigationController popViewControllerAnimated:YES];
-}*/
 
 @end

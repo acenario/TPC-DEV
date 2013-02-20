@@ -6,15 +6,15 @@
 //  Copyright (c) 2013 The Productions Club. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "AthleticsViewController.h"
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 
-@interface SecondViewController ()
+@interface AthleticsViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation AthleticsViewController
 
 @synthesize govBtn; 
 
@@ -28,19 +28,7 @@
 }
 
 - (void)screenUpdate {
-    CGFloat width = CGRectGetWidth(self.view.bounds);
     
-    UINavigationBar *naviBarObj = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, width, 44)];
-    [self.view addSubview:naviBarObj];
-    
-    NSInteger red   = 178;
-    NSInteger green = 8;
-    NSInteger blue  = 56;
-    
-    
-    [naviBarObj setTintColor:[UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0]];
-    UINavigationItem *navigItem = [[UINavigationItem alloc] initWithTitle:@"Governors"];
-    naviBarObj.items = [NSArray arrayWithObjects: navigItem,nil];
     
     self.govBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -52,7 +40,7 @@
 }
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    [self screenUpdate];
+    //[self screenUpdate];
 }
 
 - (void)viewDidLoad
@@ -60,7 +48,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self screenUpdate];
+    //[self screenUpdate];
     
     self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;
@@ -79,8 +67,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)revealMenu:(id)sender
+/*- (IBAction)revealMenu:(id)sender
 {
+    [self.slidingViewController anchorTopViewTo:ECRight];
+}*/
+
+- (IBAction)searchBtn:(id)sender {
+    [self.slidingViewController anchorTopViewTo:ECLeft];
+    
+}
+
+- (IBAction)shieldBtn:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 

@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LunchViewController : UIViewController
+
 @property (strong, nonatomic) UIButton *govBtn;
+
+- (IBAction)searchBtn:(id)sender;
+- (IBAction)shieldBtn:(id)sender;
+
 @end

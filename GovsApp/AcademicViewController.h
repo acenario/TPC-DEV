@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UnderRightViewController.h"
 
-@interface MainViewController : UIViewController
+@interface AcademicViewController : UIViewController
 
 @property (strong, nonatomic) UIButton *govBtn;
+
+- (IBAction)searchBtn:(id)sender;
+- (IBAction)shieldBtn:(id)sender;
 
 
 @end

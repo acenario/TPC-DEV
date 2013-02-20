@@ -50,7 +50,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxM-cg-Zg0">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HxM-cg-Zg0">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -70,10 +71,59 @@
             </objects>
             <point key="canvasLocation" x="601" y="654"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Under Right View Controller-->
+        <scene sceneID="DnM-BN-tr2">
+            <objects>
+                <tableViewController storyboardIdentifier="UnderRight" id="9Lh-YS-XQb" customClass="UnderRightViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="85n-x5-Vuc">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Rrw-AS-sjV">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="9Lh-YS-XQb" id="QIT-PK-YkS"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" id="82d-zE-qaY">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9Lh-YS-XQb" id="Vbp-hq-srM"/>
+                            <outlet property="delegate" destination="9Lh-YS-XQb" id="KIX-e8-Dgq"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="TIe-8b-xbG" id="Gio-WK-W8G"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0So-ME-XvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="TIe-8b-xbG">
+                    <connections>
+                        <outlet property="delegate" destination="9Lh-YS-XQb" id="82s-t9-p3f"/>
+                        <outlet property="searchBar" destination="Rrw-AS-sjV" id="PZe-n2-1MK"/>
+                        <outlet property="searchContentsController" destination="9Lh-YS-XQb" id="7Ik-M8-l6D"/>
+                        <outlet property="searchResultsDataSource" destination="9Lh-YS-XQb" id="KWy-0I-by6"/>
+                        <outlet property="searchResultsDelegate" destination="9Lh-YS-XQb" id="aQ6-Bg-KmN"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1147" y="717"/>
+        </scene>
+        <!--Academic View Controller-->
         <scene sceneID="Zci-qW-1FR">
             <objects>
-                <viewController storyboardIdentifier="Academics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Kg-he-xXC" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Academics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Kg-he-xXC" customClass="AcademicViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yrk-IH-Lei">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -83,11 +133,55 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vay-gO-1GM">
+                                <color key="tintColor" red="0.69803921570000005" green="0.031372549020000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Governor's" id="9pE-6w-MO9">
+                                        <barButtonItem key="leftBarButtonItem" id="AvE-OU-Wyw">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gXW-VA-7Sf">
+                                                <rect key="frame" x="5" y="10" width="34" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="menuButton@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shieldBtn:" destination="2Kg-he-xXC" eventType="touchUpInside" id="hcC-Yb-aaP"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="4bw-3t-EBi">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Yj4-cj-4TM">
+                                                <rect key="frame" x="281" y="10" width="34" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="menuButton@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchBtn:" destination="2Kg-he-xXC" eventType="touchUpInside" id="hPo-na-2UK"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.73913043479999996" green="0.43013934939999998" blue="0.1006365075" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Tp0-zE-mtT" firstAttribute="centerX" secondItem="yrk-IH-Lei" secondAttribute="centerX" type="default" id="OF1-nb-EUZ"/>
-                            <constraint firstItem="Tp0-zE-mtT" firstAttribute="top" secondItem="yrk-IH-Lei" secondAttribute="top" constant="20" symbolic="YES" type="default" id="P82-ug-nn1"/>
+                            <constraint firstItem="Vay-gO-1GM" firstAttribute="top" secondItem="yrk-IH-Lei" secondAttribute="top" type="default" id="6DR-hJ-aPB"/>
+                            <constraint firstItem="Tp0-zE-mtT" firstAttribute="centerX" secondItem="Vay-gO-1GM" secondAttribute="centerX" type="default" id="Gps-5T-dt5"/>
+                            <constraint firstItem="Vay-gO-1GM" firstAttribute="leading" secondItem="yrk-IH-Lei" secondAttribute="leading" type="default" id="X9Q-i3-01k"/>
+                            <constraint firstItem="Tp0-zE-mtT" firstAttribute="top" secondItem="Vay-gO-1GM" secondAttribute="bottom" type="default" id="fuY-y8-i0u"/>
+                            <constraint firstItem="Vay-gO-1GM" firstAttribute="trailing" secondItem="yrk-IH-Lei" secondAttribute="trailing" type="default" id="hVa-jn-ZkX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4dD-dm-Ubt"/>
@@ -104,17 +198,58 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DNf-dg-auB">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="294" id="0YB-Nc-v4s"/>
-                                    <constraint firstAttribute="height" constant="384" id="Ykd-PJ-Nx7"/>
-                                </constraints>
-                            </mapView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DNf-dg-auB"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzD-YT-nVz">
+                                <color key="tintColor" red="0.69803921568627447" green="0.031372549019607843" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Governor's" id="6hx-Dg-1yk">
+                                        <barButtonItem key="leftBarButtonItem" id="qE7-So-l5r">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dUc-O6-WLJ">
+                                                <rect key="frame" x="5" y="10" width="34" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="menuButton@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shieldBtn:" destination="a0m-DW-5JH" eventType="touchUpInside" id="aNg-x1-FHL"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="eEd-36-CK0">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NG1-2e-8Qd">
+                                                <rect key="frame" x="281" y="10" width="34" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="menuButton@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchBtn:" destination="a0m-DW-5JH" eventType="touchUpInside" id="q6e-UK-qLo"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="DNf-dg-auB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="BFu-C6-SJu"/>
-                            <constraint firstItem="DNf-dg-auB" firstAttribute="centerX" secondItem="9oi-zP-NeI" secondAttribute="centerX" type="default" id="agK-HQ-mA1"/>
+                            <constraint firstItem="DNf-dg-auB" firstAttribute="top" secondItem="fzD-YT-nVz" secondAttribute="bottom" constant="12" type="user" id="8af-6N-qXC"/>
+                            <constraint firstItem="fzD-YT-nVz" firstAttribute="leading" secondItem="9oi-zP-NeI" secondAttribute="leading" type="default" id="9bg-kq-unV"/>
+                            <constraint firstAttribute="bottom" secondItem="DNf-dg-auB" secondAttribute="bottom" constant="12" type="user" id="f0A-Gh-8Tg"/>
+                            <constraint firstItem="fzD-YT-nVz" firstAttribute="trailing" secondItem="9oi-zP-NeI" secondAttribute="trailing" type="default" id="jQU-HJ-5gL"/>
+                            <constraint firstAttribute="trailing" secondItem="DNf-dg-auB" secondAttribute="trailing" constant="12" type="user" id="jcC-qf-whe"/>
+                            <constraint firstItem="fzD-YT-nVz" firstAttribute="top" secondItem="9oi-zP-NeI" secondAttribute="top" type="default" id="oaH-bH-k7H"/>
+                            <constraint firstItem="DNf-dg-auB" firstAttribute="leading" secondItem="9oi-zP-NeI" secondAttribute="leading" constant="12" type="user" id="waM-Wz-3QV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Governor's Map" id="Hiw-6y-uib">
@@ -145,12 +280,60 @@
                     <view key="view" contentMode="scaleToFill" id="v2P-Jr-eVY">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hM-h4-lNZ">
+                                <color key="tintColor" red="0.69803921570000005" green="0.031372549020000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Governor's" id="EZa-Ug-GQJ">
+                                        <barButtonItem key="leftBarButtonItem" id="amD-D9-Jhk">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eFH-1V-QdL">
+                                                <rect key="frame" x="5" y="10" width="34" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="menuButton@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shieldBtn:" destination="1K5-XQ-EqI" eventType="touchUpInside" id="ZzT-fV-diQ"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="rkF-ou-Aml">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PeP-Cn-Vaa">
+                                                <rect key="frame" x="281" y="10" width="34" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="menuButton@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchBtn:" destination="1K5-XQ-EqI" eventType="touchUpInside" id="pMt-0l-ntD"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6hM-h4-lNZ" firstAttribute="leading" secondItem="v2P-Jr-eVY" secondAttribute="leading" type="default" id="HSS-Rv-JUa"/>
+                            <constraint firstItem="6hM-h4-lNZ" firstAttribute="top" secondItem="v2P-Jr-eVY" secondAttribute="top" type="default" id="ZKc-12-7uf"/>
+                            <constraint firstItem="6hM-h4-lNZ" firstAttribute="trailing" secondItem="v2P-Jr-eVY" secondAttribute="trailing" type="default" id="tsk-0q-Gvh"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gwt-MR-qLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="2105"/>
+            <point key="canvasLocation" x="1730" y="1803"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="aXw-io-Cxq">
@@ -167,8 +350,8 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pr-Rd-Dva">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="cf7-mw-EBb"/>
-                                    <constraint firstAttribute="width" constant="66" id="gyf-ZW-BtS"/>
+                                    <constraint firstAttribute="height" constant="28" id="CyQ-zW-dsa"/>
+                                    <constraint firstAttribute="width" constant="66" id="QDu-Tj-7ff"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Log Out">
@@ -180,13 +363,57 @@
                                     <action selector="logOutButtonTapAction:" destination="dnP-Nf-msU" eventType="touchUpInside" id="VzW-kD-hHb"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxK-Jp-SJF">
+                                <color key="tintColor" red="0.69803921570000005" green="0.031372549020000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Governor's" id="VAO-pE-uRB">
+                                        <barButtonItem key="leftBarButtonItem" id="rHP-Xe-TIW">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I7W-8a-8yG">
+                                                <rect key="frame" x="5" y="10" width="34" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="menuButton@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shieldBtn:" destination="dnP-Nf-msU" eventType="touchUpInside" id="5JP-aZ-lMQ"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="lXp-Tg-F2S">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OIJ-XL-Q95">
+                                                <rect key="frame" x="281" y="10" width="34" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="menuButton@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchBtn:" destination="dnP-Nf-msU" eventType="touchUpInside" id="xa4-x9-kya"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="5Pr-Rd-Dva" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="07P-GH-xG8"/>
-                            <constraint firstItem="GZH-9d-hlt" firstAttribute="centerX" secondItem="Grp-nh-Lg1" secondAttribute="centerX" type="default" id="fEw-4O-Wmk"/>
-                            <constraint firstAttribute="trailing" secondItem="5Pr-Rd-Dva" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="gHY-wX-ywL"/>
-                            <constraint firstItem="GZH-9d-hlt" firstAttribute="top" secondItem="Grp-nh-Lg1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="lR3-vh-wtt"/>
+                            <constraint firstAttribute="trailing" secondItem="5Pr-Rd-Dva" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ae4-zm-JjG"/>
+                            <constraint firstItem="DxK-Jp-SJF" firstAttribute="trailing" secondItem="Grp-nh-Lg1" secondAttribute="trailing" type="default" id="IgU-qj-fKD"/>
+                            <constraint firstItem="GZH-9d-hlt" firstAttribute="top" secondItem="DxK-Jp-SJF" secondAttribute="bottom" type="default" id="VLk-CY-ZGr"/>
+                            <constraint firstAttribute="bottom" secondItem="5Pr-Rd-Dva" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="adN-Ox-Al0"/>
+                            <constraint firstItem="DxK-Jp-SJF" firstAttribute="leading" secondItem="Grp-nh-Lg1" secondAttribute="leading" type="default" id="evf-z2-E45"/>
+                            <constraint firstItem="DxK-Jp-SJF" firstAttribute="top" secondItem="Grp-nh-Lg1" secondAttribute="top" type="default" id="sMJ-9v-yy8"/>
+                            <constraint firstItem="GZH-9d-hlt" firstAttribute="centerX" secondItem="DxK-Jp-SJF" secondAttribute="centerX" type="default" id="yDk-hQ-wyc"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -194,10 +421,10 @@
             </objects>
             <point key="canvasLocation" x="1679" y="1099"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Athletics View Controller-->
         <scene sceneID="c8r-b6-kF1">
             <objects>
-                <viewController storyboardIdentifier="Athletics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ncl-rJ-qHJ" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Athletics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ncl-rJ-qHJ" customClass="AthleticsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HkV-lg-On8">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -207,11 +434,55 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49H-kk-kbw">
+                                <color key="tintColor" red="0.69803921570000005" green="0.031372549020000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Governor's" id="5WJ-dn-VrE">
+                                        <barButtonItem key="leftBarButtonItem" id="KYP-SZ-D5e">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="15B-5i-QUP">
+                                                <rect key="frame" x="5" y="10" width="34" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="menuButton@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shieldBtn:" destination="ncl-rJ-qHJ" eventType="touchUpInside" id="9Oi-Xw-24L"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="Kg5-o2-fyn">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yLe-Br-7BY">
+                                                <rect key="frame" x="281" y="10" width="34" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="menuButton@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchBtn:" destination="ncl-rJ-qHJ" eventType="touchUpInside" id="uIw-gf-bW4"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.4215738785" green="1" blue="0.40882370890000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Gj8-EO-zrQ" firstAttribute="top" secondItem="HkV-lg-On8" secondAttribute="top" constant="20" symbolic="YES" type="default" id="U0Z-PB-rpX"/>
-                            <constraint firstItem="Gj8-EO-zrQ" firstAttribute="centerX" secondItem="HkV-lg-On8" secondAttribute="centerX" type="default" id="Ug0-Kf-cck"/>
+                            <constraint firstItem="49H-kk-kbw" firstAttribute="top" secondItem="HkV-lg-On8" secondAttribute="top" type="default" id="0zI-Xf-DaN"/>
+                            <constraint firstItem="Gj8-EO-zrQ" firstAttribute="centerX" secondItem="49H-kk-kbw" secondAttribute="centerX" type="default" id="5HS-Hs-jPe"/>
+                            <constraint firstItem="49H-kk-kbw" firstAttribute="leading" secondItem="HkV-lg-On8" secondAttribute="leading" type="default" id="8sg-eB-5S5"/>
+                            <constraint firstItem="Gj8-EO-zrQ" firstAttribute="top" secondItem="49H-kk-kbw" secondAttribute="bottom" type="default" id="WOj-iy-d7U"/>
+                            <constraint firstItem="49H-kk-kbw" firstAttribute="trailing" secondItem="HkV-lg-On8" secondAttribute="trailing" type="default" id="ifc-y4-971"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iiJ-09-oW1"/>
@@ -225,25 +496,36 @@
         <image name="menuButton@2x.png" width="68" height="48"/>
     </resources>
     <classes>
+        <class className="AcademicViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AcademicViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
+        <class className="AthleticsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AthleticsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
         <class className="ECSlidingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
         </class>
         <class className="LunchViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LunchViewController.h"/>
             <relationships>
-                <relationship kind="action" name="revealMenu:"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="revealMenu:"/>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
             </relationships>
         </class>
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="action" name="revealMenu:"/>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
                 <relationship kind="action" name="showLocations"/>
                 <relationship kind="action" name="showUser"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
@@ -255,18 +537,16 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
-        <class className="SecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="revealMenu:"/>
-            </relationships>
-        </class>
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="logOutButtonTapAction:"/>
-                <relationship kind="action" name="revealMenu:"/>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
             </relationships>
+        </class>
+        <class className="UnderRightViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UnderRightViewController.h"/>
         </class>
         <class className="initViewController" superclassName="ECSlidingViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/initViewController.h"/>

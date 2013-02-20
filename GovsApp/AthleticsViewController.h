@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface AthleticsViewController : UIViewController
 
 @property (strong, nonatomic) UIButton *govBtn;
+
+- (IBAction)searchBtn:(id)sender;
+- (IBAction)shieldBtn:(id)sender;
 
 @end

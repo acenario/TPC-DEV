@@ -25,8 +25,8 @@
 		DC31F2E616CB582C00067E34 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2E416CB582C00067E34 /* UIImage+ImageWithUIView.m */; };
 		DC31F2EA16CB586C00067E34 /* initViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2E916CB586C00067E34 /* initViewController.m */; };
 		DC31F2ED16CB58A500067E34 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2EC16CB58A500067E34 /* MenuViewController.m */; };
-		DC31F2F016CB58D700067E34 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2EF16CB58D700067E34 /* MainViewController.m */; };
-		DC31F2F316CB58EC00067E34 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2F216CB58EC00067E34 /* SecondViewController.m */; };
+		DC31F2F016CB58D700067E34 /* AcademicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2EF16CB58D700067E34 /* AcademicViewController.m */; };
+		DC31F2F316CB58EC00067E34 /* AthleticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2F216CB58EC00067E34 /* AthleticsViewController.m */; };
 		DC31F2FA16CB632700067E34 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2F916CB632700067E34 /* MapViewController.m */; };
 		DC31F2FC16CB662200067E34 /* menuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC31F2FB16CB662200067E34 /* menuButton@2x.png */; };
 		DC31F31416CB989F00067E34 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31F31316CB989F00067E34 /* Parse.framework */; };
@@ -46,6 +46,7 @@
 		DC31F33516CBA02000067E34 /* GovsLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33416CBA02000067E34 /* GovsLoginViewController.m */; };
 		DC31F33716CBA09900067E34 /* govs_dashboard-header@2x_latest.png in Resources */ = {isa = PBXBuildFile; fileRef = DC31F33616CBA09900067E34 /* govs_dashboard-header@2x_latest.png */; };
 		DC31F33A16CBA12F00067E34 /* GovSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */; };
+		DC7D042416D4A03F005B238F /* UnderRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D042316D4A03F005B238F /* UnderRightViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,10 +79,10 @@
 		DC31F2E916CB586C00067E34 /* initViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = initViewController.m; sourceTree = "<group>"; };
 		DC31F2EB16CB58A500067E34 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		DC31F2EC16CB58A500067E34 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		DC31F2EE16CB58D700067E34 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		DC31F2EF16CB58D700067E34 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		DC31F2F116CB58EC00067E34 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		DC31F2F216CB58EC00067E34 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		DC31F2EE16CB58D700067E34 /* AcademicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcademicViewController.h; sourceTree = "<group>"; };
+		DC31F2EF16CB58D700067E34 /* AcademicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcademicViewController.m; sourceTree = "<group>"; };
+		DC31F2F116CB58EC00067E34 /* AthleticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleticsViewController.h; sourceTree = "<group>"; };
+		DC31F2F216CB58EC00067E34 /* AthleticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleticsViewController.m; sourceTree = "<group>"; };
 		DC31F2F816CB632700067E34 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		DC31F2F916CB632700067E34 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		DC31F2FB16CB662200067E34 /* menuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuButton@2x.png"; sourceTree = "<group>"; };
@@ -104,6 +105,8 @@
 		DC31F33616CBA09900067E34 /* govs_dashboard-header@2x_latest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "govs_dashboard-header@2x_latest.png"; path = "Govs Photos/Archive/govs_dashboard-header@2x_latest.png"; sourceTree = SOURCE_ROOT; };
 		DC31F33816CBA12F00067E34 /* GovSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GovSignUpViewController.h; sourceTree = "<group>"; };
 		DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GovSignUpViewController.m; sourceTree = "<group>"; };
+		DC7D042216D4A03F005B238F /* UnderRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderRightViewController.h; sourceTree = "<group>"; };
+		DC7D042316D4A03F005B238F /* UnderRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderRightViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,33 +183,32 @@
 		DC0CFA1416A6076B00F98CDB /* GovsApp */ = {
 			isa = PBXGroup;
 			children = (
+				DC31F2E016CB582C00067E34 /* ECSlidingViewController */,
 				DC31F33616CBA09900067E34 /* govs_dashboard-header@2x_latest.png */,
 				DC31F2FB16CB662200067E34 /* menuButton@2x.png */,
-				DC31F2E016CB582C00067E34 /* ECSlidingViewController */,
 				DC0CFA1D16A6076B00F98CDB /* AppDelegate.h */,
 				DC0CFA1E16A6076B00F98CDB /* AppDelegate.m */,
 				DC0CFA2616A6076B00F98CDB /* MainStoryboard.storyboard */,
 				DC0CFA2916A6076B00F98CDB /* ViewController.h */,
 				DC0CFA2A16A6076B00F98CDB /* ViewController.m */,
-				DC0CFA1516A6076B00F98CDB /* Supporting Files */,
+				DC7D042216D4A03F005B238F /* UnderRightViewController.h */,
+				DC7D042316D4A03F005B238F /* UnderRightViewController.m */,
 				DC31F2E816CB586C00067E34 /* initViewController.h */,
 				DC31F2E916CB586C00067E34 /* initViewController.m */,
 				DC31F2EB16CB58A500067E34 /* MenuViewController.h */,
 				DC31F2EC16CB58A500067E34 /* MenuViewController.m */,
-				DC31F2EE16CB58D700067E34 /* MainViewController.h */,
-				DC31F2EF16CB58D700067E34 /* MainViewController.m */,
-				DC31F2F116CB58EC00067E34 /* SecondViewController.h */,
-				DC31F2F216CB58EC00067E34 /* SecondViewController.m */,
+				DC31F2EE16CB58D700067E34 /* AcademicViewController.h */,
+				DC31F2EF16CB58D700067E34 /* AcademicViewController.m */,
+				DC31F2F116CB58EC00067E34 /* AthleticsViewController.h */,
+				DC31F2F216CB58EC00067E34 /* AthleticsViewController.m */,
 				DC31F2F816CB632700067E34 /* MapViewController.h */,
 				DC31F2F916CB632700067E34 /* MapViewController.m */,
-				DC31F33316CBA02000067E34 /* GovsLoginViewController.h */,
-				DC31F33416CBA02000067E34 /* GovsLoginViewController.m */,
-				DC31F33816CBA12F00067E34 /* GovSignUpViewController.h */,
-				DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */,
 				A508EE0616CEF6B100C43C9C /* SettingsViewController.h */,
 				A508EE0716CEF6B100C43C9C /* SettingsViewController.m */,
 				A5E545DA16CEFDD300DE9AA5 /* LunchViewController.h */,
 				A5E545DB16CEFDD300DE9AA5 /* LunchViewController.m */,
+				DC0CFA1516A6076B00F98CDB /* Supporting Files */,
+				DC7D042A16D4B71F005B238F /* Login */,
 			);
 			path = GovsApp;
 			sourceTree = "<group>";
@@ -234,6 +236,17 @@
 				DC31F2E416CB582C00067E34 /* UIImage+ImageWithUIView.m */,
 			);
 			path = ECSlidingViewController;
+			sourceTree = "<group>";
+		};
+		DC7D042A16D4B71F005B238F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DC31F33316CBA02000067E34 /* GovsLoginViewController.h */,
+				DC31F33416CBA02000067E34 /* GovsLoginViewController.m */,
+				DC31F33816CBA12F00067E34 /* GovSignUpViewController.h */,
+				DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,13 +324,14 @@
 				DC31F2E616CB582C00067E34 /* UIImage+ImageWithUIView.m in Sources */,
 				DC31F2EA16CB586C00067E34 /* initViewController.m in Sources */,
 				DC31F2ED16CB58A500067E34 /* MenuViewController.m in Sources */,
-				DC31F2F016CB58D700067E34 /* MainViewController.m in Sources */,
-				DC31F2F316CB58EC00067E34 /* SecondViewController.m in Sources */,
+				DC31F2F016CB58D700067E34 /* AcademicViewController.m in Sources */,
+				DC31F2F316CB58EC00067E34 /* AthleticsViewController.m in Sources */,
 				DC31F2FA16CB632700067E34 /* MapViewController.m in Sources */,
 				DC31F33516CBA02000067E34 /* GovsLoginViewController.m in Sources */,
 				DC31F33A16CBA12F00067E34 /* GovSignUpViewController.m in Sources */,
 				A508EE0816CEF6B100C43C9C /* SettingsViewController.m in Sources */,
 				A5E545DC16CEFDD300DE9AA5 /* LunchViewController.m in Sources */,
+				DC7D042416D4A03F005B238F /* UnderRightViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
