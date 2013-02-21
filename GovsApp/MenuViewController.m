@@ -14,6 +14,7 @@
 @interface MenuViewController ()
 
 @property (strong, nonatomic) NSArray *menu;
+@property (strong, nonatomic) NSArray *menuImages;
 
 @end
 
@@ -41,8 +42,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.menu = [NSArray arrayWithObjects:@"Map", @"Academics", @"Athletics", @"Lunch", @"Settings",  nil];
+    self.menuImages = [NSArray arrayWithObjects:@"smallmap.png", @"book1.png", @"football.png", @"lunch.png", @"settings1.png", nil];
     
-    [self.slidingViewController setAnchorRightRevealAmount:50.0f]; //Change this number to change sliding menu width
+    
+    [self.slidingViewController setAnchorRightRevealAmount:45.0f]; //Change this number to change sliding menu width
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
 }
 
@@ -79,7 +82,25 @@
     
     // Configure the cell...
     
+    //UIImage* finder = [UIImage imageNamed:@"finder.png"];
+    //UIImage* searching = [UIImage imageNamed:@"searching.png"];
+    
+    UIImage * image = [UIImage imageNamed:[self.menuImages objectAtIndex:indexPath.row]];
+    
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.menu objectAtIndex:indexPath.row]];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    
+    cell.imageView.image = image;
+    
+    NSInteger red   = 178;
+    NSInteger green = 8;
+    NSInteger blue  = 56;
+    
+    tableView.backgroundColor = [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0];
+    
+    tableView.separatorColor = [UIColor lightGrayColor];
+    
+    
     
     return cell;
 }
