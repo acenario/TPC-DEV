@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "UnderRightViewController.h"
 
-@interface AcademicViewController : UIViewController
+@interface AcademicViewController : UITableViewController
 
 @property (strong, nonatomic) UIButton *govBtn;
 
 - (IBAction)searchBtn:(id)sender;
 - (IBAction)shieldBtn:(id)sender;
+
 
 
 @end

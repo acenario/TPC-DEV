@@ -12,6 +12,8 @@
 
 @interface AcademicViewController ()
 
+
+
 @end
 
 @implementation AcademicViewController
@@ -57,6 +59,8 @@
 	// Do any additional setup after loading the view.
     
     //[self screenUpdate];
+    
+    
     
     self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;

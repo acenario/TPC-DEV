@@ -62,6 +62,8 @@
 		DCA653D416D62DBD00209D5D /* questionmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA653CB16D62DBD00209D5D /* questionmark@2x.png */; };
 		DCA653D516D62DBD00209D5D /* settings1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA653CC16D62DBD00209D5D /* settings1@2x.png */; };
 		DCA653D616D62DBD00209D5D /* settings2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA653CD16D62DBD00209D5D /* settings2@2x.png */; };
+		DCA653DD16D8A85B00209D5D /* ClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA653DC16D8A85B00209D5D /* ClassesViewController.m */; };
+		DCA653E416DA846A00209D5D /* DepartmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA653E316DA846A00209D5D /* DepartmentsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +141,10 @@
 		DCA653CB16D62DBD00209D5D /* questionmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "questionmark@2x.png"; sourceTree = "<group>"; };
 		DCA653CC16D62DBD00209D5D /* settings1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings1@2x.png"; sourceTree = "<group>"; };
 		DCA653CD16D62DBD00209D5D /* settings2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings2@2x.png"; sourceTree = "<group>"; };
+		DCA653DB16D8A85B00209D5D /* ClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesViewController.h; sourceTree = "<group>"; };
+		DCA653DC16D8A85B00209D5D /* ClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesViewController.m; sourceTree = "<group>"; };
+		DCA653E216DA846A00209D5D /* DepartmentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentsViewController.h; sourceTree = "<group>"; };
+		DCA653E316DA846A00209D5D /* DepartmentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +254,10 @@
 				A508EE0716CEF6B100C43C9C /* SettingsViewController.m */,
 				A5E545DA16CEFDD300DE9AA5 /* LunchViewController.h */,
 				A5E545DB16CEFDD300DE9AA5 /* LunchViewController.m */,
+				DCA653DB16D8A85B00209D5D /* ClassesViewController.h */,
+				DCA653DC16D8A85B00209D5D /* ClassesViewController.m */,
+				DCA653E216DA846A00209D5D /* DepartmentsViewController.h */,
+				DCA653E316DA846A00209D5D /* DepartmentsViewController.m */,
 				DC0CFA1516A6076B00F98CDB /* Supporting Files */,
 				DC7D042A16D4B71F005B238F /* Login */,
 			);
@@ -404,6 +414,8 @@
 				A508EE0816CEF6B100C43C9C /* SettingsViewController.m in Sources */,
 				A5E545DC16CEFDD300DE9AA5 /* LunchViewController.m in Sources */,
 				DC7D042416D4A03F005B238F /* UnderRightViewController.m in Sources */,
+				DCA653DD16D8A85B00209D5D /* ClassesViewController.m in Sources */,
+				DCA653E416DA846A00209D5D /* DepartmentsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
