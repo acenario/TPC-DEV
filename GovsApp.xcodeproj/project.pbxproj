@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A508EE0816CEF6B100C43C9C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A508EE0716CEF6B100C43C9C /* SettingsViewController.m */; };
+		A50F6C7F16DC4C4C00A949CB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50F6C7E16DC4C4C00A949CB /* CoreData.framework */; };
+		A50F6C8216DC4C9C00A949CB /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A50F6C8016DC4C9C00A949CB /* DataModel.xcdatamodeld */; };
+		A50F6C8516DC4E3300A949CB /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F6C8416DC4E3300A949CB /* Location.m */; };
 		A5E545DC16CEFDD300DE9AA5 /* LunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E545DB16CEFDD300DE9AA5 /* LunchViewController.m */; };
 		A5E545DE16CF016200DE9AA5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E545DD16CF016200DE9AA5 /* MapKit.framework */; };
 		DC0CFA0F16A6076B00F98CDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0CFA0E16A6076B00F98CDB /* UIKit.framework */; };
@@ -69,6 +72,10 @@
 /* Begin PBXFileReference section */
 		A508EE0616CEF6B100C43C9C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		A508EE0716CEF6B100C43C9C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		A50F6C7E16DC4C4C00A949CB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A50F6C8116DC4C9C00A949CB /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		A50F6C8316DC4E3300A949CB /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		A50F6C8416DC4E3300A949CB /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		A5E545DA16CEFDD300DE9AA5 /* LunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunchViewController.h; sourceTree = "<group>"; };
 		A5E545DB16CEFDD300DE9AA5 /* LunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunchViewController.m; sourceTree = "<group>"; };
 		A5E545DD16CF016200DE9AA5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -152,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50F6C7F16DC4C4C00A949CB /* CoreData.framework in Frameworks */,
 				A5E545DE16CF016200DE9AA5 /* MapKit.framework in Frameworks */,
 				DC31F32E16CB992200067E34 /* SystemConfiguration.framework in Frameworks */,
 				DC31F32C16CB991D00067E34 /* StoreKit.framework in Frameworks */,
@@ -179,6 +187,10 @@
 		DC0CF9FF16A6076B00F98CDB = {
 			isa = PBXGroup;
 			children = (
+				A50F6C8016DC4C9C00A949CB /* DataModel.xcdatamodeld */,
+				A50F6C8316DC4E3300A949CB /* Location.h */,
+				A50F6C8416DC4E3300A949CB /* Location.m */,
+				A50F6C7E16DC4C4C00A949CB /* CoreData.framework */,
 				A5E545DD16CF016200DE9AA5 /* MapKit.framework */,
 				DC31F32D16CB992200067E34 /* SystemConfiguration.framework */,
 				DC31F32B16CB991D00067E34 /* StoreKit.framework */,
@@ -416,6 +428,8 @@
 				DC7D042416D4A03F005B238F /* UnderRightViewController.m in Sources */,
 				DCA653DD16D8A85B00209D5D /* ClassesViewController.m in Sources */,
 				DCA653E416DA846A00209D5D /* DepartmentsViewController.m in Sources */,
+				A50F6C8216DC4C9C00A949CB /* DataModel.xcdatamodeld in Sources */,
+				A50F6C8516DC4E3300A949CB /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +559,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A50F6C8016DC4C9C00A949CB /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A50F6C8116DC4C9C00A949CB /* DataModel.xcdatamodel */,
+			);
+			currentVersion = A50F6C8116DC4C9C00A949CB /* DataModel.xcdatamodel */;
+			name = DataModel.xcdatamodeld;
+			path = ../DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DC0CFA0116A6076B00F98CDB /* Project object */;
 }

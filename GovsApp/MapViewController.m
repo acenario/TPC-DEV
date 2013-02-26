@@ -9,13 +9,25 @@
 #import "MapViewController.h"
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
+@implementation MapViewController
 
-
-@interface MapViewController ()
+@synthesize managedObjectContext;
+@synthesize mapView;
+- (IBAction)showUser
+{
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.mapView. userLocation.coordinate, 1000, 1000);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+}
+- (IBAction)showLocations
+{
+    MKCoordinateRegion region = [self regionForAnnotations:locations];
+    [self.mapView setRegion:region animated:YES];
+}
 
 @end
-
-@implementation MapViewController
+@implementation MapViewController {
+    NSArray *locations;
+}
 
 @synthesize govBtn; //Not needed on Mountain Lion
 
@@ -100,11 +112,6 @@
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
    
-    
-    
-    
-    
-   
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,7 +134,58 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
     
 }
-
+- (void)updateLocations
+{
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Location"inManagedObjectContext:self.managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray * foundObjects = [self.managedObjectContext executeFetchRequest:
+                              fetchRequest error:&error];
+    if (foundObjects == nil) {
+        FATAL_CORE_DATA_ERROR(error);
+        return;
+    }
+    
+    if (locations != nil) {
+        [self.mapView removeAnnotations:locations];
+    }
+    locations = foundObjects;
+    [self.mapView addAnnotations:locations]; }
+- (MKCoordinateRegion)regionForAnnotations:(NSArray *)annotations {
+    MKCoordinateRegion region;
+    if ([annotations count] == 0) {
+        region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.
+                                                    coordinate, 1000, 1000);
+    } else if ([annotations count] == 1) {
+        id <MKAnnotation> annotation = [annotations lastObject];
+        region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 1000, 
+                                                    1000);
+    } else {
+        CLLocationCoordinate2D topLeftCoord;
+        topLeftCoord.latitude = -90;
+        ￼￼￼￼￼    topLeftCoord.longitude = 180;
+        CLLocationCoordinate2D bottomRightCoord; bottomRightCoord.latitude = 90; bottomRightCoord.longitude = -180;
+        for (id <MKAnnotation> annotation in annotations) {
+            topLeftCoord.latitude = fmax(topLeftCoord.latitude, annotation.coordinateê
+                                         .latitude);
+            topLeftCoord.longitude = fmin(topLeftCoord.longitude, annotation.ê
+                                          coordinate.longitude);
+            bottomRightCoord.latitude = fmin(bottomRightCoord.latitude, annotation.ê
+                                             coordinate.latitude);
+            bottomRightCoord.longitude = fmax(b
+                    // It said to add above show locations.
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self updateLocations];
+    
+    if ([locations count] > 0) {
+        [self showLocations];
+    } 
+}
 
 
 

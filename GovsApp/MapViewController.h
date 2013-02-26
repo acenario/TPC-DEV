@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "UnderRightViewController.h"
-
-
-
+#import "MapViewController.h"
 @interface MapViewController : UIViewController <MKMapViewDelegate>
+
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;

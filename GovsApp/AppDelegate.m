@@ -8,15 +8,29 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "MapViewController.h"
 
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+
+MapViewController *mapViewController = (MapViewController *)[[
+    tabBarController viewControllers] objectAtIndex:2];
+mapViewController.managedObjectContext = self.managedObjectContext;
+
+return YES;
+// Here's the parse section where I was not sure where to add the boool application
+}
+
 {
     [Parse setApplicationId:@"t7rMlEolr6pOza7fd90EsIy8sesRg8jC5kKiMuh7"
                   clientKey:@"K3d8MExfCXwiVSlXznxGmKqil6KMLIEfy8SV4TJ4"];
     
+    MapViewController *mapViewController = (MapViewController *)[[
+        tabBarController viewControllers] objectAtIndex:2];
+    mapViewController.managedObjectContext = self.managedObjectContext; 
+}
     
     
     return YES;
