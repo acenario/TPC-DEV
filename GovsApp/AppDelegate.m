@@ -8,35 +8,49 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-#import "MapViewController.h"
+#import <Scringo/ScringoAgent.h>
 
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-
-MapViewController *mapViewController = (MapViewController *)[[
-    tabBarController viewControllers] objectAtIndex:2];
-mapViewController.managedObjectContext = self.managedObjectContext;
-
-return YES;
-// Here's the parse section where I was not sure where to add the boool application
-}
-
 {
     [Parse setApplicationId:@"t7rMlEolr6pOza7fd90EsIy8sesRg8jC5kKiMuh7"
                   clientKey:@"K3d8MExfCXwiVSlXznxGmKqil6KMLIEfy8SV4TJ4"];
+    [ScringoAgent startSession:@"qpzkhT0ZKFr8RZHfr4mOWuPAWX2mlhXI" locationManager:nil];
     
-    MapViewController *mapViewController = (MapViewController *)[[
-        tabBarController viewControllers] objectAtIndex:2];
-    mapViewController.managedObjectContext = self.managedObjectContext; 
-}
     
     
     return YES;
 }
 
-							
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [ScringoAgent handleOpenURL:url];
+}
+
+/*-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+ sourceApplication:(NSString *)sourceApplication
+        annotation:(id)annotation{
+    return [ScringoAgent handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [ScringoAgent didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+-(BOOL)application:(UIApplication *)application
+didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    
+    [ScringoAgent didFailToRegisterForRemoteNotificationsWithError:error];
+    
+}
+
+-(BOOL)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [ScringoAgent didReceiveRemoteNotification:userInfo];
+}*/
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

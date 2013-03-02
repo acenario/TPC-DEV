@@ -39,6 +39,9 @@
 /// The key to use to display for the cell text label. This won't apply if you override tableView:cellForRowAtIndexPath:object:
 @property (nonatomic, retain) NSString *textKey;
 
+/// The key to use to display for the cell text label. This won't apply if you override tableView:cellForRowAtIndexPath:object:
+@property (retain, nonatomic) NSString *keyToDisplay;
+
 /// The key to use to display for the cell image view. This won't apply if you override tableView:cellForRowAtIndexPath:object:
 @property (nonatomic, retain) NSString *imageKey;
 

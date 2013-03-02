@@ -9,6 +9,8 @@
 #import "AthleticsViewController.h"
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
+#import "UnderRightViewController.h"
+#import <Scringo/ScringoAgent.h>
 
 @interface AthleticsViewController ()
 
@@ -16,49 +18,37 @@
 
 @implementation AthleticsViewController
 
-@synthesize govBtn; 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
     return self;
 }
 
-- (void)screenUpdate {
-    
-    
-    self.govBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    govBtn.frame = CGRectMake(8, 10, 34, 24);
-    [govBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
-    [govBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:self.govBtn];
-}
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    //[self screenUpdate];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
-    //[self screenUpdate];
     
-    self.view.layer.shadowOpacity = 0.75f;
-    self.view.layer.shadowRadius = 10.0f;
-    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    //Code for Red Bar
+    NSInteger red   = 178;
+    NSInteger green = 8;
+    NSInteger blue  = 56;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0];
     
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
     
+    /*if (![self.slidingViewController.underRightViewController isKindOfClass:[UnderRightViewController class]]) {
+        self.slidingViewController.underRightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UnderRight"];
+    }*/
+    
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,18 +57,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*- (IBAction)revealMenu:(id)sender
-{
-    [self.slidingViewController anchorTopViewTo:ECRight];
-}*/
 
 - (IBAction)searchBtn:(id)sender {
-    [self.slidingViewController anchorTopViewTo:ECLeft];
+    //[self.slidingViewController anchorTopViewTo:ECLeft];
+    [ScringoAgent openSidebar];
     
 }
 
 - (IBAction)shieldBtn:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECRight];
+    
 }
+
+
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
+}
+
+
 
 @end

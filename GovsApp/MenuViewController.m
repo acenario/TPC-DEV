@@ -41,8 +41,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.menu = [NSArray arrayWithObjects:@"Map", @"Academics", @"Athletics", @"Lunch", @"Settings",  nil];
-    self.menuImages = [NSArray arrayWithObjects:@"smallmap.png", @"book1.png", @"football.png", @"lunch.png", @"settings1.png", nil];
+    self.menu = [NSArray arrayWithObjects:@"Map", @"Academics", @"Athletics", @"Events", @"Govs", @"Lunch", @"Settings",  nil];
+    self.menuImages = [NSArray arrayWithObjects:@"smallmap.png", @"book1.png", @"football.png", @"events.png", @"questionmark.png", @"lunch.png", @"settings1.png", nil];
     
     
     [self.slidingViewController setAnchorRightRevealAmount:45.0f]; //Change this number to change sliding menu width
@@ -97,6 +97,8 @@
     NSInteger blue  = 56;
     
     tableView.backgroundColor = [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0];
+    
+     //tableView.backgroundColor = [UIColor blackColor];
     
     tableView.separatorColor = [UIColor lightGrayColor];
     

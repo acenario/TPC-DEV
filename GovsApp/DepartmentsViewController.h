@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "UnderRightViewController.h"
 
-@interface DepartmentsViewController : UITableViewController 
+@interface DepartmentsViewController : UITableViewController
+
+- (IBAction)searchBtn:(id)sender;
+- (IBAction)shieldBtn:(id)sender;
+
 
 @end

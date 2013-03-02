@@ -9,6 +9,7 @@
 #import "LunchViewController.h"
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
+#import <Scringo/ScringoAgent.h>
 
 @interface LunchViewController ()
 
@@ -71,7 +72,8 @@
 }*/
 
 - (IBAction)searchBtn:(id)sender {
-    [self.slidingViewController anchorTopViewTo:ECLeft];
+    //[self.slidingViewController anchorTopViewTo:ECLeft];
+    [ScringoAgent openSidebar];
     
 }
 

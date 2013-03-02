@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
+#import <Parse/Parse.h>
 
-@interface UnderRightViewController : UITableViewController <UISearchBarDelegate>
+@interface UnderRightViewController : PFQueryTableViewController <UITableViewDelegate, UISearchDisplayDelegate>
+
+
+
+
 
 @end

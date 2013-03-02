@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AthleticsViewController : UIViewController
+@interface AthleticsViewController : UITableViewController
 
 @property (strong, nonatomic) UIButton *govBtn;
 

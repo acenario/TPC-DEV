@@ -10,6 +10,7 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import <Parse/Parse.h>
+#import <Scringo/ScringoAgent.h>
 
 @interface SettingsViewController ()
 
@@ -67,13 +68,37 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (![PFUser currentUser]) { // No user logged in
+        // Create the log in view controller
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        [logInViewController setDelegate:self]; // Set ourselves as the delegate
+        
+        // Create the sign up view controller
+        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+        
+        
+        
+        // Assign our sign up controller to be displayed from the login controller
+        [logInViewController setSignUpController:signUpViewController];
+        
+        // Present the log in view controller
+        [self presentViewController:logInViewController animated:YES completion:NULL];
+    }
+}
+
+
 /*- (IBAction)revealMenu:(id)sender
 {
     [self.slidingViewController anchorTopViewTo:ECRight];
 }*/
 
 - (IBAction)searchBtn:(id)sender {
-    [self.slidingViewController anchorTopViewTo:ECLeft];
+    //[self.slidingViewController anchorTopViewTo:ECLeft];
+    [ScringoAgent openSidebar];
     
 }
 
