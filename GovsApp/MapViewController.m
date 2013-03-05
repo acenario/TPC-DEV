@@ -143,6 +143,7 @@
     mapView.showsUserLocation = YES;
     mapView.delegate = self;
     
+    /*[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myCommandClicked:) name:kScringoNotification_MISSING_  object:nil];*/
 
     
     //[ScringoAgent setTestMode:YES];
@@ -537,6 +538,12 @@
     
 }
 
+
+-(void)myCommandClicked:(NSNotification *)aNotification {
+    NSLog(@"User selected my custom command. Command id is =%@", [aNotification userInfo]);
+    
+    // The rest of your code
+}
 
 
 
