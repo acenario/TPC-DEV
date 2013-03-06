@@ -76,6 +76,7 @@
 }
 
 
+
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     //[self screenUpdate2];
@@ -485,12 +486,7 @@
     [mapView addAnnotation:ann22];
      
      
-    
-    
-     
-     
-     
-     
+ 
     
     
     

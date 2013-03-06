@@ -31,6 +31,7 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, readonly) CLLocationCoordinate2D location;
 
+
 //- (IBAction)logOutButtonTapAction:(id)sender; --> Removed Logout Button
 
 @end
