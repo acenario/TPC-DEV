@@ -44,8 +44,8 @@
 		DC31F33516CBA02000067E34 /* GovsLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33416CBA02000067E34 /* GovsLoginViewController.m */; };
 		DC31F33716CBA09900067E34 /* govs_dashboard-header@2x_latest.png in Resources */ = {isa = PBXBuildFile; fileRef = DC31F33616CBA09900067E34 /* govs_dashboard-header@2x_latest.png */; };
 		DC31F33A16CBA12F00067E34 /* GovSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */; };
-		DC6EA6EC16E6BF5F00E20E4E /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA6E916E6BF5F00E20E4E /* AwesomeMenu.m */; };
-		DC6EA6ED16E6BF5F00E20E4E /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA6EB16E6BF5F00E20E4E /* AwesomeMenuItem.m */; };
+		DC6EA72316E6C2AB00E20E4E /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA72016E6C2AB00E20E4E /* AwesomeMenu.m */; };
+		DC6EA72416E6C2AB00E20E4E /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA72216E6C2AB00E20E4E /* AwesomeMenuItem.m */; };
 		DC7D042416D4A03F005B238F /* UnderRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D042316D4A03F005B238F /* UnderRightViewController.m */; };
 		DC7D045416D6005F005B238F /* thegovernorsacademy_Shield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7D045316D6005F005B238F /* thegovernorsacademy_Shield@2x.png */; };
 		DC7D045716D60213005B238F /* thegovernorsacademy_Heading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7D045616D60213005B238F /* thegovernorsacademy_Heading@2x.png */; };
@@ -297,10 +297,10 @@
 		DC31F33616CBA09900067E34 /* govs_dashboard-header@2x_latest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "govs_dashboard-header@2x_latest.png"; path = "Govs Photos/Archive/govs_dashboard-header@2x_latest.png"; sourceTree = SOURCE_ROOT; };
 		DC31F33816CBA12F00067E34 /* GovSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GovSignUpViewController.h; sourceTree = "<group>"; };
 		DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GovSignUpViewController.m; sourceTree = "<group>"; };
-		DC6EA6E816E6BF5F00E20E4E /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
-		DC6EA6E916E6BF5F00E20E4E /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
-		DC6EA6EA16E6BF5F00E20E4E /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
-		DC6EA6EB16E6BF5F00E20E4E /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenuItem.m; sourceTree = "<group>"; };
+		DC6EA71F16E6C2AB00E20E4E /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
+		DC6EA72016E6C2AB00E20E4E /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
+		DC6EA72116E6C2AB00E20E4E /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
+		DC6EA72216E6C2AB00E20E4E /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenuItem.m; sourceTree = "<group>"; };
 		DC7D042216D4A03F005B238F /* UnderRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderRightViewController.h; sourceTree = "<group>"; };
 		DC7D042316D4A03F005B238F /* UnderRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderRightViewController.m; sourceTree = "<group>"; };
 		DC7D045316D6005F005B238F /* thegovernorsacademy_Shield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thegovernorsacademy_Shield@2x.png"; sourceTree = "<group>"; };
@@ -617,7 +617,7 @@
 		DC0CFA1416A6076B00F98CDB /* GovsApp */ = {
 			isa = PBXGroup;
 			children = (
-				DC6EA6E716E6BF5F00E20E4E /* AwesomeMenu */,
+				DC6EA71E16E6C2AB00E20E4E /* AwesomeMenu */,
 				DCFA4A8716E5BAFD009496DD /* Images */,
 				DCA6562B16E0872200209D5D /* pushpin@2x.png */,
 				DCA6552016DFF30900209D5D /* Scringo */,
@@ -699,13 +699,13 @@
 			path = ECSlidingViewController;
 			sourceTree = "<group>";
 		};
-		DC6EA6E716E6BF5F00E20E4E /* AwesomeMenu */ = {
+		DC6EA71E16E6C2AB00E20E4E /* AwesomeMenu */ = {
 			isa = PBXGroup;
 			children = (
-				DC6EA6E816E6BF5F00E20E4E /* AwesomeMenu.h */,
-				DC6EA6E916E6BF5F00E20E4E /* AwesomeMenu.m */,
-				DC6EA6EA16E6BF5F00E20E4E /* AwesomeMenuItem.h */,
-				DC6EA6EB16E6BF5F00E20E4E /* AwesomeMenuItem.m */,
+				DC6EA71F16E6C2AB00E20E4E /* AwesomeMenu.h */,
+				DC6EA72016E6C2AB00E20E4E /* AwesomeMenu.m */,
+				DC6EA72116E6C2AB00E20E4E /* AwesomeMenuItem.h */,
+				DC6EA72216E6C2AB00E20E4E /* AwesomeMenuItem.m */,
 			);
 			path = AwesomeMenu;
 			sourceTree = "<group>";
@@ -1270,8 +1270,8 @@
 				DCA6551F16DF926C00209D5D /* BlogViewController.m in Sources */,
 				DCA6561F16E0532300209D5D /* BuildingsClass.m in Sources */,
 				DCA6562216E06E0B00209D5D /* BuildingInfoViewController.m in Sources */,
-				DC6EA6EC16E6BF5F00E20E4E /* AwesomeMenu.m in Sources */,
-				DC6EA6ED16E6BF5F00E20E4E /* AwesomeMenuItem.m in Sources */,
+				DC6EA72316E6C2AB00E20E4E /* AwesomeMenu.m in Sources */,
+				DC6EA72416E6C2AB00E20E4E /* AwesomeMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

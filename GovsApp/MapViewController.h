@@ -12,10 +12,11 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "SVProgressHUD.h"
+#import "AwesomeMenu.h"
 
 
 
-@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate> {
+@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate, AwesomeMenuDelegate> {
     MKMapView *mapView;
     CLLocationCoordinate2D location;
 }
@@ -30,6 +31,7 @@
 @property (strong, nonatomic) UIButton *govBtn;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, readonly) CLLocationCoordinate2D location;
+
 
 
 //- (IBAction)logOutButtonTapAction:(id)sender; --> Removed Logout Button

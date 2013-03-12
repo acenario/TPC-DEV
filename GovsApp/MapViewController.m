@@ -77,10 +77,142 @@
 
 
 
+- (void)awesomemenu {
+    
+    UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg-menuitem.png"];
+    UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg-menuitem-highlighted.png"];
+    
+    UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
+    
+    //Hiding Image Code
+    UIImage *starImage2 = [UIImage imageNamed:@"icon-star3.png"];
+    UIImage *storyMenuItemImage2 = [UIImage imageNamed:@"bg-menuitem3.png"];
+    UIImage *storyMenuItemImagePressed2 = [UIImage imageNamed:@"bg-menuitem-highlighted3.png"];
+    
+    AwesomeMenuItem *starMenuItem1 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem4 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage2
+                                                           highlightedImage:storyMenuItemImagePressed2
+                                                               ContentImage:starImage2
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem5 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage2
+                                                           highlightedImage:storyMenuItemImagePressed2
+                                                               ContentImage:starImage2
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem6 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage2
+                                                           highlightedImage:storyMenuItemImagePressed2
+                                                               ContentImage:starImage2
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem7 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage2
+                                                           highlightedImage:storyMenuItemImagePressed2
+                                                               ContentImage:starImage2
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem8 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem9 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    
+    NSArray *menus = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, starMenuItem3, starMenuItem4, starMenuItem5, starMenuItem6, starMenuItem7,starMenuItem8,starMenuItem9, nil];
+    
+    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:CGRectMake(8, 10, 100, 100) menus:menus];
+    
+    menu.delegate = self;
+    
+    [self.view addSubview:menu];
+    
+   
+
+    
+	// customize menu
+	/*
+     menu.rotateAngle = M_PI/3;
+     menu.menuWholeAngle = M_PI;
+     menu.timeOffset = 0.2f;
+     menu.farRadius = 180.0f;
+     menu.endRadius = 100.0f;
+     menu.nearRadius = 50.0f;
+     */
+    
+    
+    
+    if (UIDeviceOrientationPortrait) {
+        menu.startPoint = CGPointMake(160.0, 410.0);
+    }
+    
+    /*if (UIDeviceOrientationLandscapeLeft) {
+        menu.startPoint = CGPointMake(240.0, 250.0);
+    }
+    if (UIDeviceOrientationLandscapeRight) {
+        menu.startPoint = CGPointMake(240.0, 250.0);
+    }*/
+	
+    
+    
+}
+
+- (void)AwesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
+{
+    
+    if (idx == 0) {
+       NSLog(@"Select the index : %d",idx);
+        
+    
+    }
+    
+    
+    if (idx == 1) {
+            NSLog(@"Select the index : 1");
+    }
+    
+    
+    if (idx == 2) {
+        NSLog(@"Select the index : 2");
+    }
+    
+    
+    if (idx == 7) {
+        NSLog(@"Select the index : 7");
+    }
+    
+    
+    if (idx == 8) {
+        NSLog(@"Select the index : 8");
+    }
+    
+}
+- (void)AwesomeMenuDidFinishAnimationClose:(AwesomeMenu *)menu {
+    NSLog(@"Menu was closed!");
+}
+- (void)AwesomeMenuDidFinishAnimationOpen:(AwesomeMenu *)menu {
+    NSLog(@"Menu is open!");
+    
+}
+
+
+
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     //[self screenUpdate2];
+
+    
+    [self awesomemenu];
+    
 }
+
 
 
 - (void)viewWillAppear:(BOOL)animated
@@ -144,7 +276,7 @@
     mapView.showsUserLocation = YES;
     mapView.delegate = self;
     
-    /*[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myCommandClicked:) name:kScringoNotification_MISSING_  object:nil];*/
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myCommandClicked:) name:kScringoCustomButtonClicked  object:nil];
 
     
     //[ScringoAgent setTestMode:YES];
@@ -484,8 +616,8 @@
     
     
     [mapView addAnnotation:ann22];
-     
-     
+    
+    [self awesomemenu];
  
     
     
@@ -522,7 +654,7 @@
    
     
     
-    
+
     
    
 }
