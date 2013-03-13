@@ -226,6 +226,7 @@
     
     MKPinAnnotationView *Building = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
     
+    
     Building.pinColor = MKPinAnnotationColorGreen;
     Building.image = [UIImage imageNamed:@"pushpin.png"];
     
@@ -239,6 +240,10 @@
     Building.highlighted = YES;
     Building.animatesDrop = NO;
     Building.canShowCallout = YES;
+    
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
     
     return Building;
     
