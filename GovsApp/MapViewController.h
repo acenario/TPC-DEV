@@ -19,6 +19,7 @@
 @interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate, AwesomeMenuDelegate> {
     MKMapView *mapView;
     CLLocationCoordinate2D location;
+    //AwesomeMenu *menu;
 }
 
 

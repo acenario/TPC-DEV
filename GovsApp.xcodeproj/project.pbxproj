@@ -19,6 +19,8 @@
 		DC0CFA2516A6076B00F98CDB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFA2416A6076B00F98CDB /* Default-568h@2x.png */; };
 		DC0CFA2816A6076B00F98CDB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFA2616A6076B00F98CDB /* MainStoryboard.storyboard */; };
 		DC0CFA2B16A6076B00F98CDB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0CFA2A16A6076B00F98CDB /* ViewController.m */; };
+		DC1CE00116F1135600F1E06C /* bigpin.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1CDFFF16F1135600F1E06C /* bigpin.png */; };
+		DC1CE00216F1135600F1E06C /* bigpin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1CE00016F1135600F1E06C /* bigpin@2x.png */; };
 		DC31F2E516CB582C00067E34 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2E216CB582C00067E34 /* ECSlidingViewController.m */; };
 		DC31F2E616CB582C00067E34 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2E416CB582C00067E34 /* UIImage+ImageWithUIView.m */; };
 		DC31F2EA16CB586C00067E34 /* initViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F2E916CB586C00067E34 /* initViewController.m */; };
@@ -263,6 +265,8 @@
 		DC0CFA2716A6076B00F98CDB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DC0CFA2916A6076B00F98CDB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DC0CFA2A16A6076B00F98CDB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DC1CDFFF16F1135600F1E06C /* bigpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigpin.png; sourceTree = "<group>"; };
+		DC1CE00016F1135600F1E06C /* bigpin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bigpin@2x.png"; sourceTree = "<group>"; };
 		DC31F2E116CB582C00067E34 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
 		DC31F2E216CB582C00067E34 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
 		DC31F2E316CB582C00067E34 /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
@@ -565,6 +569,8 @@
 		DC0CF9FF16A6076B00F98CDB = {
 			isa = PBXGroup;
 			children = (
+				DC1CDFFF16F1135600F1E06C /* bigpin.png */,
+				DC1CE00016F1135600F1E06C /* bigpin@2x.png */,
 				DCA6564416E0CF1000209D5D /* Default.png */,
 				DCA6564516E0CF1100209D5D /* Default@2x.png */,
 				DCA6560F16DFF36C00209D5D /* AddressBook.framework */,
@@ -1217,6 +1223,8 @@
 				DCFA4AA116E5BAFD009496DD /* icon-plus@2x.png in Resources */,
 				DCFA4AA216E5BAFD009496DD /* icon-star.png in Resources */,
 				DCFA4AA316E5BAFD009496DD /* icon-star@2x.png in Resources */,
+				DC1CE00116F1135600F1E06C /* bigpin.png in Resources */,
+				DC1CE00216F1135600F1E06C /* bigpin@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

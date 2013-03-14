@@ -21,6 +21,7 @@
 @implementation MapViewController {
     CLLocationManager *locationManager;
     //NSString *ann1;
+    
 }
 
 @synthesize govBtn; //Not needed on Mountain Lion
@@ -129,10 +130,13 @@
     NSArray *menus = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, starMenuItem3, starMenuItem4, starMenuItem5, starMenuItem6, starMenuItem7,starMenuItem8,starMenuItem9, nil];
     
     AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:CGRectMake(8, 10, 100, 100) menus:menus];
+    menu.tag = 22;
+     
     
     menu.delegate = self;
     
     [self.view addSubview:menu];
+    //[menu setHidden:TRUE];
     
    
 
@@ -148,27 +152,106 @@
      */
     
     
+     menu.startPoint = CGPointMake(160.0, 410.0);
     
-    if (UIDeviceOrientationPortrait) {
-        menu.startPoint = CGPointMake(160.0, 410.0);
-    }
     
-    /*if (UIDeviceOrientationLandscapeLeft) {
-        menu.startPoint = CGPointMake(240.0, 250.0);
-    }
-    if (UIDeviceOrientationLandscapeRight) {
-        menu.startPoint = CGPointMake(240.0, 250.0);
-    }*/
 	
     
     
 }
 
+
+- (void)awesomemenu2 {
+    
+    UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg-menuitem.png"];
+    UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg-menuitem-highlighted.png"];
+    
+    UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
+    
+    //Hiding Image Code
+    UIImage *starImage2 = [UIImage imageNamed:@"icon-star3.png"];
+    UIImage *storyMenuItemImage2 = [UIImage imageNamed:@"bg-menuitem3.png"];
+    UIImage *storyMenuItemImagePressed2 = [UIImage imageNamed:@"bg-menuitem-highlighted3.png"];
+    
+    AwesomeMenuItem *starMenuItem1 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem4 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage2
+                                                           highlightedImage:storyMenuItemImagePressed2
+                                                               ContentImage:starImage2
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem5 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage2
+                                                           highlightedImage:storyMenuItemImagePressed2
+                                                               ContentImage:starImage2
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem6 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage2
+                                                           highlightedImage:storyMenuItemImagePressed2
+                                                               ContentImage:starImage2
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem7 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage2
+                                                           highlightedImage:storyMenuItemImagePressed2
+                                                               ContentImage:starImage2
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem8 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem9 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    
+    NSArray *menus = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, starMenuItem3, starMenuItem4, starMenuItem5, starMenuItem6, starMenuItem7,starMenuItem8,starMenuItem9, nil];
+    
+    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:CGRectMake(8, 10, 100, 100) menus:menus];
+    menu.tag = 23;
+    
+    
+    menu.delegate = self;
+    
+    [self.view addSubview:menu];
+    
+    
+    
+    
+    
+	// customize menu
+	/*
+     menu.rotateAngle = M_PI/3;
+     menu.menuWholeAngle = M_PI;
+     menu.timeOffset = 0.2f;
+     menu.farRadius = 180.0f;
+     menu.endRadius = 100.0f;
+     menu.nearRadius = 50.0f;
+     */
+    
+    
+    menu.startPoint = CGPointMake(240.0, 250.0);
+    
+    
+	
+    
+    
+}
+
+
+
 - (void)AwesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
 {
     
     if (idx == 0) {
-       NSLog(@"Select the index : %d",idx);
+       //NSLog(@"Select the index : %d",idx);
+       NSLog(@"Select the index : 0");
+       [mapView setMapType:MKMapTypeHybrid];
         
     
     }
@@ -176,6 +259,7 @@
     
     if (idx == 1) {
             NSLog(@"Select the index : 1");
+        [mapView setMapType:MKMapTypeStandard];
     }
     
     
@@ -191,6 +275,7 @@
     
     if (idx == 8) {
         NSLog(@"Select the index : 8");
+        [mapView setMapType:MKMapTypeSatellite];
     }
     
 }
@@ -206,10 +291,33 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    //[self screenUpdate2];
-
     
-    [self awesomemenu];
+    
+    for (UIView *subview in [self.view subviews]) {
+        
+        if (UIDeviceOrientationLandscapeLeft) {
+        
+        if (subview.tag == 22){
+            [subview removeFromSuperview];
+            [self awesomemenu2];
+            
+            }
+        }
+        
+        if (UIDeviceOrientationPortrait) {
+            
+            if (subview.tag == 23){
+                [subview removeFromSuperview];
+                [self awesomemenu];
+                
+            }
+        }
+            
+    }
+        
+     
+    
+
     
 }
 
@@ -224,21 +332,18 @@
 
 -(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     
-    MKPinAnnotationView *Building = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
+    
+    //static NSString* AnnotationIdentifier = @"AnnotationIdentifier";
+    MKAnnotationView *Building = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
     
     
-    Building.pinColor = MKPinAnnotationColorGreen;
+    //Building.pinColor = MKPinAnnotationColorGreen;
     Building.image = [UIImage imageNamed:@"pushpin.png"];
-    
-    
-    /*UIButton *advertButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [advertButton addTarget:self
-                     action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];*/
     
     Building.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     Building.draggable = NO;
     Building.highlighted = YES;
-    Building.animatesDrop = NO;
+    //Building.animatesDrop = NO;
     Building.canShowCallout = YES;
     
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
@@ -323,7 +428,7 @@
     ann1.title = @"Gym";
     ann1.subtitle = @"Campus Facility";
     ann1.coordinate = region1.center;
-    
+    //ann1.image = [UIImage imageNamed:@"pushpin.png"];
     
     [mapView addAnnotation:ann1];
     
