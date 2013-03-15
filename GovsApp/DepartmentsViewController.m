@@ -26,6 +26,7 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -38,13 +39,12 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0];
     
+    
+    
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
     
-    /*if (![self.slidingViewController.underRightViewController isKindOfClass:[UnderRightViewController class]]) {
-        self.slidingViewController.underRightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UnderRight"];
-    }*/
     
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
 

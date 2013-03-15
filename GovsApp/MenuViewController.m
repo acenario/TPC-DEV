@@ -42,10 +42,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.menu = [NSArray arrayWithObjects:@"Map", @"Academics", @"Athletics", @"Events", @"Govs", @"Lunch", @"Settings",  nil];
-    self.menuImages = [NSArray arrayWithObjects:@"smallmap.png", @"book1.png", @"football.png", @"events.png", @"questionmark.png", @"lunch.png", @"settings1.png", nil];
+    self.menuImages = [NSArray arrayWithObjects:@"103-map.png", @"187-pencil.png", @"63-runner.png", @"83-calendar.png", @"140-gradhat.png", @"48-fork-and-knife.png", @"20-gear2.png", nil];
     
     
-    [self.slidingViewController setAnchorRightRevealAmount:45.0f]; //Change this number to change sliding menu width
+    [self.slidingViewController setAnchorRightRevealAmount:45.5f]; //Change this number to change sliding menu width
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
 }
 
@@ -91,6 +91,7 @@
     cell.textLabel.textColor = [UIColor whiteColor];
     
     cell.imageView.image = image;
+
     
     NSInteger red   = 178;
     NSInteger green = 8;
@@ -98,9 +99,10 @@
     
     tableView.backgroundColor = [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0];
     
-     //tableView.backgroundColor = [UIColor blackColor];
+    //tableView.backgroundColor = [UIColor grayColor];
     
-    tableView.separatorColor = [UIColor lightGrayColor];
+    
+    tableView.separatorColor = [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0];
     
     
     

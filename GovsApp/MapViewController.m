@@ -386,7 +386,6 @@
     mapView.showsUserLocation = YES;
     mapView.delegate = self;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myCommandClicked:) name:kScringoCustomButtonClicked  object:nil];
 
     
     //[ScringoAgent setTestMode:YES];

@@ -18,38 +18,38 @@
     [Parse setApplicationId:@"t7rMlEolr6pOza7fd90EsIy8sesRg8jC5kKiMuh7"
                   clientKey:@"K3d8MExfCXwiVSlXznxGmKqil6KMLIEfy8SV4TJ4"];
     [ScringoAgent startSession:@"qpzkhT0ZKFr8RZHfr4mOWuPAWX2mlhXI" locationManager:nil];
+    [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar2.png"] forBarMetrics:UIBarMetricsDefault];
+    /*[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar2.png"] forBarMetrics:UIBarMetricsLandscapePhone];*/
+    
     
     
     
     return YES;
 }
 
--(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return [ScringoAgent handleOpenURL:url];
-}
 
-/*-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url
- sourceApplication:(NSString *)sourceApplication
-        annotation:(id)annotation{
-    return [ScringoAgent handleOpenURL:url];
-}
-
-- (BOOL)application:(UIApplication *)application
+- (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [ScringoAgent didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
--(BOOL)application:(UIApplication *)application
+- (void)application:(UIApplication *)application
 didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    
     [ScringoAgent didFailToRegisterForRemoteNotificationsWithError:error];
-    
 }
 
--(BOOL)application:(UIApplication *)application
+- (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [ScringoAgent didReceiveRemoteNotification:userInfo];
-}*/
+}
+
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [ScringoAgent handleOpenURL:url];
+}
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

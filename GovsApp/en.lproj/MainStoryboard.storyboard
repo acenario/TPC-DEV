@@ -43,15 +43,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NavItem" textLabel="HxM-cg-Zg0" imageView="Gts-3t-vxH" style="IBUITableViewCellStyleDefault" id="rf9-Rl-pNX">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NavItem" textLabel="HxM-cg-Zg0" imageView="Gts-3t-vxH" style="IBUITableViewCellStyleDefault" id="rf9-Rl-pNX">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HxM-cg-Zg0">
-                                            <rect key="frame" x="46" y="0.0" width="264" height="43"/>
+                                            <rect key="frame" x="46" y="0.0" width="244" height="43"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -253,11 +253,11 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="WAL-tf-kGZ"/>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="DNf-dg-auB"/>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzD-YT-nVz">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzD-YT-nVz" customClass="MyCustomBar">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="xCb-3a-2cJ"/>
                                 </constraints>
-                                <color key="tintColor" red="0.69803921568627447" green="0.031372549019607843" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.69803921570000005" green="0.031372549020000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem id="6hx-Dg-1yk">
                                         <barButtonItem key="leftBarButtonItem" id="qE7-So-l5r">
@@ -1664,7 +1664,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NI-xe-ek8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3927" y="471"/>
+            <point key="canvasLocation" x="3874" y="484"/>
         </scene>
         <!--English View Controller - English-->
         <scene sceneID="x94-xM-NG2">
@@ -1865,7 +1865,7 @@
         <scene sceneID="5Ee-JR-Z0j">
             <objects>
                 <navigationController definesPresentationContext="YES" id="rNL-MG-Jo6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Day" id="oNj-mz-8g7"/>
+                    <tabBarItem key="tabBarItem" title="Day" image="179-notepad.png" id="oNj-mz-8g7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sk6-rl-Nta">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2007,7 +2007,7 @@
         <scene sceneID="13I-up-MNB">
             <objects>
                 <navigationController definesPresentationContext="YES" id="tqo-ML-AWb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Week" id="yUg-ml-IOr"/>
+                    <tabBarItem key="tabBarItem" title="Week" image="44-shoebox.png" id="yUg-ml-IOr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QlK-7H-43p">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2103,7 +2103,7 @@
         <scene sceneID="9sM-HH-o2Z">
             <objects>
                 <navigationController definesPresentationContext="YES" id="RNW-EE-nQN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Month" id="HDl-TK-xtE"/>
+                    <tabBarItem key="tabBarItem" title="Month" image="33-cabinet.png" id="HDl-TK-xtE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vzT-qg-e6f">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6293,7 +6293,7 @@ Cookies</string>
         <scene sceneID="xhW-B8-9qK">
             <objects>
                 <navigationController definesPresentationContext="YES" id="8FI-ui-Pb2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Week" id="g21-9f-kPa"/>
+                    <tabBarItem key="tabBarItem" title="Week" image="04-squiggle.png" id="g21-9f-kPa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aGN-dg-LbG">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6309,7 +6309,7 @@ Cookies</string>
         <scene sceneID="Mrw-cm-ebc">
             <objects>
                 <navigationController definesPresentationContext="YES" id="419-p7-74u" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Today" id="04d-IV-biN"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="109-chicken.png" id="04d-IV-biN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="saQ-XK-EM0">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6343,6 +6343,11 @@ Cookies</string>
         </scene>
     </scenes>
     <resources>
+        <image name="04-squiggle.png" width="33" height="16"/>
+        <image name="109-chicken.png" width="28" height="12"/>
+        <image name="179-notepad.png" width="22" height="28"/>
+        <image name="33-cabinet.png" width="20" height="26"/>
+        <image name="44-shoebox.png" width="24" height="22"/>
         <image name="background.png" width="640" height="960"/>
         <image name="finder.png" width="21" height="22"/>
         <image name="header.png" width="230" height="14"/>
@@ -6350,6 +6355,219 @@ Cookies</string>
         <image name="searching@2x.png" width="30" height="30"/>
         <image name="thegovernorsacademy_Shield@2x.png" width="64" height="64"/>
     </resources>
+    <classes>
+        <class className="AcademicViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AcademicViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
+        <class className="AdmissionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdmissionsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="AthleticsCalendarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AthleticsCalendarViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="AthleticsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AthleticsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
+        <class className="BlogViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlogViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="BuildingInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingInfoViewController.h"/>
+        </class>
+        <class className="ContactInfoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactInfoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewAddress" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="viewAdmissions" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="viewHealth" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="viewMap" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="viewSecurity" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="DayViewController" superclassName="PFQueryTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
+        <class className="DepartmentsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DepartmentsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
+        <class className="DirectionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DirectionsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ECSlidingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
+        </class>
+        <class className="EmailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EmailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="EnglishViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EnglishViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="FineArtsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FineArtsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ForeignLanguageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ForeignLanguageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="GovLifeViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GovLifeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
+        <class className="HistoryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="LunchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LunchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="MathViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="MenuViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
+        </class>
+        <class className="MonthViewController" superclassName="PFQueryTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MonthViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
+        <class className="MoodleViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodleViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="MyCustomBar" superclassName="UINavigationBar">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyCustomBar.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PFQueryTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFQueryTableViewController.h"/>
+        </class>
+        <class className="PhotosViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ScienceViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScienceViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ScoreboardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScoreboardViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="logOutButtonTapAction:"/>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
+        <class className="TodayMealViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TodayMealViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
+        <class className="UnderRightViewController" superclassName="PFQueryTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UnderRightViewController.h"/>
+        </class>
+        <class className="VeracrossViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VeracrossViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="WeekMealViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeekMealViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
+        <class className="WeekViewController" superclassName="PFQueryTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeekViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
+            </relationships>
+        </class>
+        <class className="initViewController" superclassName="ECSlidingViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/initViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
