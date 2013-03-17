@@ -108,23 +108,52 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     }
 }
 
+#pragma mark - Parsing Data info
+
+- (NSURL *)urlWithSearchText:(NSString *)searchText
+
+    {
+        
+        NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@", escapedSearchText];
+        NSURL *url = [NSURL URLWithString:urlString];
+        return url;
+    }
+
+- (NSString *)performStoreRequestWithURL:(NSURL *)url
+{
+    NSError *error;
+    NSString *resultString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+    if (resultString == nil) {
+        NSLog(@"Download Error: %@", error);
+        return nil;
+    }
+    return resultString;
+}
+
+
+
 
 #pragma mark - UISearchBarDelegate
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    [searchBar resignFirstResponder];
-    searchResults = [NSMutableArray arrayWithCapacity:10];
     
-    if (![searchBar.text isEqualToString:@"justin bieber"]) {
-    for (int i = 0; i < 3; i++) {
-        SearchResult *searchResult = [[SearchResult alloc] init];
-        searchResult.name = [NSString stringWithFormat:@"Fake Result %d for", i];
-        searchResult.place = searchBar.text;
-        searchResult.time = searchBar.text;
-        [searchResults addObject:searchResult];
-        /*[searchResults addObject:[NSString stringWithFormat:@"Fake Result %d for '%@'", i, searchBar.text]];*/
-        }
+    if ([searchBar.text length] > 0) {
+        [searchBar resignFirstResponder];
+        searchResults = [NSMutableArray arrayWithCapacity:10];
+        
+        NSURL *url = [self urlWithSearchText:searchBar.text];
+        NSLog(@"URL '%@'", url);
+        
+        NSString *jsonString = [self performStoreRequestWithURL:url];
+        NSLog(@"Received JSON string '%@'", jsonString);
+        
+        [self.tableView reloadData];
     }
+
+    
+    
+    //No need to edit below this line
     
     if ([searchBar.text isEqualToString:@"Emilie MacDonald"]) {
         
@@ -139,7 +168,24 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
     }
     
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
+        
+        /*
+         [searchBar resignFirstResponder];
+         searchResults = [NSMutableArray arrayWithCapacity:10];
+         
+         if (![searchBar.text isEqualToString:@"justin bieber"]) {
+         for (int i = 0; i < 3; i++) {
+         SearchResult *searchResult = [[SearchResult alloc] init];
+         searchResult.name = [NSString stringWithFormat:@"Fake Result %d for", i];
+         searchResult.place = searchBar.text;
+         searchResult.time = searchBar.text;
+         [searchResults addObject:searchResult];
+         
+         }
+         }*/
+        
+        
 }
 
 
