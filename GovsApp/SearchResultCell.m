@@ -35,6 +35,10 @@
     UIImageView *selectedBackgroundImageView = [[UIImageView alloc] initWithImage:image2];
     self.selectedBackgroundView = selectedBackgroundImageView;
     
+    //_nameLabel.text = @"Hello";
+    
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

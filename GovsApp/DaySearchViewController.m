@@ -28,7 +28,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 @synthesize searchBar = _searchBar;
 @synthesize tableView = _tableView;
-@synthesize data = _data;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -81,17 +81,25 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 {
     SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:SearchResultCellIdentifier];
     
-    
     if ([searchResults count] == 0) {
         return [tableView dequeueReusableCellWithIdentifier:
                 NothingFoundCellIdentifier];
     } else {
-        SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:SearchResultCellIdentifier];
         
-        SearchResult *searchResult = searchResults[indexPath.row];
+        SearchResult *searchResult = [searchResults objectAtIndex:indexPath.row];
+        NSLog(@"nameUP: %@, timeUP: %@", searchResult.name, searchResult.time);
+        
         cell.nameLabel.text = searchResult.name;
-        cell.placeLabel.text = searchResult.place;
-        cell.timeLabel.text = searchResult.place;
+        //cell.placeLabel.text = searchResult.place;
+        cell.timeLabel.text = searchResult.time;
+        
+        //cell.nameLabel.text = @"Arjun";
+        //cell.placeLabel.text = @"place";
+        //cell.timeLabel.text = @"time";
+        
+        NSLog(@"name: %@, time: %@", searchResult.name, searchResult.time);
+        
+        NSLog(@"name label: %@, time label: %@", cell.nameLabel.text, cell.timeLabel.text);
     }
     
     
@@ -119,7 +127,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     {
         
         NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@",escapedSearchText];
+        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@&date_to=2013-04-02",escapedSearchText];
         NSURL *url = [NSURL URLWithString:urlString];
         return url;
     }
@@ -146,10 +154,24 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     [alertView show];
 }
 
-- (void)parseDictionary:(NSArray *)array
+- (SearchResult *)parseName:(NSDictionary *)dictionary
 {
+    SearchResult *searchResult = [[SearchResult alloc] init];
     
-    //NSArray *array = [dictionary objectForKey:@"athletic_opponent"];
+    searchResult.name = [dictionary objectForKey:@"description"];
+    
+    //searchResult.place = [dictionary objectForKey:@"location"];
+    searchResult.time = [dictionary objectForKey:@"start_time"];
+    
+    NSLog(@"name data: %@, time data: %@", searchResult.name, searchResult.time);
+    
+
+    
+    return searchResult;
+}
+
+- (void)parseArray:(NSArray *)array
+{
     
     
     if (myJSON == nil) {
@@ -158,7 +180,20 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     }
     
     for (NSDictionary *resultDict in myJSON) {
-        NSLog(@"name: %@, start_time: %@, location: %@", [resultDict objectForKey:@"description"], [resultDict objectForKey:@"start_time"], [resultDict objectForKey:@"location"]);
+        SearchResult *searchResult;
+        
+        NSString *description = [resultDict objectForKey:@"description"];
+        
+        if ([description isEqualToString:@"Arts Night"]) {
+            searchResult = [self parseName:resultDict];
+            
+        }
+        
+        if (searchResult != nil) {
+            [searchResults addObject:searchResult];
+        }
+        
+        /*NSLog(@"name: %@, start_time: %@, location: %@", [resultDict objectForKey:@"description"], [resultDict objectForKey:@"start_time"], [resultDict objectForKey:@"location"]);*/
     }
 }
 
@@ -180,10 +215,10 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     
     
    
-    /*if (![resultObject isKindOfClass:[NSDictionary class]]) {
-        NSLog(@"JSON Error: Expected dictionary");
+    if (![resultObject isKindOfClass:[NSArray class]]) {
+        NSLog(@"JSON Error: Expected array!");
         return nil;
-    }*/
+    }
     
     
     return resultObject;
@@ -218,7 +253,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         }
         
         NSLog(@"Dictionary '%@'", dictionary);
-        [self parseDictionary:myJSON];
+        [self parseArray:myJSON];
         
         [self.tableView reloadData];
     }

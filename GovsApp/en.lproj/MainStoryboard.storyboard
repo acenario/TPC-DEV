@@ -2127,14 +2127,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qIo-TE-rqY">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="Z58-1S-JJS" id="IDv-Di-W0Y"/>
-                                    <outlet property="delegate" destination="Z58-1S-JJS" id="5o6-9o-qOI"/>
+                                    <outlet property="dataSource" destination="Z58-1S-JJS" id="3jl-ur-cYJ"/>
+                                    <outlet property="delegate" destination="Z58-1S-JJS" id="dK9-wZ-b5X"/>
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Uig-NQ-ot9">
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="Z58-1S-JJS" id="dn7-Wb-RSW"/>
+                                    <outlet property="delegate" destination="Z58-1S-JJS" id="IFK-LK-Mb1"/>
                                 </connections>
                             </searchBar>
                         </subviews>
@@ -2151,8 +2151,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" image="179-notepad.png" id="FEN-7y-BOZ"/>
                     <connections>
-                        <outlet property="searchBar" destination="Uig-NQ-ot9" id="qfR-Tl-LwP"/>
-                        <outlet property="tableView" destination="qIo-TE-rqY" id="Chr-7O-Zr1"/>
+                        <outlet property="searchBar" destination="Uig-NQ-ot9" id="srQ-Pl-8Rb"/>
+                        <outlet property="tableView" destination="qIo-TE-rqY" id="Bo0-bl-cvo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piA-EW-65c" userLabel="First Responder" sceneMemberID="firstResponder"/>

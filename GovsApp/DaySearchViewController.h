@@ -14,7 +14,6 @@
 
 @interface DaySearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
-@property (nonatomic, retain) NSData *data;
 
 - (IBAction)searchBtn:(id)sender;
 - (IBAction)shieldBtn:(id)sender;
