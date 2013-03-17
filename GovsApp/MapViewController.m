@@ -236,8 +236,7 @@
     
     
     menu.startPoint = CGPointMake(240.0, 250.0);
-    
-    
+
 	
     
     

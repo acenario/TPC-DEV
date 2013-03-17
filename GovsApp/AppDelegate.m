@@ -13,14 +13,29 @@
 
 @implementation AppDelegate
 
+- (void)customizeAppearance
+{
+    UIImage *barImage = [UIImage imageNamed:@"navbar2"];
+    [[UISearchBar appearance] setBackgroundImage:barImage];
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar2.png"] forBarMetrics:UIBarMetricsDefault];
+    /*[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar2.png"] forBarMetrics:UIBarMetricsLandscapePhone];*/
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [Parse setApplicationId:@"t7rMlEolr6pOza7fd90EsIy8sesRg8jC5kKiMuh7"
                   clientKey:@"K3d8MExfCXwiVSlXznxGmKqil6KMLIEfy8SV4TJ4"];
     [ScringoAgent startSession:@"qpzkhT0ZKFr8RZHfr4mOWuPAWX2mlhXI" locationManager:nil];
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+<<<<<<< HEAD
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar2.png"] forBarMetrics:UIBarMetricsDefault];
     /*[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar2.png"] forBarMetrics:UIBarMetricsLandscapePhone];*/
+=======
+    
+    [self customizeAppearance];
+    
+>>>>>>> Deleted DS Store
     
     
     
