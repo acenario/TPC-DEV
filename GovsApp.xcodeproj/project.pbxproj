@@ -92,6 +92,15 @@
 		DC7D045E16D6046F005B238F /* thegovernorsacademy_Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7D045C16D6046F005B238F /* thegovernorsacademy_Default.png */; };
 		DC7D045F16D6046F005B238F /* thegovernorsacademy_Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7D045D16D6046F005B238F /* thegovernorsacademy_Default@2x.png */; };
 		DC7D046916D60BEE005B238F /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7D046816D60BEE005B238F /* background.png */; };
+		DC9ACDC116F520A700DD7C1F /* DaySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9ACDB716F520A700DD7C1F /* DaySearchViewController.m */; };
+		DC9ACDC216F520A700DD7C1F /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9ACDB916F520A700DD7C1F /* SearchResult.m */; };
+		DC9ACDC316F520A700DD7C1F /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9ACDBB16F520A700DD7C1F /* SearchResultCell.m */; };
+		DC9ACDC416F520A700DD7C1F /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9ACDBC16F520A700DD7C1F /* SearchResultCell.xib */; };
+		DC9ACDC516F520A700DD7C1F /* selectedGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9ACDBD16F520A700DD7C1F /* selectedGradient.png */; };
+		DC9ACDC616F520A700DD7C1F /* TableCellGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9ACDBE16F520A700DD7C1F /* TableCellGradient.png */; };
+		DC9ACDC716F520A700DD7C1F /* TableCellGradient2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9ACDBF16F520A700DD7C1F /* TableCellGradient2.png */; };
+		DC9ACDC816F520A700DD7C1F /* TableCellGradient3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9ACDC016F520A700DD7C1F /* TableCellGradient3.png */; };
+		DC9ACDCA16F5210500DD7C1F /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9ACDC916F5210500DD7C1F /* NothingFoundCell.xib */; };
 		DCA653CE16D62DBD00209D5D /* book1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA653C516D62DBD00209D5D /* book1@2x.png */; };
 		DCA653CF16D62DBD00209D5D /* book2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA653C616D62DBD00209D5D /* book2@2x.png */; };
 		DCA653D016D62DBD00209D5D /* events@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA653C716D62DBD00209D5D /* events@2x.png */; };
@@ -115,8 +124,6 @@
 		DCA6542B16DDAA8400209D5D /* MonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA6542A16DDAA8400209D5D /* MonthViewController.m */; };
 		DCA6542D16DDC50C00209D5D /* thegovernorsacademy_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6542C16DDC50C00209D5D /* thegovernorsacademy_Icon.png */; };
 		DCA6542F16DDC51300209D5D /* thegovernorsacademy_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6542E16DDC51300209D5D /* thegovernorsacademy_Icon@2x.png */; };
-		DCA6543216DDCCCA00209D5D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA6543116DDCCCA00209D5D /* TestViewController.m */; };
-		DCA6543516DE231400209D5D /* TableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA6543416DE231300209D5D /* TableSection.m */; };
 		DCA654DC16DE501E00209D5D /* ScoreboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA654DB16DE501E00209D5D /* ScoreboardViewController.m */; };
 		DCA654DF16DE504A00209D5D /* AthleticsCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA654DE16DE504A00209D5D /* AthleticsCalendarViewController.m */; };
 		DCA654E216DE505700209D5D /* DirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA654E116DE505700209D5D /* DirectionsViewController.m */; };
@@ -387,6 +394,18 @@
 		DC7D045C16D6046F005B238F /* thegovernorsacademy_Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thegovernorsacademy_Default.png; sourceTree = "<group>"; };
 		DC7D045D16D6046F005B238F /* thegovernorsacademy_Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thegovernorsacademy_Default@2x.png"; sourceTree = "<group>"; };
 		DC7D046816D60BEE005B238F /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = "Govs Photos/background.png"; sourceTree = SOURCE_ROOT; };
+		DC9ACDB616F520A700DD7C1F /* DaySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaySearchViewController.h; sourceTree = "<group>"; };
+		DC9ACDB716F520A700DD7C1F /* DaySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaySearchViewController.m; sourceTree = "<group>"; };
+		DC9ACDB816F520A700DD7C1F /* SearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
+		DC9ACDB916F520A700DD7C1F /* SearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
+		DC9ACDBA16F520A700DD7C1F /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
+		DC9ACDBB16F520A700DD7C1F /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
+		DC9ACDBC16F520A700DD7C1F /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		DC9ACDBD16F520A700DD7C1F /* selectedGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedGradient.png; sourceTree = "<group>"; };
+		DC9ACDBE16F520A700DD7C1F /* TableCellGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableCellGradient.png; sourceTree = "<group>"; };
+		DC9ACDBF16F520A700DD7C1F /* TableCellGradient2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableCellGradient2.png; sourceTree = "<group>"; };
+		DC9ACDC016F520A700DD7C1F /* TableCellGradient3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableCellGradient3.png; sourceTree = "<group>"; };
+		DC9ACDC916F5210500DD7C1F /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		DCA653C516D62DBD00209D5D /* book1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book1@2x.png"; sourceTree = "<group>"; };
 		DCA653C616D62DBD00209D5D /* book2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book2@2x.png"; sourceTree = "<group>"; };
 		DCA653C716D62DBD00209D5D /* events@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "events@2x.png"; sourceTree = "<group>"; };
@@ -421,10 +440,6 @@
 		DCA6542A16DDAA8400209D5D /* MonthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonthViewController.m; sourceTree = "<group>"; };
 		DCA6542C16DDC50C00209D5D /* thegovernorsacademy_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thegovernorsacademy_Icon.png; sourceTree = "<group>"; };
 		DCA6542E16DDC51300209D5D /* thegovernorsacademy_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thegovernorsacademy_Icon@2x.png"; sourceTree = "<group>"; };
-		DCA6543016DDCCCA00209D5D /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		DCA6543116DDCCCA00209D5D /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		DCA6543316DE231300209D5D /* TableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSection.h; sourceTree = "<group>"; };
-		DCA6543416DE231300209D5D /* TableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSection.m; sourceTree = "<group>"; };
 		DCA654DA16DE501E00209D5D /* ScoreboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreboardViewController.h; sourceTree = "<group>"; };
 		DCA654DB16DE501E00209D5D /* ScoreboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardViewController.m; sourceTree = "<group>"; };
 		DCA654DD16DE504A00209D5D /* AthleticsCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleticsCalendarViewController.h; sourceTree = "<group>"; };
@@ -894,16 +909,24 @@
 		DCA6540B16DC94E500209D5D /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				DC9ACDBD16F520A700DD7C1F /* selectedGradient.png */,
+				DC9ACDBE16F520A700DD7C1F /* TableCellGradient.png */,
+				DC9ACDBF16F520A700DD7C1F /* TableCellGradient2.png */,
+				DC9ACDC016F520A700DD7C1F /* TableCellGradient3.png */,
 				DCA6540D16DC950700209D5D /* DayViewController.h */,
 				DCA6540E16DC950700209D5D /* DayViewController.m */,
 				DCA6541416DD4D7300209D5D /* WeekViewController.h */,
 				DCA6541516DD4D7300209D5D /* WeekViewController.m */,
 				DCA6542916DDAA8400209D5D /* MonthViewController.h */,
 				DCA6542A16DDAA8400209D5D /* MonthViewController.m */,
-				DCA6543016DDCCCA00209D5D /* TestViewController.h */,
-				DCA6543116DDCCCA00209D5D /* TestViewController.m */,
-				DCA6543316DE231300209D5D /* TableSection.h */,
-				DCA6543416DE231300209D5D /* TableSection.m */,
+				DC9ACDB616F520A700DD7C1F /* DaySearchViewController.h */,
+				DC9ACDB716F520A700DD7C1F /* DaySearchViewController.m */,
+				DC9ACDB816F520A700DD7C1F /* SearchResult.h */,
+				DC9ACDB916F520A700DD7C1F /* SearchResult.m */,
+				DC9ACDBA16F520A700DD7C1F /* SearchResultCell.h */,
+				DC9ACDBB16F520A700DD7C1F /* SearchResultCell.m */,
+				DC9ACDBC16F520A700DD7C1F /* SearchResultCell.xib */,
+				DC9ACDC916F5210500DD7C1F /* NothingFoundCell.xib */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -1379,6 +1402,15 @@
 				DC246C7316F2E3D300B9D62D /* 109-chicken@2x.png in Resources */,
 				DC246C7416F2E3D300B9D62D /* 179-notepad.png in Resources */,
 				DC246C7516F2E3D300B9D62D /* 179-notepad@2x.png in Resources */,
+<<<<<<< HEAD
+=======
+				DC9ACDC416F520A700DD7C1F /* SearchResultCell.xib in Resources */,
+				DC9ACDC516F520A700DD7C1F /* selectedGradient.png in Resources */,
+				DC9ACDC616F520A700DD7C1F /* TableCellGradient.png in Resources */,
+				DC9ACDC716F520A700DD7C1F /* TableCellGradient2.png in Resources */,
+				DC9ACDC816F520A700DD7C1F /* TableCellGradient3.png in Resources */,
+				DC9ACDCA16F5210500DD7C1F /* NothingFoundCell.xib in Resources */,
+>>>>>>> Deleted DS Store
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1415,8 +1447,6 @@
 				DCA6542516DDA35900209D5D /* FineArtsViewController.m in Sources */,
 				DCA6542816DDA38900209D5D /* ForeignLanguageViewController.m in Sources */,
 				DCA6542B16DDAA8400209D5D /* MonthViewController.m in Sources */,
-				DCA6543216DDCCCA00209D5D /* TestViewController.m in Sources */,
-				DCA6543516DE231400209D5D /* TableSection.m in Sources */,
 				DCA654DC16DE501E00209D5D /* ScoreboardViewController.m in Sources */,
 				DCA654DF16DE504A00209D5D /* AthleticsCalendarViewController.m in Sources */,
 				DCA654E216DE505700209D5D /* DirectionsViewController.m in Sources */,
@@ -1435,6 +1465,12 @@
 				DC6EA72316E6C2AB00E20E4E /* AwesomeMenu.m in Sources */,
 				DC6EA72416E6C2AB00E20E4E /* AwesomeMenuItem.m in Sources */,
 				DC246C3216F2BE8A00B9D62D /* MyCustomBar.m in Sources */,
+<<<<<<< HEAD
+=======
+				DC9ACDC116F520A700DD7C1F /* DaySearchViewController.m in Sources */,
+				DC9ACDC216F520A700DD7C1F /* SearchResult.m in Sources */,
+				DC9ACDC316F520A700DD7C1F /* SearchResultCell.m in Sources */,
+>>>>>>> Deleted DS Store
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

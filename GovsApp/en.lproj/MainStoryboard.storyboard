@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -2097,7 +2097,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDp-Xs-r08" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2591" y="4822"/>
+            <point key="canvasLocation" x="5503" y="4910"/>
         </scene>
         <!--Navigation Controller - Month-->
         <scene sceneID="9sM-HH-o2Z">
@@ -2114,6 +2114,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTj-EP-3o5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2959" y="2772"/>
+        </scene>
+        <!--Day Search View Controller - Today-->
+        <scene sceneID="CJ9-o1-4TR">
+            <objects>
+                <viewController id="Z58-1S-JJS" customClass="DaySearchViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TMm-49-Es5">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qIo-TE-rqY">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Z58-1S-JJS" id="IDv-Di-W0Y"/>
+                                    <outlet property="delegate" destination="Z58-1S-JJS" id="5o6-9o-qOI"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Uig-NQ-ot9">
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Z58-1S-JJS" id="dn7-Wb-RSW"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qIo-TE-rqY" firstAttribute="top" secondItem="Uig-NQ-ot9" secondAttribute="bottom" type="default" id="8Ox-8c-UL1"/>
+                            <constraint firstItem="Uig-NQ-ot9" firstAttribute="top" secondItem="TMm-49-Es5" secondAttribute="top" type="default" id="900-dM-4BE"/>
+                            <constraint firstItem="Uig-NQ-ot9" firstAttribute="trailing" secondItem="TMm-49-Es5" secondAttribute="trailing" type="default" id="In1-GI-vYe"/>
+                            <constraint firstItem="qIo-TE-rqY" firstAttribute="leading" secondItem="TMm-49-Es5" secondAttribute="leading" type="default" id="JUZ-gb-TDv"/>
+                            <constraint firstItem="qIo-TE-rqY" firstAttribute="bottom" secondItem="TMm-49-Es5" secondAttribute="bottom" type="default" id="L86-Rt-ptk"/>
+                            <constraint firstItem="Uig-NQ-ot9" firstAttribute="leading" secondItem="TMm-49-Es5" secondAttribute="leading" type="default" id="QYH-bQ-lpb"/>
+                            <constraint firstItem="qIo-TE-rqY" firstAttribute="trailing" secondItem="TMm-49-Es5" secondAttribute="trailing" type="default" id="U9b-m3-qS7"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Today" image="179-notepad.png" id="FEN-7y-BOZ"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Uig-NQ-ot9" id="qfR-Tl-LwP"/>
+                        <outlet property="tableView" destination="qIo-TE-rqY" id="Chr-7O-Zr1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="piA-EW-65c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2959" y="3442"/>
         </scene>
         <!--Today Meal View Controller - Today 3/1-->
         <scene sceneID="7e7-0b-GAn">
@@ -2238,7 +2281,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOw-dv-4bK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3659" y="4509"/>
+            <point key="canvasLocation" x="6571" y="4597"/>
         </scene>
         <!--Table View Controller - Breakfast-->
         <scene sceneID="9BI-Op-t6p">
@@ -2377,7 +2420,7 @@ Muffins, Cold Cereal</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6D3-kX-AjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2311" y="3711"/>
+            <point key="canvasLocation" x="5223" y="3799"/>
         </scene>
         <!--Table View Controller - Dinner-->
         <scene sceneID="Tk7-Du-Mh7">
@@ -2576,7 +2619,7 @@ Ice Cream</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUs-Q8-wtF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092" y="3711"/>
+            <point key="canvasLocation" x="6004" y="3799"/>
         </scene>
         <!--Table View Controller - Lunch-->
         <scene sceneID="wnP-rt-xZQ">
@@ -2626,7 +2669,7 @@ Field House 12:15pm</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P59-jg-Cgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2697" y="3711"/>
+            <point key="canvasLocation" x="5609" y="3799"/>
         </scene>
         <!--Week Meal View Controller - Week-->
         <scene sceneID="C4b-X9-ntP">
@@ -3189,7 +3232,7 @@ Field House 12:15pm</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giS-Y3-1Lc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3659" y="5105"/>
+            <point key="canvasLocation" x="6571" y="5193"/>
         </scene>
         <!--Table View Controller - Breakfast-->
         <scene sceneID="d56-mh-u6Z">
@@ -3327,7 +3370,7 @@ Muffins, Cold Cereal</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IyJ-ad-D2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4101" y="4336"/>
+            <point key="canvasLocation" x="7013" y="4424"/>
         </scene>
         <!--Table View Controller - Breakfast-->
         <scene sceneID="B3h-aY-wby">
@@ -3463,7 +3506,7 @@ Muffins, Cold Cereal</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yim-x5-I6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4103" y="4903"/>
+            <point key="canvasLocation" x="7015" y="4991"/>
         </scene>
         <!--Table View Controller - Breakfast-->
         <scene sceneID="wZn-TM-GfA">
@@ -3600,7 +3643,7 @@ Muffins, Cold Cereal</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uz9-Zm-LUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4099" y="5539"/>
+            <point key="canvasLocation" x="7011" y="5627"/>
         </scene>
         <!--Table View Controller - Breakfast-->
         <scene sceneID="r1H-84-dnf">
@@ -3737,7 +3780,7 @@ Cereal</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ew-q0-SHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4115" y="6197"/>
+            <point key="canvasLocation" x="7027" y="6285"/>
         </scene>
         <!--Table View Controller - Lunch-->
         <scene sceneID="59X-Gm-Lql">
@@ -3927,7 +3970,7 @@ Ice Cream</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pd-Hy-vEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4491" y="6181"/>
+            <point key="canvasLocation" x="7403" y="6269"/>
         </scene>
         <!--Table View Controller - Dinner-->
         <scene sceneID="i4g-Xj-SF7">
@@ -4119,7 +4162,7 @@ Ice Cream</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AB9-kw-jOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4866" y="6189"/>
+            <point key="canvasLocation" x="7778" y="6277"/>
         </scene>
         <!--Table View Controller - Breakfast-->
         <scene sceneID="WNB-gJ-wJR">
@@ -4255,7 +4298,7 @@ Chip Muffins, Cold Cereal</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LeX-RN-O4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4115" y="6789"/>
+            <point key="canvasLocation" x="7027" y="6877"/>
         </scene>
         <!--Table View Controller - Breakfast-->
         <scene sceneID="teG-AR-6j8">
@@ -4394,7 +4437,7 @@ Muffin, Cold Cereal</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1t-Dd-j6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4099" y="7365"/>
+            <point key="canvasLocation" x="6331" y="6173"/>
         </scene>
         <!--Table View Controller - Lunch-->
         <scene sceneID="ov0-hc-Ltg">
@@ -4585,7 +4628,7 @@ Cream </string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpQ-02-VYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4483" y="7365"/>
+            <point key="canvasLocation" x="6715" y="6173"/>
         </scene>
         <!--Table View Controller - Friday-->
         <scene sceneID="7i1-LN-Q0J">
@@ -4630,7 +4673,7 @@ Cream </string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNK-c3-6te" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4824" y="7365"/>
+            <point key="canvasLocation" x="7056" y="6173"/>
         </scene>
         <!--Table View Controller - Lunch-->
         <scene sceneID="ggW-ch-LBi">
@@ -4830,7 +4873,7 @@ Ice Cream</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3Z-AK-ERA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4491" y="6781"/>
+            <point key="canvasLocation" x="7403" y="6869"/>
         </scene>
         <!--Table View Controller - Dinner-->
         <scene sceneID="nq9-he-3jZ">
@@ -4997,7 +5040,7 @@ Cream</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUe-Ag-Xif" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4839" y="6789"/>
+            <point key="canvasLocation" x="7751" y="6877"/>
         </scene>
         <!--Table View Controller - Lunch-->
         <scene sceneID="WcK-PI-e59">
@@ -5133,7 +5176,7 @@ Strawberry Cake, Ice Cream</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TtQ-5X-UNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4475" y="5539"/>
+            <point key="canvasLocation" x="7387" y="5627"/>
         </scene>
         <!--Table View Controller - Dinner-->
         <scene sceneID="X84-11-UI7">
@@ -5324,7 +5367,7 @@ Strawberry Cake, Ice Cream</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ueg-Yf-krC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4839" y="5539"/>
+            <point key="canvasLocation" x="7751" y="5627"/>
         </scene>
         <!--Table View Controller - Lunch-->
         <scene sceneID="WNJ-Ze-wM9">
@@ -5524,7 +5567,7 @@ Cake, Ice Cream</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDR-X3-7RK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4471" y="4899"/>
+            <point key="canvasLocation" x="7383" y="4987"/>
         </scene>
         <!--Table View Controller - Dinner-->
         <scene sceneID="Hfb-s4-Zr7">
@@ -5712,7 +5755,7 @@ Cake, Ice Cream</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pu5-3k-ucq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4839" y="4903"/>
+            <point key="canvasLocation" x="7751" y="4991"/>
         </scene>
         <!--Table View Controller - Lunch-->
         <scene sceneID="fdM-wJ-lrK">
@@ -5764,7 +5807,7 @@ Noon – 4:30pm</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inR-VJ-O1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4475" y="4345"/>
+            <point key="canvasLocation" x="7387" y="4433"/>
         </scene>
         <!--Table View Controller - Dinner-->
         <scene sceneID="WOD-33-TQI">
@@ -5931,7 +5974,7 @@ Brownies</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6g-oI-cRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4831" y="4345"/>
+            <point key="canvasLocation" x="7743" y="4433"/>
         </scene>
         <!--Table View Controller - Breakfast-->
         <scene sceneID="SQP-XW-eE4">
@@ -6069,7 +6112,7 @@ Cereal</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UA0-Cy-aSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4101" y="3757"/>
+            <point key="canvasLocation" x="7013" y="3845"/>
         </scene>
         <!--Table View Controller - Lunch-->
         <scene sceneID="LX8-1a-9rI">
@@ -6121,7 +6164,7 @@ Noon – 4:30pm</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90C-82-emi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4475" y="3757"/>
+            <point key="canvasLocation" x="7387" y="3845"/>
         </scene>
         <!--Table View Controller - Dinner-->
         <scene sceneID="pP7-7h-TT6">
@@ -6287,7 +6330,7 @@ Cookies</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FT6-RL-z8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4831" y="3757"/>
+            <point key="canvasLocation" x="7743" y="3845"/>
         </scene>
         <!--Navigation Controller - Week-->
         <scene sceneID="xhW-B8-9qK">
@@ -6303,7 +6346,7 @@ Cookies</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xli-fW-qe9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3125" y="5105"/>
+            <point key="canvasLocation" x="6037" y="5193"/>
         </scene>
         <!--Navigation Controller - Today-->
         <scene sceneID="Mrw-cm-ebc">
@@ -6319,7 +6362,7 @@ Cookies</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PiU-HV-h15" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3125" y="4509"/>
+            <point key="canvasLocation" x="6037" y="4597"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="317-1A-mYD">
@@ -6335,6 +6378,7 @@ Cookies</string>
                         <segue destination="rNL-MG-Jo6" kind="relationship" relationship="viewControllers" id="PRf-jg-Ecs"/>
                         <segue destination="tqo-ML-AWb" kind="relationship" relationship="viewControllers" id="ciK-D7-MgL"/>
                         <segue destination="RNW-EE-nQN" kind="relationship" relationship="viewControllers" id="0MQ-R0-ln0"/>
+                        <segue destination="Z58-1S-JJS" kind="relationship" relationship="viewControllers" id="WSw-FT-qLL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNx-yZ-3jZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
