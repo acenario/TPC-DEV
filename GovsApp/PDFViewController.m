@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 The Productions Club. All rights reserved.
 //
 
-#import "DirectionsViewController.h"
+#import "PDFViewController.h"
 
-@interface DirectionsViewController ()
+@interface PDFViewController ()
 
 @end
 
-@implementation DirectionsViewController
+@implementation PDFViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +28,7 @@
 - (void)loadWebView {
     //[SVProgressHUD showWithStatus:@"Loading Content" maskType:SVProgressHUDMaskTypeGradient];
     self.viewWeb.delegate = self;
-    NSString *fullURL = @"http://gda.org/page.cfm?p=523";
+    NSString *fullURL = @"http://gda.org/page.cfm?p=429";
     
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];

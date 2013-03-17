@@ -41,7 +41,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.menu = [NSArray arrayWithObjects:@"Map", @"Academics", @"Athletics", @"Events", @"Govs", @"Lunch", @"Settings",  nil];
+    self.menu = [NSArray arrayWithObjects:@"Map", @"Academics", @"Athletics", @"Events", @"Govs", @"Dining", @"Settings",  nil];
     self.menuImages = [NSArray arrayWithObjects:@"103-map.png", @"187-pencil.png", @"63-runner.png", @"83-calendar.png", @"140-gradhat.png", @"48-fork-and-knife.png", @"20-gear2.png", nil];
     
     

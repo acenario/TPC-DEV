@@ -14,6 +14,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 @interface DaySearchViewController ()
 
+
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
@@ -21,10 +22,13 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 @implementation DaySearchViewController {
     NSMutableArray *searchResults;
+    NSArray *myJSON;
+    
 }
 
 @synthesize searchBar = _searchBar;
 @synthesize tableView = _tableView;
+@synthesize data = _data;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -115,7 +119,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     {
         
         NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@", escapedSearchText];
+        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@",escapedSearchText];
         NSURL *url = [NSURL URLWithString:urlString];
         return url;
     }
@@ -131,6 +135,60 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     return resultString;
 }
 
+- (void)showNetworkError
+{
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"Whoops..."
+                              message:@"There was an error reading from Veracross. Please try again."
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+    [alertView show];
+}
+
+- (void)parseDictionary:(NSArray *)array
+{
+    
+    //NSArray *array = [dictionary objectForKey:@"athletic_opponent"];
+    
+    
+    if (myJSON == nil) {
+        NSLog(@"Expected an array");
+        return;
+    }
+    
+    for (NSDictionary *resultDict in myJSON) {
+        NSLog(@"name: %@, start_time: %@, location: %@", [resultDict objectForKey:@"description"], [resultDict objectForKey:@"start_time"], [resultDict objectForKey:@"location"]);
+    }
+}
+
+- (NSDictionary *)parseJSON:(NSString *)jsonString
+{
+    NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    NSError *error;
+    
+    id resultObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if (resultObject == nil) {
+        NSLog(@"JSON Error: %@", error);
+        return nil;
+    }
+    
+    NSArray *parsedJSON = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    myJSON = parsedJSON;
+    
+    
+   
+    /*if (![resultObject isKindOfClass:[NSDictionary class]]) {
+        NSLog(@"JSON Error: Expected dictionary");
+        return nil;
+    }*/
+    
+    
+    return resultObject;
+}
+
 
 
 
@@ -140,13 +198,27 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     
     if ([searchBar.text length] > 0) {
         [searchBar resignFirstResponder];
+        
         searchResults = [NSMutableArray arrayWithCapacity:10];
         
         NSURL *url = [self urlWithSearchText:searchBar.text];
-        NSLog(@"URL '%@'", url);
-        
         NSString *jsonString = [self performStoreRequestWithURL:url];
-        NSLog(@"Received JSON string '%@'", jsonString);
+        
+        
+        if (jsonString == nil) {
+            [self showNetworkError];
+            return;
+        }
+        
+        NSDictionary *dictionary = [self parseJSON:jsonString];
+        
+        if (dictionary == nil) {
+            [self showNetworkError];
+            return;
+        }
+        
+        NSLog(@"Dictionary '%@'", dictionary);
+        [self parseDictionary:myJSON];
         
         [self.tableView reloadData];
     }

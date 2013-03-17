@@ -19,6 +19,9 @@
 		DC0CFA2516A6076B00F98CDB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFA2416A6076B00F98CDB /* Default-568h@2x.png */; };
 		DC0CFA2816A6076B00F98CDB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFA2616A6076B00F98CDB /* MainStoryboard.storyboard */; };
 		DC0CFA2B16A6076B00F98CDB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0CFA2A16A6076B00F98CDB /* ViewController.m */; };
+		DC128E7C16F5A48200FC89A5 /* PDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC128E7B16F5A48200FC89A5 /* PDFViewController.m */; };
+		DC128E7F16F5A62E00FC89A5 /* 113-navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = DC128E7D16F5A62E00FC89A5 /* 113-navigation.png */; };
+		DC128E8016F5A62E00FC89A5 /* 113-navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC128E7E16F5A62E00FC89A5 /* 113-navigation@2x.png */; };
 		DC1CE00116F1135600F1E06C /* bigpin.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1CDFFF16F1135600F1E06C /* bigpin.png */; };
 		DC1CE00216F1135600F1E06C /* bigpin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1CE00016F1135600F1E06C /* bigpin@2x.png */; };
 		DC246C2E16F2BDD600B9D62D /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = DC246C2C16F2BDD500B9D62D /* navbar.png */; };
@@ -308,6 +311,10 @@
 		DC0CFA2716A6076B00F98CDB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DC0CFA2916A6076B00F98CDB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DC0CFA2A16A6076B00F98CDB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DC128E7A16F5A48200FC89A5 /* PDFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFViewController.h; sourceTree = "<group>"; };
+		DC128E7B16F5A48200FC89A5 /* PDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFViewController.m; sourceTree = "<group>"; };
+		DC128E7D16F5A62E00FC89A5 /* 113-navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "113-navigation.png"; sourceTree = "<group>"; };
+		DC128E7E16F5A62E00FC89A5 /* 113-navigation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "113-navigation@2x.png"; sourceTree = "<group>"; };
 		DC1CDFFF16F1135600F1E06C /* bigpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigpin.png; sourceTree = "<group>"; };
 		DC1CE00016F1135600F1E06C /* bigpin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bigpin@2x.png"; sourceTree = "<group>"; };
 		DC246C2C16F2BDD500B9D62D /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navbar.png; path = "Govs Photos/navbar.png"; sourceTree = "<group>"; };
@@ -795,6 +802,8 @@
 		DC246C3D16F2DA4100B9D62D /* NewSidebar */ = {
 			isa = PBXGroup;
 			children = (
+				DC128E7D16F5A62E00FC89A5 /* 113-navigation.png */,
+				DC128E7E16F5A62E00FC89A5 /* 113-navigation@2x.png */,
 				DC246C5E16F2E3D300B9D62D /* 04-squiggle.png */,
 				DC246C5F16F2E3D300B9D62D /* 04-squiggle@2x.png */,
 				DC246C6016F2E3D300B9D62D /* 33-cabinet.png */,
@@ -974,6 +983,8 @@
 				DCA654FD16DF3A2200209D5D /* TodayMealViewController.m */,
 				DCA654FF16DF3A3100209D5D /* WeekMealViewController.h */,
 				DCA6550016DF3A3100209D5D /* WeekMealViewController.m */,
+				DC128E7A16F5A48200FC89A5 /* PDFViewController.h */,
+				DC128E7B16F5A48200FC89A5 /* PDFViewController.m */,
 			);
 			name = Meals;
 			sourceTree = "<group>";
@@ -1408,6 +1419,8 @@
 				DC9ACDC716F520A700DD7C1F /* TableCellGradient2.png in Resources */,
 				DC9ACDC816F520A700DD7C1F /* TableCellGradient3.png in Resources */,
 				DC9ACDCA16F5210500DD7C1F /* NothingFoundCell.xib in Resources */,
+				DC128E7F16F5A62E00FC89A5 /* 113-navigation.png in Resources */,
+				DC128E8016F5A62E00FC89A5 /* 113-navigation@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1465,6 +1478,7 @@
 				DC9ACDC116F520A700DD7C1F /* DaySearchViewController.m in Sources */,
 				DC9ACDC216F520A700DD7C1F /* SearchResult.m in Sources */,
 				DC9ACDC316F520A700DD7C1F /* SearchResultCell.m in Sources */,
+				DC128E7C16F5A48200FC89A5 /* PDFViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
