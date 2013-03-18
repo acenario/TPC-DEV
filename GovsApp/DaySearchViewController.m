@@ -23,6 +23,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 @implementation DaySearchViewController {
     NSMutableArray *searchResults;
     NSArray *myJSON;
+    BOOL isLoading;
     
 }
 
@@ -39,6 +40,12 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     return self;
 }
 
+- (void) hideKeyboard {
+    [self.view endEditing:YES];
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -51,6 +58,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     [self.tableView registerNib:cellNib forCellReuseIdentifier:
      NothingFoundCellIdentifier];
     
+    //[self pullData];
     
     //Code to calculate date
     NSDate *currDate = [NSDate date];
@@ -66,13 +74,16 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     
     [dateFormatter setDateFormat:@"YYYY-MM-dd"]; //HH:mm:ss
     
-    NSString *dateString = [dateFormatter stringFromDate:currDate];
-    NSString *dateStringAddedSeven = [dateFormatter stringFromDate:currDateAddedbySeven];
-    NSLog(@"Today: %@",dateString);
-    NSLog(@"One week from today: %@", dateStringAddedSeven);
+    //NSString *dateString = [dateFormatter stringFromDate:currDate];
+    //NSString *dateStringAddedSeven = [dateFormatter stringFromDate:currDateAddedbySeven];
+    //NSLog(@"Today: %@",dateString);
+    //NSLog(@"One week from today: %@", dateStringAddedSeven);
     
     //Show keyboard instantly
     //[self.searchBar becomeFirstResponder];
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.tableView addGestureRecognizer:gestureRecognizer];
     
     
 }
@@ -83,6 +94,11 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [SVProgressHUD dismiss];
+}
 
 
 #pragma mark - UITableViewDataSource
@@ -119,12 +135,12 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    
     if ([searchResults count] == 0) {
         return [tableView dequeueReusableCellWithIdentifier:
                 NothingFoundCellIdentifier];
         
     } else {
+        
         SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:SearchResultCellIdentifier];
         
         SearchResult *searchResult = [searchResults objectAtIndex:indexPath.row];
@@ -134,7 +150,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         
         NSString *place = [self placeForDisplay:searchResult.place];
         //NSString *place = searchResult.place;
-        NSLog(@"placeVALUE: %@", place);
+        //NSLog(@"placeVALUE: %@", place);
         
         
         if (place == (NSString *)[NSNull null]) {
@@ -146,7 +162,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
             timeValue = @"Time not provided";
         }
         
-        NSLog(@"name: %@, place: %@", searchResult.name, searchResult.place);
+        //NSLog(@"name: %@, place: %@", searchResult.name, searchResult.place);
         
         cell.placeLabel.text = [NSString stringWithFormat:@"%@", place];
         cell.timeLabel.text = [NSString stringWithFormat:@"%@", timeValue];
@@ -156,20 +172,22 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         
         //NSLog(@"name label: %@, time label: %@", cell.nameLabel.text, cell.timeLabel.text);
         
-        NSDate *currDate = [NSDate date];
+        /*NSDate *currDate = [NSDate date];
 
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
         [dateFormatter setDateFormat:@"HH:mm:ss"];
         NSString *dateString = [dateFormatter stringFromDate:currDate];
-        NSLog(@"Parsed time: %@", dateString);
+        NSLog(@"Parsed time: %@", dateString);*/
         
+        
+        //[SVProgressHUD showSuccessWithStatus:@"Done!"];
         
         
         return cell;
         
     }
     
-    
+
     
 }
 
@@ -194,7 +212,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     {
         
         NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@&date_to=2013-04-06",escapedSearchText];
+        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@&date_to=%@",escapedSearchText,escapedSearchText];
         NSURL *url = [NSURL URLWithString:urlString];
         return url;
     }
@@ -212,6 +230,8 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 - (void)showNetworkError
 {
+    [SVProgressHUD dismiss];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     UIAlertView *alertView = [[UIAlertView alloc]
                               initWithTitle:@"Whoops..."
                               message:@"There was an error reading from Veracross. Please try again."
@@ -260,8 +280,10 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         
         
         if (searchResult != nil) {
+            
             [searchResults addObject:searchResult];
         }
+        
         
         /*NSLog(@"name: %@, start_time: %@, location: %@", [resultDict objectForKey:@"description"], [resultDict objectForKey:@"start_time"], [resultDict objectForKey:@"location"]);*/
     }
@@ -294,6 +316,70 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     return resultObject;
 }
 
+- (void)pullData {
+    
+    NSDate *currDate = [NSDate date];
+    NSDate *currDateAddedbySeven = [NSDate date];
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = 7;
+    
+    
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    currDateAddedbySeven = [theCalendar dateByAddingComponents:dayComponent toDate:currDate options:0];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"]; //HH:mm:ss
+    
+    //NSString *today = [dateFormatter stringFromDate:currDate];
+    //NSString *nextWeek = [dateFormatter stringFromDate:currDateAddedbySeven];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [SVProgressHUD showWithStatus:@"Loading"];
+    
+    searchResults = [NSMutableArray arrayWithCapacity:10];
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        
+        NSURL *url = [self urlWithSearchText:@"2013-04-16"];
+        NSString *jsonString = [self performStoreRequestWithURL:url];
+        
+        
+        if (jsonString == nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showNetworkError];
+            });
+            return;
+        }
+        
+        NSDictionary *dictionary = [self parseJSON:jsonString];
+        
+        if (dictionary == nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showNetworkError];
+            });
+            return;
+            
+        }
+        
+        //NSLog(@"Dictionary '%@'", dictionary);
+        [self parseArray:myJSON];
+        [searchResults sortUsingSelector:@selector(compareName:)];
+        
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [SVProgressHUD dismiss];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        });
+        NSLog(@"Done Initial Load!");
+    });
+    
+    
+}
+
 
 
 
@@ -304,29 +390,53 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     if ([searchBar.text length] > 0) {
         [searchBar resignFirstResponder];
         
+        [self.tableView reloadData];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        [SVProgressHUD showWithStatus:@"Loading"];
+        
         searchResults = [NSMutableArray arrayWithCapacity:10];
+        
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        dispatch_async(queue, ^{
         
         NSURL *url = [self urlWithSearchText:searchBar.text];
         NSString *jsonString = [self performStoreRequestWithURL:url];
         
         
         if (jsonString == nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
             [self showNetworkError];
+                });
             return;
         }
         
         NSDictionary *dictionary = [self parseJSON:jsonString];
         
         if (dictionary == nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
             [self showNetworkError];
+            });
             return;
+                
         }
         
-        NSLog(@"Dictionary '%@'", dictionary);
+        //NSLog(@"Dictionary '%@'", dictionary);
         [self parseArray:myJSON];
         [searchResults sortUsingSelector:@selector(compareName:)];
         
-        [self.tableView reloadData];
+       
+            
+       
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+                [SVProgressHUD dismiss];
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            });
+         NSLog(@"Done Search!");
+            });
+        
     }
 
     
@@ -362,7 +472,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
          
          }
          }*/
-        
+    
         
 }
 

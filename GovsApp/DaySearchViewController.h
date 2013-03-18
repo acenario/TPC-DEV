@@ -11,6 +11,7 @@
 #import "MenuViewController.h"
 #import <Scringo/ScringoAgent.h>
 #import "SearchResult.h"
+#import "SVProgressHUD.h"
 
 @interface DaySearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 

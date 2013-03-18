@@ -85,6 +85,8 @@
 		DC31F33516CBA02000067E34 /* GovsLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33416CBA02000067E34 /* GovsLoginViewController.m */; };
 		DC31F33716CBA09900067E34 /* govs_dashboard-header@2x_latest.png in Resources */ = {isa = PBXBuildFile; fileRef = DC31F33616CBA09900067E34 /* govs_dashboard-header@2x_latest.png */; };
 		DC31F33A16CBA12F00067E34 /* GovSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */; };
+		DC3891FD16F7B06B003E87F2 /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3891FB16F7B06B003E87F2 /* 06-magnify.png */; };
+		DC3891FE16F7B06B003E87F2 /* 06-magnify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3891FC16F7B06B003E87F2 /* 06-magnify@2x.png */; };
 		DC6EA72316E6C2AB00E20E4E /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA72016E6C2AB00E20E4E /* AwesomeMenu.m */; };
 		DC6EA72416E6C2AB00E20E4E /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA72216E6C2AB00E20E4E /* AwesomeMenuItem.m */; };
 		DC7D042416D4A03F005B238F /* UnderRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D042316D4A03F005B238F /* UnderRightViewController.m */; };
@@ -388,6 +390,8 @@
 		DC31F33616CBA09900067E34 /* govs_dashboard-header@2x_latest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "govs_dashboard-header@2x_latest.png"; path = "Govs Photos/Archive/govs_dashboard-header@2x_latest.png"; sourceTree = SOURCE_ROOT; };
 		DC31F33816CBA12F00067E34 /* GovSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GovSignUpViewController.h; sourceTree = "<group>"; };
 		DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GovSignUpViewController.m; sourceTree = "<group>"; };
+		DC3891FB16F7B06B003E87F2 /* 06-magnify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify.png"; sourceTree = "<group>"; };
+		DC3891FC16F7B06B003E87F2 /* 06-magnify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify@2x.png"; sourceTree = "<group>"; };
 		DC6EA71F16E6C2AB00E20E4E /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
 		DC6EA72016E6C2AB00E20E4E /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
 		DC6EA72116E6C2AB00E20E4E /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
@@ -802,6 +806,8 @@
 		DC246C3D16F2DA4100B9D62D /* NewSidebar */ = {
 			isa = PBXGroup;
 			children = (
+				DC3891FB16F7B06B003E87F2 /* 06-magnify.png */,
+				DC3891FC16F7B06B003E87F2 /* 06-magnify@2x.png */,
 				DC128E7D16F5A62E00FC89A5 /* 113-navigation.png */,
 				DC128E7E16F5A62E00FC89A5 /* 113-navigation@2x.png */,
 				DC246C5E16F2E3D300B9D62D /* 04-squiggle.png */,
@@ -1421,6 +1427,8 @@
 				DC9ACDCA16F5210500DD7C1F /* NothingFoundCell.xib in Resources */,
 				DC128E7F16F5A62E00FC89A5 /* 113-navigation.png in Resources */,
 				DC128E8016F5A62E00FC89A5 /* 113-navigation@2x.png in Resources */,
+				DC3891FD16F7B06B003E87F2 /* 06-magnify.png in Resources */,
+				DC3891FE16F7B06B003E87F2 /* 06-magnify@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
