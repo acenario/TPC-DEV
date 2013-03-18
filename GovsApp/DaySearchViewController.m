@@ -51,6 +51,26 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     [self.tableView registerNib:cellNib forCellReuseIdentifier:
      NothingFoundCellIdentifier];
     
+    
+    //Code to calculate date
+    NSDate *currDate = [NSDate date];
+    NSDate *currDateAddedbySeven = [NSDate date];
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = 7;
+    
+    
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    currDateAddedbySeven = [theCalendar dateByAddingComponents:dayComponent toDate:currDate options:0];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"]; //HH:mm:ss
+    
+    NSString *dateString = [dateFormatter stringFromDate:currDate];
+    NSString *dateStringAddedSeven = [dateFormatter stringFromDate:currDateAddedbySeven];
+    NSLog(@"Today: %@",dateString);
+    NSLog(@"One week from today: %@", dateStringAddedSeven);
+    
     //Show keyboard instantly
     //[self.searchBar becomeFirstResponder];
     
@@ -77,33 +97,73 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         return [searchResults count];
     }
 }
+
+- (NSString *)placeForDisplay:(NSString *)place
+{
+    //if (place == (NSString *)@"Frost Library") {
+    //if ([place isEqualToString:@"Wilkie Ctr., Remis Lobby"]) {
+    if ([[NSString stringWithFormat:@"%@", place] isEqualToString:@"Wilkie Ctr., Remis Lobby"]) { 
+        return @"Wilkie Performing Arts Center";
+        
+    } else if ([[NSString stringWithFormat:@"%@", place] isEqualToString:@"Wilkie Ctr., Auditorium"]) {
+            return @"Wilkie Performing Arts Center";
+        
+    /*} else if ([place isEqualToString:@"audiobook"]) {
+        return @"Audio Book";*/
+    } else {
+        return place;
+    }
+    
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:SearchResultCellIdentifier];
+
     
     if ([searchResults count] == 0) {
         return [tableView dequeueReusableCellWithIdentifier:
                 NothingFoundCellIdentifier];
+        
     } else {
+        SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:SearchResultCellIdentifier];
         
         SearchResult *searchResult = [searchResults objectAtIndex:indexPath.row];
-        NSLog(@"nameUP: %@, timeUP: %@", searchResult.name, searchResult.time);
+        //NSLog(@"nameUP: %@, timeUP: %@", searchResult.name, searchResult.time);
         
         cell.nameLabel.text = searchResult.name;
-        //cell.placeLabel.text = searchResult.place;
-        cell.timeLabel.text = searchResult.time;
         
-        //cell.nameLabel.text = @"Arjun";
-        //cell.placeLabel.text = @"place";
-        //cell.timeLabel.text = @"time";
+        NSString *place = [self placeForDisplay:searchResult.place];
+        //NSString *place = searchResult.place;
+        NSLog(@"placeVALUE: %@", place);
         
-        NSLog(@"name: %@, time: %@", searchResult.name, searchResult.time);
         
-        NSLog(@"name label: %@, time label: %@", cell.nameLabel.text, cell.timeLabel.text);
+        if (place == (NSString *)[NSNull null]) {
+            place = @"Location not provided";
+        }
+        
+        NSString *timeValue = searchResult.time;
+        if (timeValue == (NSString *)[NSNull null]) {
+            timeValue = @"Time not provided";
+        }
+        
+        NSLog(@"name: %@, place: %@", searchResult.name, searchResult.place);
+        
+        cell.placeLabel.text = [NSString stringWithFormat:@"%@", place];
+        cell.timeLabel.text = [NSString stringWithFormat:@"%@", timeValue];
+
+        
+        //NSLog(@"name: %@, time: %@", searchResult.name, searchResult.time);
+        
+        //NSLog(@"name label: %@, time label: %@", cell.nameLabel.text, cell.timeLabel.text);
+        
+        
+        
+        return cell;
+        
     }
     
     
-    return cell;
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -127,7 +187,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     {
         
         NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@&date_to=2013-04-02",escapedSearchText];
+        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@&date_to=2013-04-06",escapedSearchText];
         NSURL *url = [NSURL URLWithString:urlString];
         return url;
     }
@@ -159,11 +219,11 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     SearchResult *searchResult = [[SearchResult alloc] init];
     
     searchResult.name = [dictionary objectForKey:@"description"];
-    
-    //searchResult.place = [dictionary objectForKey:@"location"];
+    searchResult.place = [dictionary objectForKey:@"location"];
     searchResult.time = [dictionary objectForKey:@"start_time"];
     
-    NSLog(@"name data: %@, time data: %@", searchResult.name, searchResult.time);
+    
+    //NSLog(@"name data: %@, time data: %@", searchResult.name, searchResult.time);
     
 
     
@@ -182,12 +242,14 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     for (NSDictionary *resultDict in myJSON) {
         SearchResult *searchResult;
         
-        NSString *description = [resultDict objectForKey:@"description"];
+        //NSString *description = [resultDict objectForKey:@"description"];
         
-        if ([description isEqualToString:@"Arts Night"]) {
+        
+        //if ([description isEqualToString:@"March Break"]) {
             searchResult = [self parseName:resultDict];
             
-        }
+        //}
+        
         
         if (searchResult != nil) {
             [searchResults addObject:searchResult];
