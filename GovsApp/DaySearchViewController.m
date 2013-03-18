@@ -156,6 +156,13 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         
         //NSLog(@"name label: %@, time label: %@", cell.nameLabel.text, cell.timeLabel.text);
         
+        NSDate *currDate = [NSDate date];
+
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
+        NSString *dateString = [dateFormatter stringFromDate:currDate];
+        NSLog(@"Parsed time: %@", dateString);
+        
         
         
         return cell;
@@ -221,9 +228,10 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     searchResult.name = [dictionary objectForKey:@"description"];
     searchResult.place = [dictionary objectForKey:@"location"];
     searchResult.time = [dictionary objectForKey:@"start_time"];
+    searchResult.startDate = [dictionary objectForKey:@"start_date"];
     
     
-    //NSLog(@"name data: %@, time data: %@", searchResult.name, searchResult.time);
+    //NSLog(@"start date: %@", searchResult.startDate);
     
 
     
@@ -316,6 +324,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         
         NSLog(@"Dictionary '%@'", dictionary);
         [self parseArray:myJSON];
+        [searchResults sortUsingSelector:@selector(compareName:)];
         
         [self.tableView reloadData];
     }

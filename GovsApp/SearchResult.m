@@ -13,8 +13,13 @@
 @synthesize name = _name;
 @synthesize place = _place;
 @synthesize time = _time;
+@synthesize startDate = _startDate;
 
 
+- (NSComparisonResult)compareName:(SearchResult *)other
+{
+    return [self.startDate localizedStandardCompare:other.startDate];
+}
 
 
 @end

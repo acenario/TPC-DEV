@@ -13,5 +13,8 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *place;
 @property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSString *startDate;
+
+- (NSComparisonResult)compareName:(SearchResult *)other;
 
 @end
