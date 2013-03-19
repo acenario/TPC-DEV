@@ -7,16 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
-#import "UnderRightViewController.h"
-//#import "TableSection.h"
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
+#import <Scringo/ScringoAgent.h>
+#import "SearchResult.h"
+#import "SVProgressHUD.h"
 
-@interface WeekViewController : PFQueryTableViewController
+
+@interface WeekViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
 
 - (IBAction)searchBtn:(id)sender;
 - (IBAction)shieldBtn:(id)sender;
 
-
-@property (nonatomic, retain) NSArray* tableSections;
-
 @end
+

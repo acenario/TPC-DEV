@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
-#import "UnderRightViewController.h"
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
+#import <Scringo/ScringoAgent.h>
+#import "SearchResult.h"
+#import "SVProgressHUD.h"
 
-@interface DayViewController : PFQueryTableViewController
 
-//testing a github pull request and merge.
+@interface DayViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
 
 - (IBAction)searchBtn:(id)sender;
 - (IBAction)shieldBtn:(id)sender;

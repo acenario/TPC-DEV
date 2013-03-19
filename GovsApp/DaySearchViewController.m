@@ -49,7 +49,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.rowHeight = 70;
+    self.tableView.rowHeight = 80;
 	
     UINib *cellNib = [UINib nibWithNibName:@"SearchResultCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:SearchResultCellIdentifier];
@@ -98,6 +98,94 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 - (void)viewDidDisappear:(BOOL)animated
 {
     [SVProgressHUD dismiss];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+- (NSString *)userVisibleDateTimeStringForRFC3339DateTimeString:(NSString *)rfc3339DateTimeString
+// Returns a user-visible date time string that corresponds to the
+// specified RFC 3339 date time string. Note that this does not handle
+// all possible RFC 3339 date time strings, just one of the most common
+// styles.
+{
+    NSString *          userVisibleDateTimeString;
+    NSDateFormatter *   rfc3339DateFormatter;
+    NSLocale *          enUSPOSIXLocale;
+    NSDate *            date;
+    NSDateFormatter *   userVisibleDateFormatter;
+    
+    userVisibleDateTimeString = nil;
+    
+    // Convert the RFC 3339 date time string to an NSDate.
+    
+    rfc3339DateFormatter = [[NSDateFormatter alloc] init];
+    
+    enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    
+    [rfc3339DateFormatter setLocale:enUSPOSIXLocale];
+    [rfc3339DateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
+    //[rfc3339DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    
+    date = [rfc3339DateFormatter dateFromString:rfc3339DateTimeString];
+    if (date != nil) {
+        
+        // Convert the NSDate to a user-visible date string.
+        
+        userVisibleDateFormatter = [[NSDateFormatter alloc] init];
+        assert(userVisibleDateFormatter != nil);
+        
+        
+        //[userVisibleDateFormatter setDateStyle:NSDateFormatterShortStyle];
+        [userVisibleDateFormatter setTimeStyle:NSDateFormatterShortStyle];
+        
+        userVisibleDateTimeString = [userVisibleDateFormatter stringFromDate:date];
+    }
+    
+    if (date == nil) {
+        userVisibleDateTimeString = @"Not provided";
+    }
+    
+    return userVisibleDateTimeString;
+}
+
+- (NSString *)userVisibleDateStringForDateString:(NSString *)rfc3339DateTimeString
+// Returns a user-visible date time string that corresponds to the
+// specified RFC 3339 date time string. Note that this does not handle
+// all possible RFC 3339 date time strings, just one of the most common
+// styles.
+{
+    NSString *          userVisibleDateTimeString;
+    NSDateFormatter *   rfc3339DateFormatter;
+    NSLocale *          enUSPOSIXLocale;
+    NSDate *            date;
+    NSDateFormatter *   userVisibleDateFormatter;
+    
+    userVisibleDateTimeString = nil;
+    
+    // Convert the RFC 3339 date time string to an NSDate.
+    
+    rfc3339DateFormatter = [[NSDateFormatter alloc] init];
+    
+    enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    
+    [rfc3339DateFormatter setLocale:enUSPOSIXLocale];
+    [rfc3339DateFormatter setDateFormat:@"yyyy-MM-dd"];
+    //[rfc3339DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    
+    date = [rfc3339DateFormatter dateFromString:rfc3339DateTimeString];
+    if (date != nil) {
+        
+        // Convert the NSDate to a user-visible date string.
+        
+        userVisibleDateFormatter = [[NSDateFormatter alloc] init];
+        assert(userVisibleDateFormatter != nil);
+        
+        
+        //[userVisibleDateFormatter setDateFormat:@"MM'/'dd'/'YY"];
+        [userVisibleDateFormatter setDateStyle:NSDateFormatterFullStyle];
+        
+        userVisibleDateTimeString = [userVisibleDateFormatter stringFromDate:date];
+    }
+    return userVisibleDateTimeString;
 }
 
 
@@ -149,38 +237,32 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         cell.nameLabel.text = searchResult.name;
         
         NSString *place = [self placeForDisplay:searchResult.place];
-        //NSString *place = searchResult.place;
-        //NSLog(@"placeVALUE: %@", place);
-        
-        
         if (place == (NSString *)[NSNull null]) {
-            place = @"Location not provided";
+            place = @"Not provided";
         }
         
         NSString *timeValue = searchResult.time;
+        
         if (timeValue == (NSString *)[NSNull null]) {
-            timeValue = @"Time not provided";
+            timeValue = nil;
         }
+
+        NSString *timeConverted = [self userVisibleDateTimeStringForRFC3339DateTimeString:timeValue];
+        
+        
+        NSString *dateValue = searchResult.startDate;
+        
+        
+        NSString *dateConverted = [self userVisibleDateStringForDateString:dateValue];
+        
+     
         
         //NSLog(@"name: %@, place: %@", searchResult.name, searchResult.place);
         
         cell.placeLabel.text = [NSString stringWithFormat:@"%@", place];
-        cell.timeLabel.text = [NSString stringWithFormat:@"%@", timeValue];
+        cell.timeLabel.text = [NSString stringWithFormat:@"%@", timeConverted];
+        cell.dateLabel.text = [NSString stringWithFormat:@"%@", dateConverted];
 
-        
-        //NSLog(@"name: %@, time: %@", searchResult.name, searchResult.time);
-        
-        //NSLog(@"name label: %@, time label: %@", cell.nameLabel.text, cell.timeLabel.text);
-        
-        /*NSDate *currDate = [NSDate date];
-
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-        [dateFormatter setDateFormat:@"HH:mm:ss"];
-        NSString *dateString = [dateFormatter stringFromDate:currDate];
-        NSLog(@"Parsed time: %@", dateString);*/
-        
-        
-        //[SVProgressHUD showSuccessWithStatus:@"Done!"];
         
         
         return cell;
@@ -190,6 +272,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
     
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -205,12 +288,13 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     }
 }
 
+
+
 #pragma mark - Parsing Data info
 
 - (NSURL *)urlWithSearchText:(NSString *)searchText
 
     {
-        
         NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@&date_to=%@",escapedSearchText,escapedSearchText];
         NSURL *url = [NSURL URLWithString:urlString];
@@ -231,6 +315,8 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 - (void)showNetworkError
 {
     [SVProgressHUD dismiss];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
     [self.tableView reloadData];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     UIAlertView *alertView = [[UIAlertView alloc]

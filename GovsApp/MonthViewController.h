@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
-#import "UnderRightViewController.h"
-//#import "TKCalendarMonthView.h"
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
+#import <Scringo/ScringoAgent.h>
+#import "SearchResult.h"
+#import "SVProgressHUD.h"
 
-@interface MonthViewController : PFQueryTableViewController
+
+@interface MonthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 
 - (IBAction)searchBtn:(id)sender;

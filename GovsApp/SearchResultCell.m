@@ -13,6 +13,8 @@
 @synthesize nameLabel = _nameLabel;
 @synthesize placeLabel = _placeLabel;
 @synthesize timeLabel = _timeLabel;
+@synthesize dateLabel = _dateLabel;
+
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

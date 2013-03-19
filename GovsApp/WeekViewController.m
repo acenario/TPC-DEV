@@ -7,43 +7,36 @@
 //
 
 #import "WeekViewController.h"
-#import "ECSlidingViewController.h"
-#import "MenuViewController.h"
-#import <Scringo/ScringoAgent.h>
+#import "SearchResultCell.h"
 
+static NSString *const SearchResultCellIdentifier = @"SearchResultCell";
+static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 @interface WeekViewController ()
 
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
 @end
 
-@implementation WeekViewController 
+@implementation WeekViewController {
+    NSMutableArray *searchResults;
+    NSArray *myJSON;
+    NSString *addedDate;
+}
 
-- (id)initWithStyle:(UITableViewStyle)style
+@synthesize tableView = _tableView;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom the table
-        
-        // The className to query on
-        self.className = @"Week";
-        
-        // The key of the PFObject to display in the label of the default cell style
-        self.keyToDisplay = @"text";
-        
-        // Whether the built-in pull-to-refresh is enabled
-        self.pullToRefreshEnabled = YES;
-        
-        // Whether the built-in pagination is enabled
-        self.paginationEnabled = YES;
-        
-        // The number of objects to show per page
-        self.objectsPerPage = 5;
-        
-        
-        
-        
+        // Custom initialization
     }
     return self;
+}
+
+- (void) hideKeyboard {
+    [self.view endEditing:YES];
 }
 
 #pragma mark - View lifecycle
@@ -52,28 +45,16 @@
 {
     [super viewDidLoad];
     
-    //Code for Red Bar
-    NSInteger red   = 178;
-    NSInteger green = 8;
-    NSInteger blue  = 56;
+    self.tableView.rowHeight = 80;
+	
+    UINib *cellNib = [UINib nibWithNibName:@"SearchResultCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:SearchResultCellIdentifier];
     
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0];
+    cellNib = [UINib nibWithNibName:NothingFoundCellIdentifier bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:
+     NothingFoundCellIdentifier];
     
-    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
-        self.slidingViewController.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
-    }
-    
-    /*if (![self.slidingViewController.underRightViewController isKindOfClass:[UnderRightViewController class]]) {
-        self.slidingViewController.underRightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UnderRight"];
-    }*/
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    
+    [self pullData];
     
     
 }
@@ -93,6 +74,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -102,14 +84,12 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [SVProgressHUD dismiss];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [super viewDidDisappear:animated];
+    
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -121,7 +101,7 @@
 
 #pragma mark - Sidebar Button Code
 - (IBAction)searchBtn:(id)sender {
-    //[self.slidingViewController anchorTopViewTo:ECLeft];
+    
     [ScringoAgent openSidebar];
     
 }
@@ -131,229 +111,365 @@
     
 }
 
-#pragma mark - Parse
-
-- (void)objectsDidLoad:(NSError *)error {
-    [super objectsDidLoad:error];
+- (NSString *)userVisibleDateTimeStringForRFC3339DateTimeString:(NSString *)rfc3339DateTimeString
+// Returns a user-visible date time string that corresponds to the
+// specified RFC 3339 date time string. Note that this does not handle
+// all possible RFC 3339 date time strings, just one of the most common
+// styles.
+{
+    NSString *          userVisibleDateTimeString;
+    NSDateFormatter *   rfc3339DateFormatter;
+    NSLocale *          enUSPOSIXLocale;
+    NSDate *            date;
+    NSDateFormatter *   userVisibleDateFormatter;
     
+    userVisibleDateTimeString = nil;
     
+    // Convert the RFC 3339 date time string to an NSDate.
     
+    rfc3339DateFormatter = [[NSDateFormatter alloc] init];
     
-}
-
-- (void)objectsWillLoad {
-    [super objectsWillLoad];
+    enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
     
-    // This method is called before a PFQuery is fired to get more objects
-}
-
-
-// Override to customize what kind of query to perform on the class. The default is to query for
-// all objects ordered by createdAt descending.
-- (PFQuery *)queryForTable {
-    PFQuery *query = [PFQuery queryWithClassName:@"Week"];
+    [rfc3339DateFormatter setLocale:enUSPOSIXLocale];
+    [rfc3339DateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
+    //[rfc3339DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    date = [rfc3339DateFormatter dateFromString:rfc3339DateTimeString];
     
-    // If no objects are loaded in memory, we look to the cache first to fill the table
-    // and then subsequently do a query against the network.
-    if ([self.objects count] == 0) {
-        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    }
-    //self.objectsPerPage = 8;
-    
-    
-    
-    //[query whereKey:@"day" equalTo:@"Saturday"];
-    
-    
-    
-    //[query orderByAscending:@"priority"];
-    
-    return query;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 8;
-}
-
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    if (section == 0) {
-        return @"Saturday";
-    } else if (section == 1) {
-        return @"Sunday";
-    } else if (section == 2) {
-        return @"Monday";
-    } else if (section == 3) {
-        return @"Tuesday";
-    } else if (section == 4) {
-        return @"Wednesday";
-    } else if (section == 5) {
-        return @"Thursday";
-    } else if (section == 6) {
-        return @"Friday";
-    } else {
-        return @"Saturday";
-    }
-}
-
-/*- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 4;
-    
- 
-    //PFQuery *query = [PFQuery queryWithClassName:@"Week"];
-    
-    if (section == 0) {
-        //[query whereKey:@"playername" equalTo:@"Saturday"];
-        return 1;
-    } else if (section == 1) {
-        //[query whereKey:@"playername" equalTo:@"Sunday"];
-        return 2;
-    } else if (section == 2) {
-        //[query whereKey:@"playername" equalTo:@"Monday"];
-        return 1;
-    } else if (section == 3) {
-        //[query whereKey:@"playername" equalTo:@"Tuesday"];
-        return 1;
-    } else if (section == 4) {
-        //[query whereKey:@"playername" equalTo:@"Wednesday"];
-        return 1;
-    } else if (section == 5) {
-        //[query whereKey:@"playername" equalTo:@"Thursday"];
-        return 1;
-    } else if (section == 6) {
-        //[query whereKey:@"playername" equalTo:@"Friday"];
-        return 1;
-    } else  {
-        //[query whereKey:@"playername" equalTo:@"Saturday2"];
-        return 1;
-    }
-}
-     */
-     
-
-
-
-// Override to customize the look of a cell representing an object. The default is to display
-// a UITableViewCellStyleDefault style cell with the label being the first key in the object.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
-    
-    // Configure the cell
+    if (date != nil) {
         
+        // Convert the NSDate to a user-visible date string.
+        
+        userVisibleDateFormatter = [[NSDateFormatter alloc] init];
+        assert(userVisibleDateFormatter != nil);
+        
+        
+        //[userVisibleDateFormatter setDateStyle:NSDateFormatterShortStyle];
+        [userVisibleDateFormatter setTimeStyle:NSDateFormatterShortStyle];
+        
+        userVisibleDateTimeString = [userVisibleDateFormatter stringFromDate:date];
+    }
     
+    if (date == nil) {
+        userVisibleDateTimeString = @"Not provided";
+    }
     
-    
-    cell.textLabel.text = [object objectForKey:@"text"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [object objectForKey:@"time"]];
-    
-    return cell;
+    return userVisibleDateTimeString;
 }
 
-/*
- 
- [self.sections removeAllObjects];
- [self.sectionToWineTypeMap removeAllObjects];
- 
- NSInteger section = 0;
- NSInteger rowIndex = 0;
- for (PFObject *object in self.objects) {
- NSString *wineType = [object objectForKey:@"wineType"];
- NSMutableArray *objectsInSection = [self.sections objectForKey:wineType];
- if (!objectsInSection) {
- objectsInSection = [NSMutableArray array];
- 
- [self.sectionToWineTypeMap setObject:wineType forKey:[NSNumber   numberWithInt:section++]];
- }
- 
- [objectsInSection addObject:[NSNumber numberWithInt:rowIndex++]];
- [self.sections setObject:objectsInSection forKey:wineType];
- 
- 
- */
+- (NSString *)userVisibleDateStringForDateString:(NSString *)rfc3339DateTimeString
+// Returns a user-visible date time string that corresponds to the
+// specified RFC 3339 date time string. Note that this does not handle
+// all possible RFC 3339 date time strings, just one of the most common
+// styles.
+{
+    NSString *          userVisibleDateTimeString;
+    NSDateFormatter *   rfc3339DateFormatter;
+    NSLocale *          enUSPOSIXLocale;
+    NSDate *            date;
+    NSDateFormatter *   userVisibleDateFormatter;
+    
+    userVisibleDateTimeString = nil;
+    
+    // Convert the RFC 3339 date time string to an NSDate.
+    
+    rfc3339DateFormatter = [[NSDateFormatter alloc] init];
+    
+    enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    
+    [rfc3339DateFormatter setLocale:enUSPOSIXLocale];
+    [rfc3339DateFormatter setDateFormat:@"yyyy-MM-dd"];
+    //[rfc3339DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    
+    date = [rfc3339DateFormatter dateFromString:rfc3339DateTimeString];
+    if (date != nil) {
+        
+        // Convert the NSDate to a user-visible date string.
+        
+        userVisibleDateFormatter = [[NSDateFormatter alloc] init];
+        assert(userVisibleDateFormatter != nil);
+        
+        
+        //[userVisibleDateFormatter setDateFormat:@"MM'/'dd'/'YY"];
+        [userVisibleDateFormatter setDateStyle:NSDateFormatterFullStyle];
+        
+        userVisibleDateTimeString = [userVisibleDateFormatter stringFromDate:date];
+    }
+    return userVisibleDateTimeString;
+}
 
+#pragma mark - UITableViewDataSource
 
-/*
- // Override if you need to change the ordering of objects in the table.
- - (PFObject *)objectAtIndex:(NSIndexPath *)indexPath {
- return [objects objectAtIndex:indexPath.row];
- }
- */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (searchResults == nil) {
+        return 0;
+    } else if ([searchResults count] == 0) {
+        return 1;
+    } else {
+        return [searchResults count];
+    }
+}
 
+- (NSString *)placeForDisplay:(NSString *)place
+{
+    //if (place == (NSString *)@"Frost Library") {
+    //if ([place isEqualToString:@"Wilkie Ctr., Remis Lobby"]) {
+    if ([[NSString stringWithFormat:@"%@", place] isEqualToString:@"Wilkie Ctr., Remis Lobby"]) {
+        return @"Wilkie Performing Arts Center";
+        
+    } else if ([[NSString stringWithFormat:@"%@", place] isEqualToString:@"Wilkie Ctr., Auditorium"]) {
+        return @"Wilkie Performing Arts Center";
+        
+        /*} else if ([place isEqualToString:@"audiobook"]) {
+         return @"Audio Book";*/
+    } else {
+        return place;
+    }
+    
+}
 
-
-/*
- // Override to customize the look of the cell that allows the user to load the next page of objects.
- // The default implementation is a UITableViewCellStyleDefault cell with simple labels.
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath {
- static NSString *CellIdentifier = @"NextPage";
- 
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
- 
- if (cell == nil) {
- cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
- }
- 
- cell.selectionStyle = UITableViewCellSelectionStyleNone;
- cell.textLabel.text = @"Load more...";
- 
- return cell;
- }
- */
-
-#pragma mark - Table view data source
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-#pragma mark - Table view delegate
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if ([searchResults count] == 0) {
+        return [tableView dequeueReusableCellWithIdentifier:
+                NothingFoundCellIdentifier];
+        
+    } else {
+        
+        SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:SearchResultCellIdentifier];
+        
+        SearchResult *searchResult = [searchResults objectAtIndex:indexPath.row];
+        
+        
+        cell.nameLabel.text = searchResult.name;
+        
+        NSString *place = [self placeForDisplay:searchResult.place];
+        if (place == (NSString *)[NSNull null]) {
+            place = @"Not provided";
+        }
+        
+        NSString *timeValue = searchResult.time;
+        
+        if (timeValue == (NSString *)[NSNull null]) {
+            timeValue = nil;
+        }
+        
+        NSString *timeConverted = [self userVisibleDateTimeStringForRFC3339DateTimeString:timeValue];
+        
+        
+        NSString *dateValue = searchResult.startDate;
+        
+        NSString *dateConverted = [self userVisibleDateStringForDateString:dateValue];
+        
+        
+        cell.placeLabel.text = [NSString stringWithFormat:@"%@", place];
+        cell.timeLabel.text = [NSString stringWithFormat:@"%@", timeConverted];
+        cell.dateLabel.text = [NSString stringWithFormat:@"%@", dateConverted];
+        
+        
+        
+        return cell;
+        
+    }
+    
+    
+    
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([searchResults count] == 0) {
+        return nil;
+    } else {
+        return indexPath;
+    }
+}
+
+#pragma mark - Parsing Data info
+
+- (NSURL *)urlWithSearchText:(NSString *)searchText
+
+{
+    
+    NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@&date_to=%@",escapedSearchText,addedDate];
+    NSURL *url = [NSURL URLWithString:urlString];
+    return url;
+}
+
+- (NSString *)performStoreRequestWithURL:(NSURL *)url
+{
+    NSError *error;
+    NSString *resultString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+    if (resultString == nil) {
+        NSLog(@"Download Error: %@", error);
+        return nil;
+    }
+    return resultString;
+}
+
+- (void)showNetworkError
+{
+    [SVProgressHUD dismiss];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self.tableView reloadData];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"Whoops..."
+                              message:@"There was an error reading from Veracross. Please try again."
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+    [alertView show];
+    
+    
+}
+
+- (SearchResult *)parseName:(NSDictionary *)dictionary
+{
+    SearchResult *searchResult = [[SearchResult alloc] init];
+    
+    searchResult.name = [dictionary objectForKey:@"description"];
+    searchResult.place = [dictionary objectForKey:@"location"];
+    searchResult.time = [dictionary objectForKey:@"start_time"];
+    searchResult.startDate = [dictionary objectForKey:@"start_date"];
+    
+    
+    //NSLog(@"start date: %@", searchResult.startDate);
+    
+    
+    
+    return searchResult;
+}
+
+- (void)parseArray:(NSArray *)array
+{
+    
+    
+    if (myJSON == nil) {
+        NSLog(@"Expected an array");
+        return;
+    }
+    
+    for (NSDictionary *resultDict in myJSON) {
+        SearchResult *searchResult;
+        
+        //NSString *description = [resultDict objectForKey:@"description"];
+        
+        
+        //if ([description isEqualToString:@"March Break"]) {
+        searchResult = [self parseName:resultDict];
+        
+        //}
+        
+        
+        if (searchResult != nil) {
+            
+            [searchResults addObject:searchResult];
+        }
+        
+        
+        /*NSLog(@"name: %@, start_time: %@, location: %@", [resultDict objectForKey:@"description"], [resultDict objectForKey:@"start_time"], [resultDict objectForKey:@"location"]);*/
+    }
+}
+
+- (NSDictionary *)parseJSON:(NSString *)jsonString
+{
+    NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    NSError *error;
+    
+    id resultObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if (resultObject == nil) {
+        NSLog(@"JSON Error: %@", error);
+        return nil;
+    }
+    
+    NSArray *parsedJSON = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    myJSON = parsedJSON;
+    
+    
+    
+    if (![resultObject isKindOfClass:[NSArray class]]) {
+        NSLog(@"JSON Error: Expected array!");
+        return nil;
+    }
+    
+    
+    return resultObject;
+}
+
+- (void)pullData {
+    
+    NSDate *currDate = [NSDate date];
+    NSDate *currDateAddedbySeven = [NSDate date];
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = 7;
+    
+    
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    currDateAddedbySeven = [theCalendar dateByAddingComponents:dayComponent toDate:currDate options:0];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"]; //HH:mm:ss
+    
+    NSString *today = [dateFormatter stringFromDate:currDate];
+    NSString *nextWeek = [dateFormatter stringFromDate:currDateAddedbySeven];
+    addedDate = nextWeek;
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [SVProgressHUD showWithStatus:@"Loading"];
+    
+    searchResults = [NSMutableArray arrayWithCapacity:10];
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        
+        NSURL *url = [self urlWithSearchText:today];
+        NSString *jsonString = [self performStoreRequestWithURL:url];
+        
+        
+        if (jsonString == nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showNetworkError];
+            });
+            return;
+        }
+        
+        NSDictionary *dictionary = [self parseJSON:jsonString];
+        
+        if (dictionary == nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showNetworkError];
+            });
+            return;
+            
+        }
+        
+        //NSLog(@"Dictionary '%@'", dictionary);
+        [self parseArray:myJSON];
+        [searchResults sortUsingSelector:@selector(compareName:)];
+        
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [SVProgressHUD dismiss];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        });
+        //NSLog(@"Done Initial Load!");
+    });
+    
+    
 }
 
 
