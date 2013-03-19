@@ -8,6 +8,7 @@
 
 #import "DaySearchViewController.h"
 #import "SearchResultCell.h"
+#import "AFJSONRequestOperation.h"
 
 static NSString *const SearchResultCellIdentifier = @"SearchResultCell";
 static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
@@ -23,7 +24,8 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 @implementation DaySearchViewController {
     NSMutableArray *searchResults;
     NSArray *myJSON;
-    BOOL isLoading;
+    //BOOL isLoading;
+    NSOperationQueue *queue;
     
 }
 
@@ -33,9 +35,8 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        queue = [[NSOperationQueue alloc] init];
     }
     return self;
 }
@@ -99,6 +100,8 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 {
     [SVProgressHUD dismiss];
 }
+
+
 
 
 #pragma mark - UITableViewDataSource
@@ -212,12 +215,13 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     {
         
         NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@&date_to=%@",escapedSearchText,escapedSearchText];
+        /*NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@&date_to=%@",escapedSearchText,escapedSearchText];*/
+        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@", escapedSearchText];
         NSURL *url = [NSURL URLWithString:urlString];
         return url;
     }
 
-- (NSString *)performStoreRequestWithURL:(NSURL *)url
+/*- (NSString *)performStoreRequestWithURL:(NSURL *)url
 {
     NSError *error;
     NSString *resultString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
@@ -226,7 +230,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         return nil;
     }
     return resultString;
-}
+}*/
 
 - (void)showNetworkError
 {
@@ -289,7 +293,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     }
 }
 
-- (NSDictionary *)parseJSON:(NSString *)jsonString
+/*- (NSDictionary *)parseJSON:(NSString *)jsonString
 {
     NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -311,12 +315,12 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         NSLog(@"JSON Error: Expected array!");
         return nil;
     }
-    
+ 
     
     return resultObject;
-}
+}*/
 
-- (void)pullData {
+/*- (void)pullData {
     
     NSDate *currDate = [NSDate date];
     NSDate *currDateAddedbySeven = [NSDate date];
@@ -376,9 +380,9 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         });
         NSLog(@"Done Initial Load!");
     });
+ 
     
-    
-}
+}*/
 
 
 
@@ -391,52 +395,22 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         [searchBar resignFirstResponder];
         
         [self.tableView reloadData];
-        
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        [SVProgressHUD showWithStatus:@"Loading"];
-        
         searchResults = [NSMutableArray arrayWithCapacity:10];
+        //NSURL *url = [self urlWithSearchText:searchBar.text];
+        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=2013-04-01"];
+        NSURL *url = [NSURL URLWithString:urlString];
         
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        dispatch_async(queue, ^{
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation
+                                             JSONRequestOperationWithRequest:request
+                                             success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                 NSLog(@"Success!");
+                                             } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                 NSLog(@"Failure! %@", error);
+                                             }];
         
-        NSURL *url = [self urlWithSearchText:searchBar.text];
-        NSString *jsonString = [self performStoreRequestWithURL:url];
         
-        
-        if (jsonString == nil) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-            [self showNetworkError];
-                });
-            return;
-        }
-        
-        NSDictionary *dictionary = [self parseJSON:jsonString];
-        
-        if (dictionary == nil) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-            [self showNetworkError];
-            });
-            return;
-                
-        }
-        
-        //NSLog(@"Dictionary '%@'", dictionary);
-        [self parseArray:myJSON];
-        [searchResults sortUsingSelector:@selector(compareName:)];
-        
-       
-            
-       
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
-                [SVProgressHUD dismiss];
-                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            });
-         NSLog(@"Done Search!");
-            });
-        
+        [queue addOperation:operation];
     }
 
     
@@ -456,22 +430,6 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
     }
     
-    //[self.tableView reloadData];
-        
-        /*
-         [searchBar resignFirstResponder];
-         searchResults = [NSMutableArray arrayWithCapacity:10];
-         
-         if (![searchBar.text isEqualToString:@"justin bieber"]) {
-         for (int i = 0; i < 3; i++) {
-         SearchResult *searchResult = [[SearchResult alloc] init];
-         searchResult.name = [NSString stringWithFormat:@"Fake Result %d for", i];
-         searchResult.place = searchBar.text;
-         searchResult.time = searchBar.text;
-         [searchResults addObject:searchResult];
-         
-         }
-         }*/
     
         
 }
