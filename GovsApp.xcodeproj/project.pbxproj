@@ -279,6 +279,8 @@
 		DCA6564716E0CF1400209D5D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564516E0CF1100209D5D /* Default@2x.png */; };
 		DCA6564A16E0D41800209D5D /* finder.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564816E0D40900209D5D /* finder.png */; };
 		DCA6564B16E0D41800209D5D /* finder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564916E0D40E00209D5D /* finder@2x.png */; };
+		DCD360C216F8DE1400B4DC01 /* libKal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD360C116F8DE1400B4DC01 /* libKal.a */; };
+		DCD360C416F8DE4F00B4DC01 /* Kal.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DCD360C316F8DE4F00B4DC01 /* Kal.bundle */; };
 		DCFA4A9616E5BAFD009496DD /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A8816E5BAFD009496DD /* bg-addbutton-highlighted.png */; };
 		DCFA4A9716E5BAFD009496DD /* bg-addbutton-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A8916E5BAFD009496DD /* bg-addbutton-highlighted@2x.png */; };
 		DCFA4A9816E5BAFD009496DD /* bg-addbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A8A16E5BAFD009496DD /* bg-addbutton.png */; };
@@ -294,6 +296,16 @@
 		DCFA4AA216E5BAFD009496DD /* icon-star.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A9416E5BAFD009496DD /* icon-star.png */; };
 		DCFA4AA316E5BAFD009496DD /* icon-star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A9516E5BAFD009496DD /* icon-star@2x.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCE304F916F8E03A009249B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCD360BB16F8DCBC00B4DC01 /* Kal.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = Kal;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A508EE0616CEF6B100C43C9C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -619,6 +631,9 @@
 		DCA6564516E0CF1100209D5D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Govs Photos/Default@2x.png"; sourceTree = "<group>"; };
 		DCA6564816E0D40900209D5D /* finder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finder.png; sourceTree = "<group>"; };
 		DCA6564916E0D40E00209D5D /* finder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finder@2x.png"; sourceTree = "<group>"; };
+		DCD360BB16F8DCBC00B4DC01 /* Kal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kal.xcodeproj; path = ../../Kal2/src/Kal.xcodeproj; sourceTree = SOURCE_ROOT; };
+		DCD360C116F8DE1400B4DC01 /* libKal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKal.a; path = "../../Kal2/src/build/Release-iphoneos/libKal.a"; sourceTree = "<group>"; };
+		DCD360C316F8DE4F00B4DC01 /* Kal.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Kal.bundle; path = ../../Kal2/src/Kal.bundle; sourceTree = "<group>"; };
 		DCFA4A8816E5BAFD009496DD /* bg-addbutton-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted.png"; sourceTree = "<group>"; };
 		DCFA4A8916E5BAFD009496DD /* bg-addbutton-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted@2x.png"; sourceTree = "<group>"; };
 		DCFA4A8A16E5BAFD009496DD /* bg-addbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton.png"; sourceTree = "<group>"; };
@@ -640,6 +655,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD360C216F8DE1400B4DC01 /* libKal.a in Frameworks */,
 				DCA6561016DFF36D00209D5D /* AddressBook.framework in Frameworks */,
 				DCA6560E16DFF35F00209D5D /* CoreText.framework in Frameworks */,
 				DCA6560C16DFF34C00209D5D /* Twitter.framework in Frameworks */,
@@ -673,6 +689,9 @@
 		DC0CF9FF16A6076B00F98CDB = {
 			isa = PBXGroup;
 			children = (
+				DCD360C316F8DE4F00B4DC01 /* Kal.bundle */,
+				DCD360C116F8DE1400B4DC01 /* libKal.a */,
+				DCD360BB16F8DCBC00B4DC01 /* Kal.xcodeproj */,
 				DC246C3B16F2D18000B9D62D /* ios-linen.png */,
 				DC246C3716F2CAFA00B9D62D /* navbarL@2x.png */,
 				DC246C3816F2CAFA00B9D62D /* navbarL.png */,
@@ -1153,6 +1172,14 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		DCE304F616F8E03A009249B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCE304FA16F8E03A009249B2 /* libKal.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		DCFA4A8716E5BAFD009496DD /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1213,6 +1240,12 @@
 			mainGroup = DC0CF9FF16A6076B00F98CDB;
 			productRefGroup = DC0CFA0B16A6076B00F98CDB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DCE304F616F8E03A009249B2 /* Products */;
+					ProjectRef = DCD360BB16F8DCBC00B4DC01 /* Kal.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DC0CFA0916A6076B00F98CDB /* GovsApp */,
@@ -1220,11 +1253,22 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		DCE304FA16F8E03A009249B2 /* libKal.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKal.a;
+			remoteRef = DCE304F916F8E03A009249B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		DC0CFA0816A6076B00F98CDB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD360C416F8DE4F00B4DC01 /* Kal.bundle in Resources */,
 				DC0CFA1916A6076B00F98CDB /* InfoPlist.strings in Resources */,
 				DC0CFA2516A6076B00F98CDB /* Default-568h@2x.png in Resources */,
 				DC0CFA2816A6076B00F98CDB /* MainStoryboard.storyboard in Resources */,
@@ -1582,13 +1626,17 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GovsApp/GovsApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "../../Kal2/**";
 				INFOPLIST_FILE = "GovsApp/GovsApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = /Users/Arjun/Desktop/Projects/Kal2/;
 				OTHER_LDFLAGS = (
 					"-lsqlite3.0",
 					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1603,13 +1651,17 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GovsApp/GovsApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "../../Kal2/**";
 				INFOPLIST_FILE = "GovsApp/GovsApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = /Users/Arjun/Desktop/Projects/Kal2/;
 				OTHER_LDFLAGS = (
 					"-lsqlite3.0",
 					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

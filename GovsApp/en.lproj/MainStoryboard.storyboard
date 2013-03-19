@@ -1943,67 +1943,6 @@
             </objects>
             <point key="canvasLocation" x="2967" y="1531"/>
         </scene>
-        <!--Month View Controller - Month-->
-        <scene sceneID="F29-iW-mks">
-            <objects>
-                <tableViewController id="0Dx-2e-iT1" customClass="MonthViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="erC-BC-ppB">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="monthitems" id="Qgd-rX-iB4">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Month" id="Xcv-kE-eBx">
-                        <barButtonItem key="leftBarButtonItem" id="Raa-m7-xwk">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xMd-Hb-mhQ">
-                                <rect key="frame" x="5" y="6" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" backgroundImage="thegovernorsacademy_Shield@2x.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="shieldBtn:" destination="0Dx-2e-iT1" eventType="touchUpInside" id="1nv-nB-aGn"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="aap-9t-Bvs">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JrK-sz-OCL">
-                                <rect key="frame" x="291" y="9" width="24" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" backgroundImage="finder.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="searchBtn:" destination="0Dx-2e-iT1" eventType="touchUpInside" id="dFt-m2-iyZ"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hHL-Ht-vJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3493" y="2772"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="QYb-5n-deN">
             <objects>
@@ -2023,22 +1962,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDp-Xs-r08" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5503" y="4910"/>
-        </scene>
-        <!--Navigation Controller - Month-->
-        <scene sceneID="9sM-HH-o2Z">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="RNW-EE-nQN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Month" image="33-cabinet.png" id="HDl-TK-xtE"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vzT-qg-e6f">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="0Dx-2e-iT1" kind="relationship" relationship="rootViewController" id="ers-iQ-BXK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fTj-EP-3o5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2959" y="2772"/>
         </scene>
         <!--Day Search View Controller - Search-->
         <scene sceneID="CJ9-o1-4TR">
@@ -6345,7 +6268,7 @@ Cookies</string>
                     <connections>
                         <segue destination="67e-MV-y5c" kind="relationship" relationship="viewControllers" id="Ip3-64-tsd"/>
                         <segue destination="jST-dN-pzf" kind="relationship" relationship="viewControllers" id="dap-Sn-ZVk"/>
-                        <segue destination="RNW-EE-nQN" kind="relationship" relationship="viewControllers" id="0MQ-R0-ln0"/>
+                        <segue destination="NqH-zI-3nJ" kind="relationship" relationship="viewControllers" id="Kne-DX-O8a"/>
                         <segue destination="Z58-1S-JJS" kind="relationship" relationship="viewControllers" id="WSw-FT-qLL"/>
                     </connections>
                 </tabBarController>
@@ -6383,6 +6306,40 @@ Cookies</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRu-GD-TH3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5873" y="5882"/>
+        </scene>
+        <!--K - Month-->
+        <scene sceneID="hbJ-vk-uiN">
+            <objects>
+                <navigationController id="NqH-zI-3nJ" customClass="K" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Month" image="33-cabinet.png" id="Txm-OU-BXa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="orU-Y4-xIv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nkH-Dz-EVH" kind="relationship" relationship="rootViewController" id="xKf-2s-ooS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uhO-1N-UHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2967" y="2841"/>
+        </scene>
+        <!--Kal View Controller-->
+        <scene sceneID="FgY-Nv-Xwl">
+            <objects>
+                <viewController id="nkH-Dz-EVH" customClass="KalViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zc3-BW-crw">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="B8D-6N-Xrd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1P-cy-yrw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3371" y="2827"/>
         </scene>
     </scenes>
     <resources>
@@ -6517,6 +6474,9 @@ Cookies</string>
                 <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
             </relationships>
         </class>
+        <class className="KalViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KalViewController.h"/>
+        </class>
         <class className="LunchViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LunchViewController.h"/>
             <relationships>
@@ -6540,13 +6500,6 @@ Cookies</string>
         </class>
         <class className="MenuViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-        </class>
-        <class className="MonthViewController" superclassName="PFQueryTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MonthViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
         </class>
         <class className="MoodleViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodleViewController.h"/>

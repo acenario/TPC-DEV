@@ -56,6 +56,9 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     
     [self pullData];
     
+    KalViewController *calendar = [[KalViewController alloc] init];
+    [self.navigationController pushViewController:calendar animated:YES];
+    
     
 }
 

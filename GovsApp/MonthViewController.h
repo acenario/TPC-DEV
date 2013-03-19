@@ -12,6 +12,7 @@
 #import <Scringo/ScringoAgent.h>
 #import "SearchResult.h"
 #import "SVProgressHUD.h"
+#import "Kal.h"
 
 
 @interface MonthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
