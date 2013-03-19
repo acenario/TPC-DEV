@@ -231,6 +231,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 - (void)showNetworkError
 {
     [SVProgressHUD dismiss];
+    [self.tableView reloadData];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     UIAlertView *alertView = [[UIAlertView alloc]
                               initWithTitle:@"Whoops..."
@@ -239,6 +240,8 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
                               cancelButtonTitle:@"OK"
                               otherButtonTitles:nil];
     [alertView show];
+    
+    
 }
 
 - (SearchResult *)parseName:(NSDictionary *)dictionary
@@ -394,6 +397,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         [SVProgressHUD showWithStatus:@"Loading"];
+        
         
         searchResults = [NSMutableArray arrayWithCapacity:10];
         
