@@ -79,14 +79,15 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    [SVProgressHUD dismiss];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    
+
     [super viewDidDisappear:animated];
+    //[SVProgressHUD dismiss];
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
 }
 
@@ -422,18 +423,18 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     
     [dateFormatter setDateFormat:@"YYYY-MM-dd"]; //HH:mm:ss
     
-    //NSString *today = [dateFormatter stringFromDate:currDate];
+    NSString *today = [dateFormatter stringFromDate:currDate];
     //NSString *nextWeek = [dateFormatter stringFromDate:currDateAddedbySeven];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [SVProgressHUD showWithStatus:@"Loading"];
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeGradient];
     
     searchResults = [NSMutableArray arrayWithCapacity:10];
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
         
-        NSURL *url = [self urlWithSearchText:@"2013-04-16"];
+        NSURL *url = [self urlWithSearchText:today];
         NSString *jsonString = [self performStoreRequestWithURL:url];
         
         

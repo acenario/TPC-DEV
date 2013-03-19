@@ -1,18 +1,25 @@
 //
-//  DetailViewController.m
+//  PopupViewController.m
 //  GovsApp
 //
-//  Created by Arjun Bhatnagar on 3/18/13.
+//  Created by Arjun Bhatnagar on 3/19/13.
 //  Copyright (c) 2013 The Productions Club. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "PopupViewController.h"
 
-@interface DetailViewController ()
+@interface PopupViewController ()
+
+- (IBAction)close:(id)sender;
 
 @end
 
-@implementation DetailViewController
+@implementation PopupViewController
+
+- (IBAction)close:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,11 +40,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)close:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -84,8 +84,6 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    [SVProgressHUD dismiss];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [super viewDidDisappear:animated];
     
 }
@@ -427,7 +425,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     addedDate = nextWeek;
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [SVProgressHUD showWithStatus:@"Loading"];
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeGradient];
     
     searchResults = [NSMutableArray arrayWithCapacity:10];
     

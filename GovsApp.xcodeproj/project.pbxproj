@@ -88,6 +88,12 @@
 		DC31F33A16CBA12F00067E34 /* GovSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */; };
 		DC3891FD16F7B06B003E87F2 /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3891FB16F7B06B003E87F2 /* 06-magnify.png */; };
 		DC3891FE16F7B06B003E87F2 /* 06-magnify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3891FC16F7B06B003E87F2 /* 06-magnify@2x.png */; };
+		DC58C87316F8EF18003555CA /* CloseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DC58C86F16F8EF18003555CA /* CloseButton.png */; };
+		DC58C87416F8EF18003555CA /* CloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC58C87016F8EF18003555CA /* CloseButton@2x.png */; };
+		DC58C87516F8EF18003555CA /* StoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DC58C87116F8EF18003555CA /* StoreButton.png */; };
+		DC58C87616F8EF18003555CA /* StoreButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC58C87216F8EF18003555CA /* StoreButton@2x.png */; };
+		DC58C87A16F8F4F0003555CA /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC58C87816F8F4F0003555CA /* PopupViewController.m */; };
+		DC58C87B16F8F4F0003555CA /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC58C87916F8F4F0003555CA /* PopupViewController.xib */; };
 		DC68C0C216F80DC800A69D4E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68C0C016F80DC800A69D4E /* DetailViewController.m */; };
 		DC6EA72316E6C2AB00E20E4E /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA72016E6C2AB00E20E4E /* AwesomeMenu.m */; };
 		DC6EA72416E6C2AB00E20E4E /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA72216E6C2AB00E20E4E /* AwesomeMenuItem.m */; };
@@ -395,6 +401,13 @@
 		DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GovSignUpViewController.m; sourceTree = "<group>"; };
 		DC3891FB16F7B06B003E87F2 /* 06-magnify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify.png"; sourceTree = "<group>"; };
 		DC3891FC16F7B06B003E87F2 /* 06-magnify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify@2x.png"; sourceTree = "<group>"; };
+		DC58C86F16F8EF18003555CA /* CloseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CloseButton.png; path = ../CloseButton.png; sourceTree = "<group>"; };
+		DC58C87016F8EF18003555CA /* CloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CloseButton@2x.png"; path = "../CloseButton@2x.png"; sourceTree = "<group>"; };
+		DC58C87116F8EF18003555CA /* StoreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StoreButton.png; path = ../StoreButton.png; sourceTree = "<group>"; };
+		DC58C87216F8EF18003555CA /* StoreButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "StoreButton@2x.png"; path = "../StoreButton@2x.png"; sourceTree = "<group>"; };
+		DC58C87716F8F4F0003555CA /* PopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupViewController.h; sourceTree = "<group>"; };
+		DC58C87816F8F4F0003555CA /* PopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
+		DC58C87916F8F4F0003555CA /* PopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
 		DC68C0BF16F80DC800A69D4E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		DC68C0C016F80DC800A69D4E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		DC6EA71F16E6C2AB00E20E4E /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
@@ -884,6 +897,10 @@
 		DCA653C416D62DBD00209D5D /* Sidebar */ = {
 			isa = PBXGroup;
 			children = (
+				DC58C86F16F8EF18003555CA /* CloseButton.png */,
+				DC58C87016F8EF18003555CA /* CloseButton@2x.png */,
+				DC58C87116F8EF18003555CA /* StoreButton.png */,
+				DC58C87216F8EF18003555CA /* StoreButton@2x.png */,
 				DCA653C516D62DBD00209D5D /* book1@2x.png */,
 				DCA653C616D62DBD00209D5D /* book2@2x.png */,
 				DCA653C716D62DBD00209D5D /* events@2x.png */,
@@ -950,6 +967,9 @@
 				DC68C0BF16F80DC800A69D4E /* DetailViewController.h */,
 				DC68C0C016F80DC800A69D4E /* DetailViewController.m */,
 				DC19160216F8C9E100216E53 /* DetailViewController.xib */,
+				DC58C87716F8F4F0003555CA /* PopupViewController.h */,
+				DC58C87816F8F4F0003555CA /* PopupViewController.m */,
+				DC58C87916F8F4F0003555CA /* PopupViewController.xib */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -1438,6 +1458,11 @@
 				DC3891FD16F7B06B003E87F2 /* 06-magnify.png in Resources */,
 				DC3891FE16F7B06B003E87F2 /* 06-magnify@2x.png in Resources */,
 				DC19160316F8C9E100216E53 /* DetailViewController.xib in Resources */,
+				DC58C87316F8EF18003555CA /* CloseButton.png in Resources */,
+				DC58C87416F8EF18003555CA /* CloseButton@2x.png in Resources */,
+				DC58C87516F8EF18003555CA /* StoreButton.png in Resources */,
+				DC58C87616F8EF18003555CA /* StoreButton@2x.png in Resources */,
+				DC58C87B16F8F4F0003555CA /* PopupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1497,6 +1522,7 @@
 				DC9ACDC316F520A700DD7C1F /* SearchResultCell.m in Sources */,
 				DC128E7C16F5A48200FC89A5 /* PDFViewController.m in Sources */,
 				DC68C0C216F80DC800A69D4E /* DetailViewController.m in Sources */,
+				DC58C87A16F8F4F0003555CA /* PopupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

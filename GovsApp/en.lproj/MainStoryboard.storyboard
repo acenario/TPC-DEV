@@ -1900,7 +1900,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7td-My-Y51" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2967" y="2193"/>
+            <point key="canvasLocation" x="2955" y="2115"/>
+        </scene>
+        <!--Month View Controller - Month-->
+        <scene sceneID="pz2-yo-efv">
+            <objects>
+                <viewController id="r4Q-T5-x8o" customClass="MonthViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P7Y-7d-t58">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qZ6-hn-Y8B">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="r4Q-T5-x8o" id="zQK-5c-mge"/>
+                                    <outlet property="delegate" destination="r4Q-T5-x8o" id="Uva-PR-Os7"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nt9-oM-68O">
+                                <items>
+                                    <navigationItem title="This Month" id="ORX-0v-Yj7"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nt9-oM-68O" firstAttribute="trailing" secondItem="P7Y-7d-t58" secondAttribute="trailing" type="default" id="Bue-6e-fSb"/>
+                            <constraint firstItem="qZ6-hn-Y8B" firstAttribute="bottom" secondItem="P7Y-7d-t58" secondAttribute="bottom" type="default" id="E2l-Ww-VQB"/>
+                            <constraint firstItem="qZ6-hn-Y8B" firstAttribute="top" secondItem="nt9-oM-68O" secondAttribute="bottom" type="default" id="LZF-DH-dVa"/>
+                            <constraint firstItem="qZ6-hn-Y8B" firstAttribute="leading" secondItem="P7Y-7d-t58" secondAttribute="leading" type="default" id="Nto-Nu-4Zx"/>
+                            <constraint firstItem="nt9-oM-68O" firstAttribute="top" secondItem="P7Y-7d-t58" secondAttribute="top" type="default" id="XPv-YS-Xcf"/>
+                            <constraint firstItem="nt9-oM-68O" firstAttribute="leading" secondItem="P7Y-7d-t58" secondAttribute="leading" type="default" id="Xt9-ld-ot7"/>
+                            <constraint firstItem="qZ6-hn-Y8B" firstAttribute="trailing" secondItem="P7Y-7d-t58" secondAttribute="trailing" type="default" id="cFt-JD-ld8"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Month" image="33-cabinet.png" id="AQ0-su-jXe"/>
+                    <connections>
+                        <outlet property="tableView" destination="qZ6-hn-Y8B" id="hrq-Sf-30Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMk-X6-8Lf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2955" y="2809"/>
         </scene>
         <!--Day View Controller - Today-->
         <scene sceneID="apG-xm-qR7">
@@ -1941,68 +1982,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BwC-tc-IEz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2967" y="1531"/>
-        </scene>
-        <!--Month View Controller - Month-->
-        <scene sceneID="F29-iW-mks">
-            <objects>
-                <tableViewController id="0Dx-2e-iT1" customClass="MonthViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="erC-BC-ppB">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="monthitems" id="Qgd-rX-iB4">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Month" id="Xcv-kE-eBx">
-                        <barButtonItem key="leftBarButtonItem" id="Raa-m7-xwk">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xMd-Hb-mhQ">
-                                <rect key="frame" x="5" y="6" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" backgroundImage="thegovernorsacademy_Shield@2x.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="shieldBtn:" destination="0Dx-2e-iT1" eventType="touchUpInside" id="1nv-nB-aGn"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="aap-9t-Bvs">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JrK-sz-OCL">
-                                <rect key="frame" x="291" y="9" width="24" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" backgroundImage="finder.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="searchBtn:" destination="0Dx-2e-iT1" eventType="touchUpInside" id="dFt-m2-iyZ"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hHL-Ht-vJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3493" y="2772"/>
+            <point key="canvasLocation" x="2955" y="1439"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="QYb-5n-deN">
@@ -2024,22 +2004,6 @@
             </objects>
             <point key="canvasLocation" x="5503" y="4910"/>
         </scene>
-        <!--Navigation Controller - Month-->
-        <scene sceneID="9sM-HH-o2Z">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="RNW-EE-nQN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Month" image="33-cabinet.png" id="HDl-TK-xtE"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vzT-qg-e6f">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="0Dx-2e-iT1" kind="relationship" relationship="rootViewController" id="ers-iQ-BXK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fTj-EP-3o5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2959" y="2772"/>
-        </scene>
         <!--Day Search View Controller - Search-->
         <scene sceneID="CJ9-o1-4TR">
             <objects>
@@ -2048,11 +2012,11 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qIo-TE-rqY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qIo-TE-rqY">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Z58-1S-JJS" id="3jl-ur-cYJ"/>
-                                    <outlet property="delegate" destination="Z58-1S-JJS" id="dK9-wZ-b5X"/>
+                                    <outlet property="delegate" destination="Z58-1S-JJS" id="4Af-Y9-ZMW"/>
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="Search by day (e.g. 2013-04-01)" translatesAutoresizingMaskIntoConstraints="NO" id="Uig-NQ-ot9">
@@ -2124,7 +2088,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piA-EW-65c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2959" y="3442"/>
+            <point key="canvasLocation" x="2955" y="3482"/>
         </scene>
         <!--Today Meal View Controller - Today 3/1-->
         <scene sceneID="7e7-0b-GAn">
@@ -6345,7 +6309,7 @@ Cookies</string>
                     <connections>
                         <segue destination="67e-MV-y5c" kind="relationship" relationship="viewControllers" id="Ip3-64-tsd"/>
                         <segue destination="jST-dN-pzf" kind="relationship" relationship="viewControllers" id="dap-Sn-ZVk"/>
-                        <segue destination="RNW-EE-nQN" kind="relationship" relationship="viewControllers" id="0MQ-R0-ln0"/>
+                        <segue destination="r4Q-T5-x8o" kind="relationship" relationship="viewControllers" id="zmC-b8-Ccb"/>
                         <segue destination="Z58-1S-JJS" kind="relationship" relationship="viewControllers" id="WSw-FT-qLL"/>
                     </connections>
                 </tabBarController>
@@ -6400,236 +6364,6 @@ Cookies</string>
         <image name="searching@2x.png" width="30" height="30"/>
         <image name="thegovernorsacademy_Shield@2x.png" width="64" height="64"/>
     </resources>
-    <classes>
-        <class className="AcademicViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AcademicViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="AdmissionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdmissionsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="AthleticsCalendarViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AthleticsCalendarViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="AthleticsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AthleticsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="BlogViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlogViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="BuildingInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingInfoViewController.h"/>
-        </class>
-        <class className="ContactInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactInfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewAddress" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="viewAdmissions" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="viewHealth" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="viewMap" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="viewSecurity" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="DaySearchViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DaySearchViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="DayViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DayViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="DepartmentsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DepartmentsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="DirectionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DirectionsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="ECSlidingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
-        </class>
-        <class className="EmailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EmailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="EnglishViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EnglishViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="FineArtsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FineArtsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="ForeignLanguageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ForeignLanguageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="GovLifeViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GovLifeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="HistoryViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="LunchViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LunchViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="MathViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="MenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-        </class>
-        <class className="MonthViewController" superclassName="PFQueryTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MonthViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="MoodleViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodleViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="MyCustomBar" superclassName="UINavigationBar">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyCustomBar.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PDFViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PDFViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="PFQueryTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFQueryTableViewController.h"/>
-        </class>
-        <class className="PhotosViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="ScienceViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScienceViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="ScoreboardViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScoreboardViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="SettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="logOutButtonTapAction:"/>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="TodayMealViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TodayMealViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="UnderRightViewController" superclassName="PFQueryTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UnderRightViewController.h"/>
-        </class>
-        <class className="VeracrossViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VeracrossViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="WeekMealViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeekMealViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-            </relationships>
-        </class>
-        <class className="WeekViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeekViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchBtn:"/>
-                <relationship kind="action" name="shieldBtn:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="initViewController" superclassName="ECSlidingViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/initViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -9,6 +9,7 @@
 #import "DaySearchViewController.h"
 #import "SearchResultCell.h"
 
+
 static NSString *const SearchResultCellIdentifier = @"SearchResultCell";
 static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
@@ -50,6 +51,8 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 {
     [super viewDidLoad];
     self.tableView.rowHeight = 80;
+    
+    NSLog(@"delegate:%@ dataSource:%@", self.tableView.delegate, self.tableView.dataSource);
 	
     UINib *cellNib = [UINib nibWithNibName:@"SearchResultCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:SearchResultCellIdentifier];
@@ -60,24 +63,6 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     
     //[self pullData];
     
-    //Code to calculate date
-    NSDate *currDate = [NSDate date];
-    NSDate *currDateAddedbySeven = [NSDate date];
-    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
-    dayComponent.day = 7;
-    
-    
-    NSCalendar *theCalendar = [NSCalendar currentCalendar];
-    currDateAddedbySeven = [theCalendar dateByAddingComponents:dayComponent toDate:currDate options:0];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    
-    [dateFormatter setDateFormat:@"YYYY-MM-dd"]; //HH:mm:ss
-    
-    //NSString *dateString = [dateFormatter stringFromDate:currDate];
-    //NSString *dateStringAddedSeven = [dateFormatter stringFromDate:currDateAddedbySeven];
-    //NSLog(@"Today: %@",dateString);
-    //NSLog(@"One week from today: %@", dateStringAddedSeven);
     
     //Show keyboard instantly
     //[self.searchBar becomeFirstResponder];
@@ -97,8 +82,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    [SVProgressHUD dismiss];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
 }
 
 - (NSString *)userVisibleDateTimeStringForRFC3339DateTimeString:(NSString *)rfc3339DateTimeString
@@ -277,6 +261,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -424,7 +409,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     //NSString *nextWeek = [dateFormatter stringFromDate:currDateAddedbySeven];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [SVProgressHUD showWithStatus:@"Loading"];
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeGradient];
     
     searchResults = [NSMutableArray arrayWithCapacity:10];
     
@@ -482,7 +467,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         [self.tableView reloadData];
         
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        [SVProgressHUD showWithStatus:@"Loading"];
+        [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeGradient];
         
         
         searchResults = [NSMutableArray arrayWithCapacity:10];
