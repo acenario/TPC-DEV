@@ -91,6 +91,8 @@
 		DC68C0C216F80DC800A69D4E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68C0C016F80DC800A69D4E /* DetailViewController.m */; };
 		DC6EA72316E6C2AB00E20E4E /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA72016E6C2AB00E20E4E /* AwesomeMenu.m */; };
 		DC6EA72416E6C2AB00E20E4E /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA72216E6C2AB00E20E4E /* AwesomeMenuItem.m */; };
+		DC7A9DF416F8D6EB00CF331F /* libKal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7A9DF316F8D6EB00CF331F /* libKal.a */; };
+		DC7A9DF816F8DA7200CF331F /* Kal.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DC7A9DF716F8DA7200CF331F /* Kal.bundle */; };
 		DC7D042416D4A03F005B238F /* UnderRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D042316D4A03F005B238F /* UnderRightViewController.m */; };
 		DC7D045416D6005F005B238F /* thegovernorsacademy_Shield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7D045316D6005F005B238F /* thegovernorsacademy_Shield@2x.png */; };
 		DC7D045716D60213005B238F /* thegovernorsacademy_Heading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7D045616D60213005B238F /* thegovernorsacademy_Heading@2x.png */; };
@@ -401,6 +403,9 @@
 		DC6EA72016E6C2AB00E20E4E /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
 		DC6EA72116E6C2AB00E20E4E /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
 		DC6EA72216E6C2AB00E20E4E /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenuItem.m; sourceTree = "<group>"; };
+		DC7A9DEC16F8D0BC00CF331F /* Kal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kal.xcodeproj; path = ../../Kal2/src/Kal.xcodeproj; sourceTree = SOURCE_ROOT; };
+		DC7A9DF316F8D6EB00CF331F /* libKal.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libKal.a; path = "../../Kal2/src/build/Release-iphoneos/libKal.a"; sourceTree = "<group>"; };
+		DC7A9DF716F8DA7200CF331F /* Kal.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Kal.bundle; path = ../../Kal2/src/Kal.bundle; sourceTree = SOURCE_ROOT; };
 		DC7D042216D4A03F005B238F /* UnderRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderRightViewController.h; sourceTree = "<group>"; };
 		DC7D042316D4A03F005B238F /* UnderRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderRightViewController.m; sourceTree = "<group>"; };
 		DC7D045316D6005F005B238F /* thegovernorsacademy_Shield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thegovernorsacademy_Shield@2x.png"; sourceTree = "<group>"; };
@@ -640,6 +645,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7A9DF416F8D6EB00CF331F /* libKal.a in Frameworks */,
 				DCA6561016DFF36D00209D5D /* AddressBook.framework in Frameworks */,
 				DCA6560E16DFF35F00209D5D /* CoreText.framework in Frameworks */,
 				DCA6560C16DFF34C00209D5D /* Twitter.framework in Frameworks */,
@@ -673,6 +679,9 @@
 		DC0CF9FF16A6076B00F98CDB = {
 			isa = PBXGroup;
 			children = (
+				DC7A9DF316F8D6EB00CF331F /* libKal.a */,
+				DC7A9DF716F8DA7200CF331F /* Kal.bundle */,
+				DC7A9DEC16F8D0BC00CF331F /* Kal.xcodeproj */,
 				DC246C3B16F2D18000B9D62D /* ios-linen.png */,
 				DC246C3716F2CAFA00B9D62D /* navbarL@2x.png */,
 				DC246C3816F2CAFA00B9D62D /* navbarL.png */,
@@ -1438,6 +1447,7 @@
 				DC3891FD16F7B06B003E87F2 /* 06-magnify.png in Resources */,
 				DC3891FE16F7B06B003E87F2 /* 06-magnify@2x.png in Resources */,
 				DC19160316F8C9E100216E53 /* DetailViewController.xib in Resources */,
+				DC7A9DF816F8DA7200CF331F /* Kal.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1587,8 +1597,10 @@
 				OTHER_LDFLAGS = (
 					"-lsqlite3.0",
 					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1608,8 +1620,10 @@
 				OTHER_LDFLAGS = (
 					"-lsqlite3.0",
 					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
