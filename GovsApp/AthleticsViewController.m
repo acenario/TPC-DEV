@@ -9,7 +9,6 @@
 #import "AthleticsViewController.h"
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
-#import "UnderRightViewController.h"
 #import <Scringo/ScringoAgent.h>
 
 @interface AthleticsViewController ()
@@ -42,12 +41,7 @@
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
-    
-    /*if (![self.slidingViewController.underRightViewController isKindOfClass:[UnderRightViewController class]]) {
-        self.slidingViewController.underRightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UnderRight"];
-    }*/
-    
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+
     
 }
 

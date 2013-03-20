@@ -45,8 +45,6 @@
         self.slidingViewController.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
     
-    
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
 
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UnderRightViewController.h"
+
 
 @interface AcademicViewController : UITableViewController
 

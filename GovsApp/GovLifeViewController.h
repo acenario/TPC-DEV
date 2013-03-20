@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SVProgressHUD.h"
 #import <Parse/Parse.h>
-#import "UnderRightViewController.h"
 
 @interface GovLifeViewController : UITableViewController
 
