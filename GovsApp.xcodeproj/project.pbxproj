@@ -88,6 +88,8 @@
 		DC31F33A16CBA12F00067E34 /* GovSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */; };
 		DC3891FD16F7B06B003E87F2 /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3891FB16F7B06B003E87F2 /* 06-magnify.png */; };
 		DC3891FE16F7B06B003E87F2 /* 06-magnify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3891FC16F7B06B003E87F2 /* 06-magnify@2x.png */; };
+		DC5533AB16F912E50068D6E3 /* ComingSoonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5533A916F912E40068D6E3 /* ComingSoonViewController.m */; };
+		DC5533AC16F912E50068D6E3 /* ComingSoonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5533AA16F912E40068D6E3 /* ComingSoonViewController.xib */; };
 		DC58C87316F8EF18003555CA /* CloseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DC58C86F16F8EF18003555CA /* CloseButton.png */; };
 		DC58C87416F8EF18003555CA /* CloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC58C87016F8EF18003555CA /* CloseButton@2x.png */; };
 		DC58C87516F8EF18003555CA /* StoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DC58C87116F8EF18003555CA /* StoreButton.png */; };
@@ -401,6 +403,9 @@
 		DC31F33916CBA12F00067E34 /* GovSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GovSignUpViewController.m; sourceTree = "<group>"; };
 		DC3891FB16F7B06B003E87F2 /* 06-magnify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify.png"; sourceTree = "<group>"; };
 		DC3891FC16F7B06B003E87F2 /* 06-magnify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify@2x.png"; sourceTree = "<group>"; };
+		DC5533A816F912E40068D6E3 /* ComingSoonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComingSoonViewController.h; sourceTree = "<group>"; };
+		DC5533A916F912E40068D6E3 /* ComingSoonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComingSoonViewController.m; sourceTree = "<group>"; };
+		DC5533AA16F912E40068D6E3 /* ComingSoonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComingSoonViewController.xib; sourceTree = "<group>"; };
 		DC58C86F16F8EF18003555CA /* CloseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CloseButton.png; path = ../CloseButton.png; sourceTree = "<group>"; };
 		DC58C87016F8EF18003555CA /* CloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CloseButton@2x.png"; path = "../CloseButton@2x.png"; sourceTree = "<group>"; };
 		DC58C87116F8EF18003555CA /* StoreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StoreButton.png; path = ../StoreButton.png; sourceTree = "<group>"; };
@@ -803,6 +808,9 @@
 				DCA6562116E06E0300209D5D /* BuildingInfoViewController.m */,
 				DC246C3016F2BE8A00B9D62D /* MyCustomBar.h */,
 				DC246C3116F2BE8A00B9D62D /* MyCustomBar.m */,
+				DC5533A816F912E40068D6E3 /* ComingSoonViewController.h */,
+				DC5533A916F912E40068D6E3 /* ComingSoonViewController.m */,
+				DC5533AA16F912E40068D6E3 /* ComingSoonViewController.xib */,
 				DC0CFA1516A6076B00F98CDB /* Supporting Files */,
 				DC7D042A16D4B71F005B238F /* Login */,
 			);
@@ -1463,6 +1471,7 @@
 				DC58C87516F8EF18003555CA /* StoreButton.png in Resources */,
 				DC58C87616F8EF18003555CA /* StoreButton@2x.png in Resources */,
 				DC58C87B16F8F4F0003555CA /* PopupViewController.xib in Resources */,
+				DC5533AC16F912E50068D6E3 /* ComingSoonViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1523,6 +1532,7 @@
 				DC128E7C16F5A48200FC89A5 /* PDFViewController.m in Sources */,
 				DC68C0C216F80DC800A69D4E /* DetailViewController.m in Sources */,
 				DC58C87A16F8F4F0003555CA /* PopupViewController.m in Sources */,
+				DC5533AB16F912E50068D6E3 /* ComingSoonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

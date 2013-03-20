@@ -7,19 +7,25 @@
 //
 
 #import "PopupViewController.h"
+#import <QuartzCore/QuartzCore.h>
+#import "ComingSoonViewController.h"
 
 @interface PopupViewController ()
 
 - (IBAction)close:(id)sender;
 
+@property (nonatomic, weak) IBOutlet UIView *backgroundView;
+
 @end
 
-@implementation PopupViewController
-
-- (IBAction)close:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
+@implementation PopupViewController {
+    ComingSoonViewController *comingSoon;
 }
+
+@synthesize backgroundView = _backgroundView;
+
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +39,74 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.backgroundView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.backgroundView.layer.borderWidth = 3.0f;
+    self.backgroundView.layer.cornerRadius = 10.0f;
     // Do any additional setup after loading the view from its nib.
+}
+
+- (IBAction)close:(id)sender
+{
+    [self dismissFromParentViewController];
+}
+
+- (void)dismissFromParentViewController
+{
+    [self willMoveToParentViewController:nil];
+    [UIView animateWithDuration:0.4 animations:^
+    {
+        CGRect rect = self.view.bounds;
+        rect.origin.y += rect.size.height;
+        self.view.frame = rect;
+        comingSoon.alpha = 0.0f;
+    }
+                     completion:^(BOOL finished)
+    {
+        [self.view removeFromSuperview];
+        [comingSoon removeFromSuperview];
+        [self removeFromParentViewController];
+    }];
+}
+
+- (void)presentInParentViewController:(UIViewController *)parentViewController
+{
+    comingSoon = [[ComingSoonViewController alloc]initWithFrame:parentViewController.view.bounds];
+    [parentViewController.view addSubview:comingSoon];
+    
+    [parentViewController.view addSubview:self.view];
+    [parentViewController addChildViewController:self];
+    CAKeyframeAnimation *bounceAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+    bounceAnimation.duration = 0.4;
+    bounceAnimation.delegate = self;
+    bounceAnimation.values = [NSArray arrayWithObjects:
+                              [NSNumber numberWithFloat:0.7f],
+                              [NSNumber numberWithFloat:1.2f],
+                              [NSNumber numberWithFloat:0.9f],
+                              [NSNumber numberWithFloat:1.0f],
+                              nil];
+    bounceAnimation.keyTimes = [NSArray arrayWithObjects:
+                                [NSNumber numberWithFloat:0.0f],
+                                [NSNumber numberWithFloat:0.334f],
+                                [NSNumber numberWithFloat:0.666f],
+                                [NSNumber numberWithFloat:1.0f],
+                                nil];
+    bounceAnimation.timingFunctions = [NSArray arrayWithObjects:
+                                       [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
+                                       [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
+                                       [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
+                                       nil];
+    [self.view.layer addAnimation:bounceAnimation forKey:@"bounceAnimation"];
+    
+    CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+                                       fadeAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
+                                       fadeAnimation.toValue = [NSNumber numberWithFloat:1.0f];
+                                       fadeAnimation.duration = 0.1;
+                                       [comingSoon.layer addAnimation:fadeAnimation forKey:@"fadeAnimation"];
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    [self didMoveToParentViewController:self.parentViewController];
 }
 
 - (void)didReceiveMemoryWarning
