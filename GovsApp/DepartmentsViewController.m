@@ -84,7 +84,6 @@
 
 
 - (void)viewDidUnload {
-    [self setDsvvd:nil];
     [super viewDidUnload];
 }
 @end

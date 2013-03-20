@@ -19,6 +19,7 @@
     [[UISearchBar appearance] setBackgroundImage:barImage];
     
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar2.png"] forBarMetrics:UIBarMetricsDefault];
+    
     /*[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar2.png"] forBarMetrics:UIBarMetricsLandscapePhone];*/
 }
 

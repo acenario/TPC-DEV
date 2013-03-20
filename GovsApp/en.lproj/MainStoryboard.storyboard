@@ -577,6 +577,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0xv-PV-qXH">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="pDR-iR-SyG">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="dob-Zy-4RT" kind="relationship" relationship="rootViewController" id="GaU-MS-tbn"/>
                     </connections>
@@ -1754,7 +1758,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NI-xe-ek8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3874" y="484"/>
+            <point key="canvasLocation" x="3832" y="459"/>
         </scene>
         <!--English View Controller - English-->
         <scene sceneID="x94-xM-NG2">
