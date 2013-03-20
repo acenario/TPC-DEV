@@ -285,6 +285,8 @@
 		DCA6564716E0CF1400209D5D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564516E0CF1100209D5D /* Default@2x.png */; };
 		DCA6564A16E0D41800209D5D /* finder.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564816E0D40900209D5D /* finder.png */; };
 		DCA6564B16E0D41800209D5D /* finder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564916E0D40E00209D5D /* finder@2x.png */; };
+		DCC5157616FA3CC8008155D5 /* libSSToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC5156D16FA3BBB008155D5 /* libSSToolkit.a */; };
+		DCC5157716FA3CF5008155D5 /* SSToolkitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DCC5157116FA3BBB008155D5 /* SSToolkitResources.bundle */; };
 		DCC86E4F16F942CD0069A94A /* ComingSoonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC86E4D16F942CC0069A94A /* ComingSoonViewController.m */; };
 		DCC86E5016F942CD0069A94A /* ComingSoonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC86E4E16F942CC0069A94A /* ComingSoonViewController.xib */; };
 		DCE9CA4516F96BC800A846B7 /* pushpin.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE9CA4416F96BC800A846B7 /* pushpin.png */; };
@@ -305,6 +307,44 @@
 		DCFA4AA216E5BAFD009496DD /* icon-star.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A9416E5BAFD009496DD /* icon-star.png */; };
 		DCFA4AA316E5BAFD009496DD /* icon-star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A9516E5BAFD009496DD /* icon-star@2x.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCC5156C16FA3BBB008155D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC5156616FA3BBB008155D5 /* SSToolkit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = SSToolkit;
+		};
+		DCC5156E16FA3BBB008155D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC5156616FA3BBB008155D5 /* SSToolkit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B239101D1357DC3E00ADE21B;
+			remoteInfo = SSToolkitTests;
+		};
+		DCC5157016FA3BBB008155D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC5156616FA3BBB008155D5 /* SSToolkit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B2C507EA151BA64400E94614;
+			remoteInfo = SSToolkitResources;
+		};
+		DCC5157216FA3CB5008155D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC5156616FA3BBB008155D5 /* SSToolkit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = SSToolkit;
+		};
+		DCC5157416FA3CB5008155D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC5156616FA3BBB008155D5 /* SSToolkit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B2C507E9151BA64400E94614;
+			remoteInfo = SSToolkitResources;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A508EE0616CEF6B100C43C9C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -637,6 +677,7 @@
 		DCA6564516E0CF1100209D5D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Govs Photos/Default@2x.png"; sourceTree = "<group>"; };
 		DCA6564816E0D40900209D5D /* finder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finder.png; sourceTree = "<group>"; };
 		DCA6564916E0D40E00209D5D /* finder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finder@2x.png"; sourceTree = "<group>"; };
+		DCC5156616FA3BBB008155D5 /* SSToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSToolkit.xcodeproj; path = Vendor/SSToolkit/SSToolkit.xcodeproj; sourceTree = "<group>"; };
 		DCC86E4C16F942CC0069A94A /* ComingSoonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComingSoonViewController.h; path = ../ComingSoonViewController.h; sourceTree = "<group>"; };
 		DCC86E4D16F942CC0069A94A /* ComingSoonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComingSoonViewController.m; path = ../ComingSoonViewController.m; sourceTree = "<group>"; };
 		DCC86E4E16F942CC0069A94A /* ComingSoonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComingSoonViewController.xib; path = ../ComingSoonViewController.xib; sourceTree = "<group>"; };
@@ -664,6 +705,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC5157616FA3CC8008155D5 /* libSSToolkit.a in Frameworks */,
 				DCA6561016DFF36D00209D5D /* AddressBook.framework in Frameworks */,
 				DCA6560E16DFF35F00209D5D /* CoreText.framework in Frameworks */,
 				DCA6560C16DFF34C00209D5D /* Twitter.framework in Frameworks */,
@@ -697,6 +739,7 @@
 		DC0CF9FF16A6076B00F98CDB = {
 			isa = PBXGroup;
 			children = (
+				DCC5156616FA3BBB008155D5 /* SSToolkit.xcodeproj */,
 				DCE9CA4616F9798300A846B7 /* 07-map-marker.png */,
 				DCE9CA4716F9798300A846B7 /* 07-map-marker@2x.png */,
 				DC246C3B16F2D18000B9D62D /* ios-linen.png */,
@@ -1190,6 +1233,16 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		DCC5156716FA3BBB008155D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCC5156D16FA3BBB008155D5 /* libSSToolkit.a */,
+				DCC5156F16FA3BBB008155D5 /* SSToolkitTests.app */,
+				DCC5157116FA3BBB008155D5 /* SSToolkitResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		DCFA4A8716E5BAFD009496DD /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1225,6 +1278,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				DCC5157316FA3CB5008155D5 /* PBXTargetDependency */,
+				DCC5157516FA3CB5008155D5 /* PBXTargetDependency */,
 			);
 			name = GovsApp;
 			productName = GovsApp;
@@ -1250,6 +1305,12 @@
 			mainGroup = DC0CF9FF16A6076B00F98CDB;
 			productRefGroup = DC0CFA0B16A6076B00F98CDB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DCC5156716FA3BBB008155D5 /* Products */;
+					ProjectRef = DCC5156616FA3BBB008155D5 /* SSToolkit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DC0CFA0916A6076B00F98CDB /* GovsApp */,
@@ -1257,12 +1318,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		DCC5156D16FA3BBB008155D5 /* libSSToolkit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSSToolkit.a;
+			remoteRef = DCC5156C16FA3BBB008155D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCC5156F16FA3BBB008155D5 /* SSToolkitTests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SSToolkitTests.app;
+			remoteRef = DCC5156E16FA3BBB008155D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCC5157116FA3BBB008155D5 /* SSToolkitResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SSToolkitResources.bundle;
+			remoteRef = DCC5157016FA3BBB008155D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		DC0CFA0816A6076B00F98CDB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DC0CFA1916A6076B00F98CDB /* InfoPlist.strings in Resources */,
+				DCC5157716FA3CF5008155D5 /* SSToolkitResources.bundle in Resources */,
 				DC0CFA2516A6076B00F98CDB /* Default-568h@2x.png in Resources */,
 				DC0CFA2816A6076B00F98CDB /* MainStoryboard.storyboard in Resources */,
 				DC31F2FC16CB662200067E34 /* menuButton@2x.png in Resources */,
@@ -1550,6 +1636,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DCC5157316FA3CB5008155D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SSToolkit;
+			targetProxy = DCC5157216FA3CB5008155D5 /* PBXContainerItemProxy */;
+		};
+		DCC5157516FA3CB5008155D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SSToolkitResources;
+			targetProxy = DCC5157416FA3CB5008155D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		DC0CFA1716A6076B00F98CDB /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -1630,11 +1729,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GovsApp/GovsApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = Vendor/SSToolkit;
 				INFOPLIST_FILE = "GovsApp/GovsApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-lsqlite3.0",
 					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1651,11 +1752,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GovsApp/GovsApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = Vendor/SSToolkit;
 				INFOPLIST_FILE = "GovsApp/GovsApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-lsqlite3.0",
 					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
