@@ -1629,13 +1629,13 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="[Coming Soon] - My Academics" id="9Uo-oD-Smt">
+                            <tableViewSection headerTitle="My Academics" id="9Uo-oD-Smt">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ZqC-oz-NAu">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ZqC-oz-NAu">
                                         <rect key="frame" x="0.0" y="358" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Class Schedule" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6R-rx-OHU">
@@ -1643,19 +1643,30 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Coming Soon]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m03-b9-blp">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="113" id="1Kg-sG-20I"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.37647058820000001" green="0.1176470588" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="a6R-rx-OHU" firstAttribute="centerY" secondItem="ZqC-oz-NAu" secondAttribute="centerY" type="default" id="MZh-lG-THs"/>
+                                            <constraint firstItem="m03-b9-blp" firstAttribute="centerY" secondItem="ZqC-oz-NAu" secondAttribute="centerY" type="default" id="BDi-1u-oDQ"/>
+                                            <constraint firstItem="m03-b9-blp" firstAttribute="top" secondItem="a6R-rx-OHU" secondAttribute="top" type="default" id="OIx-wI-c0V"/>
+                                            <constraint firstItem="m03-b9-blp" firstAttribute="leading" secondItem="a6R-rx-OHU" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="bjT-4s-tYO"/>
                                             <constraint firstItem="a6R-rx-OHU" firstAttribute="leading" secondItem="ZqC-oz-NAu" secondAttribute="leading" constant="30" id="dcq-qv-yhj"/>
+                                            <constraint firstItem="m03-b9-blp" firstAttribute="bottom" secondItem="a6R-rx-OHU" secondAttribute="bottom" type="default" id="eKB-MR-WN0"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="sWU-2r-a5Y">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="sWU-2r-a5Y">
                                         <rect key="frame" x="0.0" y="403" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Homework" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieN-6h-RbN">
@@ -1663,19 +1674,30 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Coming Soon]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yC-CR-a7U">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="113" id="R6H-ym-Ivi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.37647058820000001" green="0.1176470588" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="1yC-CR-a7U" firstAttribute="bottom" secondItem="ieN-6h-RbN" secondAttribute="bottom" type="default" id="KA1-eM-jfj"/>
+                                            <constraint firstItem="1yC-CR-a7U" firstAttribute="leading" secondItem="ieN-6h-RbN" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Xz0-y0-yI7"/>
+                                            <constraint firstItem="1yC-CR-a7U" firstAttribute="top" secondItem="ieN-6h-RbN" secondAttribute="top" type="default" id="ZYR-pK-cYR"/>
                                             <constraint firstItem="ieN-6h-RbN" firstAttribute="leading" secondItem="sWU-2r-a5Y" secondAttribute="leading" constant="30" id="cMi-ex-ohn"/>
                                             <constraint firstItem="ieN-6h-RbN" firstAttribute="top" secondItem="sWU-2r-a5Y" secondAttribute="top" constant="11" id="enM-Zo-swr"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TNr-PF-2ei">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TNr-PF-2ei">
                                         <rect key="frame" x="0.0" y="447" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Grades" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUa-36-xaC">
@@ -1683,19 +1705,30 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Coming Soon]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXa-gz-CqS">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="113" id="fqw-Yo-LTm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.37647058820000001" green="0.1176470588" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="UXa-gz-CqS" firstAttribute="leading" secondItem="cUa-36-xaC" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5gG-8D-KJ3"/>
+                                            <constraint firstItem="UXa-gz-CqS" firstAttribute="top" secondItem="cUa-36-xaC" secondAttribute="top" type="default" id="ARX-da-53D"/>
                                             <constraint firstItem="cUa-36-xaC" firstAttribute="leading" secondItem="TNr-PF-2ei" secondAttribute="leading" constant="30" id="HFY-Io-VpO"/>
                                             <constraint firstItem="cUa-36-xaC" firstAttribute="top" secondItem="TNr-PF-2ei" secondAttribute="top" constant="11" id="aDj-kZ-TEj"/>
+                                            <constraint firstItem="UXa-gz-CqS" firstAttribute="bottom" secondItem="cUa-36-xaC" secondAttribute="bottom" type="default" id="o1V-vX-kWb"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cmu-P7-hKO">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cmu-P7-hKO">
                                         <rect key="frame" x="0.0" y="491" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GPA Calculator" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZl-FE-lDP">
@@ -1703,12 +1736,23 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Coming Soon]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrH-aX-1oM">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="113" id="xbp-hh-Yro"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.37647058820000001" green="0.1176470588" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="yZl-FE-lDP" firstAttribute="top" secondItem="cmu-P7-hKO" secondAttribute="top" constant="11" id="6J3-uB-Uzj"/>
+                                            <constraint firstItem="lrH-aX-1oM" firstAttribute="bottom" secondItem="yZl-FE-lDP" secondAttribute="bottom" type="default" id="CTR-G9-VPr"/>
                                             <constraint firstItem="yZl-FE-lDP" firstAttribute="leading" secondItem="cmu-P7-hKO" secondAttribute="leading" constant="30" id="HMr-K7-0G2"/>
+                                            <constraint firstItem="lrH-aX-1oM" firstAttribute="leading" secondItem="yZl-FE-lDP" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="UJ0-bI-Cua"/>
+                                            <constraint firstItem="lrH-aX-1oM" firstAttribute="top" secondItem="yZl-FE-lDP" secondAttribute="top" type="default" id="nfP-NH-J3D"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -2285,7 +2329,7 @@
             </objects>
             <point key="canvasLocation" x="2955" y="3482"/>
         </scene>
-        <!--Today Meal View Controller - [Coming Soon] - Today-->
+        <!--Today Meal View Controller - Today-->
         <scene sceneID="7e7-0b-GAn">
             <objects>
                 <tableViewController storyboardIdentifier="TodayMeal" id="Qax-ZN-g8B" customClass="TodayMealViewController" sceneMemberID="viewController">
@@ -2294,7 +2338,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection id="iad-3q-hik">
+                            <tableViewSection footerTitle="[Coming Soon!]" id="iad-3q-hik">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KLi-ni-brt">
                                         <rect key="frame" x="0.0" y="10" width="320" height="45"/>
@@ -2369,7 +2413,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="[Coming Soon] - Today" id="vIi-kT-V1i">
+                    <navigationItem key="navigationItem" title="Today" id="vIi-kT-V1i">
                         <barButtonItem key="leftBarButtonItem" id="Hqu-n2-dx0">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qus-ig-EQ1">
                                 <rect key="frame" x="5" y="6" width="32" height="32"/>
@@ -2798,7 +2842,7 @@ Field House 12:15pm</string>
             </objects>
             <point key="canvasLocation" x="5609" y="3799"/>
         </scene>
-        <!--Week Meal View Controller - [Coming Soon] - Week-->
+        <!--Week Meal View Controller - Week-->
         <scene sceneID="C4b-X9-ntP">
             <objects>
                 <tableViewController storyboardIdentifier="WeekMeal" id="jiR-4T-2jB" customClass="WeekMealViewController" sceneMemberID="viewController">
@@ -2807,7 +2851,7 @@ Field House 12:15pm</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Saturday 3/2" id="Qe1-ig-XRV">
+                            <tableViewSection headerTitle="Saturday" footerTitle="[Coming Soon!]" id="Qe1-ig-XRV">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="foR-F1-EJ6">
                                         <rect key="frame" x="0.0" y="46" width="320" height="45"/>
@@ -2880,10 +2924,10 @@ Field House 12:15pm</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Sunday 3/3" id="Q8A-N5-uO4">
+                            <tableViewSection headerTitle="Sunday" footerTitle="[Coming Soon!]" id="Q8A-N5-uO4">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nL6-l3-YAk">
-                                        <rect key="frame" x="0.0" y="226" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="257" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -2906,7 +2950,7 @@ Field House 12:15pm</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gXJ-29-cto">
-                                        <rect key="frame" x="0.0" y="271" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="302" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -2929,7 +2973,7 @@ Field House 12:15pm</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Vdk-Mo-vuo">
-                                        <rect key="frame" x="0.0" y="315" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="346" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -2953,10 +2997,10 @@ Field House 12:15pm</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Monday 3/4" id="1XF-U3-Cns">
+                            <tableViewSection headerTitle="Monday" footerTitle="[Coming Soon!]" id="1XF-U3-Cns">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Aym-AL-r5O">
-                                        <rect key="frame" x="0.0" y="406" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="468" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -2979,7 +3023,7 @@ Field House 12:15pm</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6JM-5n-UXH">
-                                        <rect key="frame" x="0.0" y="451" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="513" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -3002,7 +3046,7 @@ Field House 12:15pm</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wbQ-8X-Qd0">
-                                        <rect key="frame" x="0.0" y="495" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="557" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -3026,10 +3070,10 @@ Field House 12:15pm</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Tuesday 3/5" id="MjD-rB-ECf">
+                            <tableViewSection headerTitle="Tuesday" footerTitle="[Coming Soon!]" id="MjD-rB-ECf">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pwE-r3-Wec">
-                                        <rect key="frame" x="0.0" y="586" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="679" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -3052,7 +3096,7 @@ Field House 12:15pm</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IlB-Dd-mB1">
-                                        <rect key="frame" x="0.0" y="631" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="724" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -3075,7 +3119,7 @@ Field House 12:15pm</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JMc-8C-ju0">
-                                        <rect key="frame" x="0.0" y="675" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="768" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -3099,10 +3143,10 @@ Field House 12:15pm</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Wednesday 3/6" id="fRf-Lg-u7z">
+                            <tableViewSection headerTitle="Wednesday" footerTitle="[Coming Soon!]" id="fRf-Lg-u7z">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0Qq-Nd-fZz">
-                                        <rect key="frame" x="0.0" y="766" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="890" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -3125,7 +3169,7 @@ Field House 12:15pm</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bwE-3G-AeK">
-                                        <rect key="frame" x="0.0" y="811" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="935" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -3148,7 +3192,7 @@ Field House 12:15pm</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oiG-Xf-YM1">
-                                        <rect key="frame" x="0.0" y="855" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="979" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -3172,10 +3216,10 @@ Field House 12:15pm</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Thursday 3/7" id="OPX-BL-9QN">
+                            <tableViewSection headerTitle="Thursday" footerTitle="[Coming Soon!]" id="OPX-BL-9QN">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Knf-QD-9Ei">
-                                        <rect key="frame" x="0.0" y="946" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="1101" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -3198,7 +3242,7 @@ Field House 12:15pm</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="RiF-N0-JEw">
-                                        <rect key="frame" x="0.0" y="991" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="1146" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -3221,7 +3265,7 @@ Field House 12:15pm</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nx6-dG-qlO">
-                                        <rect key="frame" x="0.0" y="1035" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="1190" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -3245,10 +3289,10 @@ Field House 12:15pm</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Friday 3/8" id="pIB-qg-YHY">
+                            <tableViewSection headerTitle="Friday" footerTitle="[Coming Soon!]" id="pIB-qg-YHY">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="b2C-m3-xJC">
-                                        <rect key="frame" x="0.0" y="1126" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="1312" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -3271,7 +3315,7 @@ Field House 12:15pm</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VQa-Sv-RH2">
-                                        <rect key="frame" x="0.0" y="1171" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="1357" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -3294,7 +3338,7 @@ Field House 12:15pm</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2q4-g7-Apv">
-                                        <rect key="frame" x="0.0" y="1215" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="1401" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -3320,7 +3364,7 @@ Field House 12:15pm</string>
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="[Coming Soon] - Week" id="97W-dO-ffD">
+                    <navigationItem key="navigationItem" title="Week" id="97W-dO-ffD">
                         <barButtonItem key="leftBarButtonItem" id="r4A-5h-iPx">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7QU-j5-qsI">
                                 <rect key="frame" x="5" y="6" width="32" height="32"/>
@@ -6529,7 +6573,7 @@ Cookies</string>
                                     <navigationItem title="Dining Online" id="Htu-FU-GoC">
                                         <barButtonItem key="leftBarButtonItem" id="00y-EY-QBb">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Onh-ma-Mft">
-                                                <rect key="frame" x="5" y="6" width="32" height="33"/>
+                                                <rect key="frame" x="5" y="5" width="32" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" backgroundImage="thegovernorsacademy_Shield@2x.png">
