@@ -10,4 +10,7 @@
 
 @interface PopupViewController : UIViewController
 
+- (void)presentInParentViewController:(UIViewController *)parentViewController;
+- (void)dismissFromParentViewController;
+
 @end

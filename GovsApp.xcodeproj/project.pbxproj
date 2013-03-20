@@ -285,6 +285,8 @@
 		DCA6564716E0CF1400209D5D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564516E0CF1100209D5D /* Default@2x.png */; };
 		DCA6564A16E0D41800209D5D /* finder.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564816E0D40900209D5D /* finder.png */; };
 		DCA6564B16E0D41800209D5D /* finder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564916E0D40E00209D5D /* finder@2x.png */; };
+		DCC86E4F16F942CD0069A94A /* ComingSoonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC86E4D16F942CC0069A94A /* ComingSoonViewController.m */; };
+		DCC86E5016F942CD0069A94A /* ComingSoonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC86E4E16F942CC0069A94A /* ComingSoonViewController.xib */; };
 		DCFA4A9616E5BAFD009496DD /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A8816E5BAFD009496DD /* bg-addbutton-highlighted.png */; };
 		DCFA4A9716E5BAFD009496DD /* bg-addbutton-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A8916E5BAFD009496DD /* bg-addbutton-highlighted@2x.png */; };
 		DCFA4A9816E5BAFD009496DD /* bg-addbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A8A16E5BAFD009496DD /* bg-addbutton.png */; };
@@ -632,6 +634,9 @@
 		DCA6564516E0CF1100209D5D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Govs Photos/Default@2x.png"; sourceTree = "<group>"; };
 		DCA6564816E0D40900209D5D /* finder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finder.png; sourceTree = "<group>"; };
 		DCA6564916E0D40E00209D5D /* finder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finder@2x.png"; sourceTree = "<group>"; };
+		DCC86E4C16F942CC0069A94A /* ComingSoonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComingSoonViewController.h; path = ../ComingSoonViewController.h; sourceTree = "<group>"; };
+		DCC86E4D16F942CC0069A94A /* ComingSoonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComingSoonViewController.m; path = ../ComingSoonViewController.m; sourceTree = "<group>"; };
+		DCC86E4E16F942CC0069A94A /* ComingSoonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComingSoonViewController.xib; path = ../ComingSoonViewController.xib; sourceTree = "<group>"; };
 		DCFA4A8816E5BAFD009496DD /* bg-addbutton-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted.png"; sourceTree = "<group>"; };
 		DCFA4A8916E5BAFD009496DD /* bg-addbutton-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted@2x.png"; sourceTree = "<group>"; };
 		DCFA4A8A16E5BAFD009496DD /* bg-addbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton.png"; sourceTree = "<group>"; };
@@ -782,6 +787,9 @@
 				DC7D042316D4A03F005B238F /* UnderRightViewController.m */,
 				DC31F2E816CB586C00067E34 /* initViewController.h */,
 				DC31F2E916CB586C00067E34 /* initViewController.m */,
+				DCC86E4C16F942CC0069A94A /* ComingSoonViewController.h */,
+				DCC86E4D16F942CC0069A94A /* ComingSoonViewController.m */,
+				DCC86E4E16F942CC0069A94A /* ComingSoonViewController.xib */,
 				DC246C3D16F2DA4100B9D62D /* NewSidebar */,
 				DC31F2EB16CB58A500067E34 /* MenuViewController.h */,
 				DC31F2EC16CB58A500067E34 /* MenuViewController.m */,
@@ -1463,6 +1471,7 @@
 				DC58C87516F8EF18003555CA /* StoreButton.png in Resources */,
 				DC58C87616F8EF18003555CA /* StoreButton@2x.png in Resources */,
 				DC58C87B16F8F4F0003555CA /* PopupViewController.xib in Resources */,
+				DCC86E5016F942CD0069A94A /* ComingSoonViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1523,6 +1532,7 @@
 				DC128E7C16F5A48200FC89A5 /* PDFViewController.m in Sources */,
 				DC68C0C216F80DC800A69D4E /* DetailViewController.m in Sources */,
 				DC58C87A16F8F4F0003555CA /* PopupViewController.m in Sources */,
+				DCC86E4F16F942CD0069A94A /* ComingSoonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
