@@ -25,6 +25,8 @@
 		DC19160316F8C9E100216E53 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC19160216F8C9E100216E53 /* DetailViewController.xib */; };
 		DC1CE00116F1135600F1E06C /* bigpin.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1CDFFF16F1135600F1E06C /* bigpin.png */; };
 		DC1CE00216F1135600F1E06C /* bigpin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1CE00016F1135600F1E06C /* bigpin@2x.png */; };
+		DC20333C16F93B0100DD6857 /* ComingSoonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC20333A16F93B0100DD6857 /* ComingSoonViewController.m */; };
+		DC20333D16F93B0100DD6857 /* ComingSoonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC20333B16F93B0100DD6857 /* ComingSoonViewController.xib */; };
 		DC246C2E16F2BDD600B9D62D /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = DC246C2C16F2BDD500B9D62D /* navbar.png */; };
 		DC246C2F16F2BDD600B9D62D /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC246C2D16F2BDD500B9D62D /* navbar@2x.png */; };
 		DC246C3216F2BE8A00B9D62D /* MyCustomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DC246C3116F2BE8A00B9D62D /* MyCustomBar.m */; };
@@ -328,6 +330,9 @@
 		DC19160216F8C9E100216E53 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		DC1CDFFF16F1135600F1E06C /* bigpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigpin.png; sourceTree = "<group>"; };
 		DC1CE00016F1135600F1E06C /* bigpin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bigpin@2x.png"; sourceTree = "<group>"; };
+		DC20333916F93B0100DD6857 /* ComingSoonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComingSoonViewController.h; sourceTree = "<group>"; };
+		DC20333A16F93B0100DD6857 /* ComingSoonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComingSoonViewController.m; sourceTree = "<group>"; };
+		DC20333B16F93B0100DD6857 /* ComingSoonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComingSoonViewController.xib; sourceTree = "<group>"; };
 		DC246C2C16F2BDD500B9D62D /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navbar.png; path = "Govs Photos/navbar.png"; sourceTree = "<group>"; };
 		DC246C2D16F2BDD500B9D62D /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbar@2x.png"; path = "Govs Photos/navbar@2x.png"; sourceTree = "<group>"; };
 		DC246C3016F2BE8A00B9D62D /* MyCustomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCustomBar.h; path = ../MyCustomBar.h; sourceTree = "<group>"; };
@@ -946,6 +951,9 @@
 		DCA6540B16DC94E500209D5D /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				DC20333916F93B0100DD6857 /* ComingSoonViewController.h */,
+				DC20333A16F93B0100DD6857 /* ComingSoonViewController.m */,
+				DC20333B16F93B0100DD6857 /* ComingSoonViewController.xib */,
 				DC9ACDBD16F520A700DD7C1F /* selectedGradient.png */,
 				DC9ACDBE16F520A700DD7C1F /* TableCellGradient.png */,
 				DC9ACDBF16F520A700DD7C1F /* TableCellGradient2.png */,
@@ -1463,6 +1471,7 @@
 				DC58C87516F8EF18003555CA /* StoreButton.png in Resources */,
 				DC58C87616F8EF18003555CA /* StoreButton@2x.png in Resources */,
 				DC58C87B16F8F4F0003555CA /* PopupViewController.xib in Resources */,
+				DC20333D16F93B0100DD6857 /* ComingSoonViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1523,6 +1532,7 @@
 				DC128E7C16F5A48200FC89A5 /* PDFViewController.m in Sources */,
 				DC68C0C216F80DC800A69D4E /* DetailViewController.m in Sources */,
 				DC58C87A16F8F4F0003555CA /* PopupViewController.m in Sources */,
+				DC20333C16F93B0100DD6857 /* ComingSoonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
