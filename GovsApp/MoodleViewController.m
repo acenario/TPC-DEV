@@ -28,7 +28,7 @@
 - (void)loadWebView {
     //[SVProgressHUD showWithStatus:@"Loading Content" maskType:SVProgressHUDMaskTypeGradient];
     self.viewWeb.delegate = self;
-    NSString *fullURL = @"http://elmstreet.govsacademy.org";
+    NSString *fullURL = @"http://elmstreet.govsacademy.org/moodle";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     
