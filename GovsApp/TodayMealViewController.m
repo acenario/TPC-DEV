@@ -41,13 +41,12 @@
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
-    
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
-    
+        
     PopupViewController *controller = [[PopupViewController alloc] initWithNibName:@"PopupViewController" bundle:nil];
     
     [controller presentInParentViewController:self];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -66,6 +65,7 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
     
 }
+
 
 #pragma mark - Table view delegate
 

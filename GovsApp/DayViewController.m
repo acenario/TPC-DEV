@@ -217,6 +217,8 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     //if (place == (NSString *)@"Frost Library") {
     //if ([place isEqualToString:@"Wilkie Ctr., Remis Lobby"]) {
     if ([[NSString stringWithFormat:@"%@", place] isEqualToString:@"Wilkie Ctr., Remis Lobby"]) {
+        
+        
         return @"Wilkie Performing Arts Center";
         
     } else if ([[NSString stringWithFormat:@"%@", place] isEqualToString:@"Wilkie Ctr., Auditorium"]) {

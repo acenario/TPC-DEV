@@ -10,6 +10,7 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import <Scringo/ScringoAgent.h>
+#import "PopupViewController.h"
 
 @interface WeekMealViewController ()
 
@@ -42,7 +43,9 @@
     }
     
     
-    //[self.view addGestureRecognizer:self.slidingViewController.panGesture];
+    PopupViewController *controller = [[PopupViewController alloc] initWithNibName:@"PopupViewController" bundle:nil];
+    
+    [controller presentInParentViewController:self];
 }
 
 - (void)didReceiveMemoryWarning

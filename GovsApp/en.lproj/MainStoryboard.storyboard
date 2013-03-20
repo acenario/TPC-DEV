@@ -1109,15 +1109,16 @@
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="lED-2Z-xxJ"/>
-                                                        <constraint firstAttribute="width" constant="300" id="nns-3w-vFW"/>
+                                                        <constraint firstAttribute="width" constant="260" id="mi1-kW-AqL"/>
                                                     </constraints>
                                                 </webView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="P1d-l4-YWB" firstAttribute="top" secondItem="05s-t9-zLf" secondAttribute="top" constant="1" id="M43-Iu-dcq"/>
-                                            <constraint firstItem="P1d-l4-YWB" firstAttribute="centerX" secondItem="05s-t9-zLf" secondAttribute="centerX" type="default" id="MhB-W6-cdI"/>
+                                            <constraint firstItem="P1d-l4-YWB" firstAttribute="centerX" secondItem="05s-t9-zLf" secondAttribute="centerX" type="default" id="qpo-Aw-a1E"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -1135,16 +1136,17 @@
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="AsN-fO-szf"/>
-                                                        <constraint firstAttribute="width" constant="300" id="nqm-kq-eXk"/>
+                                                        <constraint firstAttribute="width" constant="260" id="Lq4-63-9uD"/>
                                                     </constraints>
                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                                 </webView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="CXU-I2-ylk" firstAttribute="centerX" secondItem="T4T-1i-OBa" secondAttribute="centerX" type="default" id="AgI-Z8-DuE"/>
                                             <constraint firstItem="CXU-I2-ylk" firstAttribute="top" secondItem="T4T-1i-OBa" secondAttribute="top" constant="1" id="ePa-aw-xvT"/>
+                                            <constraint firstItem="CXU-I2-ylk" firstAttribute="centerX" secondItem="T4T-1i-OBa" secondAttribute="centerX" type="default" id="kn8-tb-PWH"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -1161,7 +1163,7 @@
                                                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdf-fy-XG7">
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="300" id="Xjv-wY-gxV"/>
+                                                        <constraint firstAttribute="width" constant="260" id="W8r-Ap-BUJ"/>
                                                         <constraint firstAttribute="height" constant="43" id="dfz-qq-oEZ"/>
                                                     </constraints>
                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
@@ -1169,9 +1171,10 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="rdf-fy-XG7" firstAttribute="centerX" secondItem="D9r-5F-4hv" secondAttribute="centerX" type="default" id="LYg-qc-qBD"/>
                                             <constraint firstItem="rdf-fy-XG7" firstAttribute="top" secondItem="D9r-5F-4hv" secondAttribute="top" constant="1" id="WuO-hP-LJI"/>
+                                            <constraint firstItem="rdf-fy-XG7" firstAttribute="centerX" secondItem="D9r-5F-4hv" secondAttribute="centerX" type="default" id="cL4-MN-ySr"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -1189,16 +1192,17 @@
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="4ZQ-S0-4VM"/>
-                                                        <constraint firstAttribute="width" constant="300" id="cS3-4t-jx3"/>
+                                                        <constraint firstAttribute="width" constant="260" id="D7z-Fl-nvX"/>
                                                     </constraints>
                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                                 </webView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="z3O-JK-eEZ" firstAttribute="centerX" secondItem="wVa-HH-F4C" secondAttribute="centerX" type="default" id="8iz-xJ-rPM"/>
                                             <constraint firstItem="z3O-JK-eEZ" firstAttribute="top" secondItem="wVa-HH-F4C" secondAttribute="top" constant="1" id="mZL-Yd-tMC"/>
+                                            <constraint firstItem="z3O-JK-eEZ" firstAttribute="centerX" secondItem="wVa-HH-F4C" secondAttribute="centerX" type="default" id="pWl-6q-MSR"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -1215,7 +1219,7 @@
                                                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Bu-X5-jK5">
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="300" id="2l7-sp-ZLU"/>
+                                                        <constraint firstAttribute="width" constant="300" id="P8R-Nk-IR1"/>
                                                         <constraint firstAttribute="height" constant="43" id="o7m-dn-vpz"/>
                                                     </constraints>
                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
@@ -1223,9 +1227,10 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="0Bu-X5-jK5" firstAttribute="centerX" secondItem="bRO-mI-d1j" secondAttribute="centerX" type="default" id="C8m-ZV-Tgl"/>
                                             <constraint firstItem="0Bu-X5-jK5" firstAttribute="top" secondItem="bRO-mI-d1j" secondAttribute="top" constant="1" id="Kz3-aK-sYx"/>
+                                            <constraint firstItem="0Bu-X5-jK5" firstAttribute="centerX" secondItem="bRO-mI-d1j" secondAttribute="centerX" type="default" id="VXY-Dc-sPs"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -1242,17 +1247,18 @@
                                                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3y-jW-3Tq">
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="477" id="Ej4-ZJ-jH7"/>
                                                         <constraint firstAttribute="width" constant="300" id="r3S-GW-0YB"/>
+                                                        <constraint firstAttribute="height" constant="477" id="xUL-ss-Bcu"/>
                                                     </constraints>
                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                                 </webView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="r3y-jW-3Tq" firstAttribute="top" secondItem="p5e-TA-apl" secondAttribute="top" constant="1" id="COG-XO-xpB"/>
                                             <constraint firstItem="r3y-jW-3Tq" firstAttribute="centerX" secondItem="p5e-TA-apl" secondAttribute="centerX" type="default" id="Ldq-WU-UEa"/>
+                                            <constraint firstItem="r3y-jW-3Tq" firstAttribute="top" secondItem="p5e-TA-apl" secondAttribute="top" constant="1" id="Z0j-qf-fNC"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -1878,7 +1884,42 @@
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIC-bg-8LH">
                                 <items>
-                                    <navigationItem title="This Week" id="lGt-6S-o4T"/>
+                                    <navigationItem title="This Week" id="lGt-6S-o4T">
+                                        <barButtonItem key="leftBarButtonItem" id="jdx-Or-wE1">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iai-Ct-HA8">
+                                                <rect key="frame" x="5" y="5" width="32" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="thegovernorsacademy_Shield@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shieldBtn:" destination="jST-dN-pzf" eventType="touchUpInside" id="bBb-kY-bpM"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="Y9n-zQ-cIU">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xgi-5O-lwa">
+                                                <rect key="frame" x="291" y="9" width="24" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="finder.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchBtn:" destination="jST-dN-pzf" eventType="touchUpInside" id="zj7-w7-6Gx"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -1919,7 +1960,42 @@
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nt9-oM-68O">
                                 <items>
-                                    <navigationItem title="This Month" id="ORX-0v-Yj7"/>
+                                    <navigationItem title="This Month" id="ORX-0v-Yj7">
+                                        <barButtonItem key="leftBarButtonItem" id="GeJ-8B-fdi">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ygv-f1-dJD">
+                                                <rect key="frame" x="5" y="6" width="32" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="thegovernorsacademy_Shield@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shieldBtn:" destination="r4Q-T5-x8o" eventType="touchUpInside" id="Rnz-i9-BwL"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="wuz-IY-8Cd">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wZF-8h-zHj">
+                                                <rect key="frame" x="291" y="9" width="24" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="finder.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchBtn:" destination="r4Q-T5-x8o" eventType="touchUpInside" id="hkJ-Rj-4Ej"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -1960,7 +2036,42 @@
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xti-eH-pH5">
                                 <items>
-                                    <navigationItem title="Today" id="7TB-7J-ffc"/>
+                                    <navigationItem title="Today" id="7TB-7J-ffc">
+                                        <barButtonItem key="leftBarButtonItem" id="fKo-A2-uCw">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ycg-1t-yd8">
+                                                <rect key="frame" x="5" y="5" width="32" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="thegovernorsacademy_Shield@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shieldBtn:" destination="67e-MV-y5c" eventType="touchUpInside" id="lCr-5n-Bz3"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="7pY-Ol-mgl">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wmC-3O-g1U">
+                                                <rect key="frame" x="291" y="9" width="24" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="finder.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchBtn:" destination="67e-MV-y5c" eventType="touchUpInside" id="jqt-OP-pt0"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -2090,7 +2201,7 @@
             </objects>
             <point key="canvasLocation" x="2955" y="3482"/>
         </scene>
-        <!--Today Meal View Controller - Today 3/1-->
+        <!--Today Meal View Controller - [Coming Soon] - Today-->
         <scene sceneID="7e7-0b-GAn">
             <objects>
                 <tableViewController storyboardIdentifier="TodayMeal" id="Qax-ZN-g8B" customClass="TodayMealViewController" sceneMemberID="viewController">
@@ -2174,7 +2285,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Today 3/1" id="vIi-kT-V1i">
+                    <navigationItem key="navigationItem" title="[Coming Soon] - Today" id="vIi-kT-V1i">
                         <barButtonItem key="leftBarButtonItem" id="Hqu-n2-dx0">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qus-ig-EQ1">
                                 <rect key="frame" x="5" y="6" width="32" height="32"/>
@@ -2603,7 +2714,7 @@ Field House 12:15pm</string>
             </objects>
             <point key="canvasLocation" x="5609" y="3799"/>
         </scene>
-        <!--Week Meal View Controller - Week-->
+        <!--Week Meal View Controller - [Coming Soon] - Week-->
         <scene sceneID="C4b-X9-ntP">
             <objects>
                 <tableViewController storyboardIdentifier="WeekMeal" id="jiR-4T-2jB" customClass="WeekMealViewController" sceneMemberID="viewController">
@@ -3125,7 +3236,7 @@ Field House 12:15pm</string>
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Week" id="97W-dO-ffD">
+                    <navigationItem key="navigationItem" title="[Coming Soon] - Week" id="97W-dO-ffD">
                         <barButtonItem key="leftBarButtonItem" id="r4A-5h-iPx">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7QU-j5-qsI">
                                 <rect key="frame" x="5" y="6" width="32" height="32"/>
@@ -6329,12 +6440,55 @@ Cookies</string>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </webView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uz9-7x-Pkg">
+                                <items>
+                                    <navigationItem title="Dining Online" id="Htu-FU-GoC">
+                                        <barButtonItem key="leftBarButtonItem" id="00y-EY-QBb">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Onh-ma-Mft">
+                                                <rect key="frame" x="5" y="6" width="32" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="thegovernorsacademy_Shield@2x.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shieldBtn:" destination="vtL-t4-rQR" eventType="touchUpInside" id="cbQ-Lj-K2W"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="fvr-am-5EG">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OJx-Mb-jJB">
+                                                <rect key="frame" x="291" y="9" width="24" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" backgroundImage="finder.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchBtn:" destination="vtL-t4-rQR" eventType="touchDragInside" id="z78-FE-a8j"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Uz9-7x-Pkg" firstAttribute="top" secondItem="3y6-8u-sBV" secondAttribute="top" type="default" id="1rf-X4-ckJ"/>
                             <constraint firstItem="MaY-Zp-fv3" firstAttribute="leading" secondItem="3y6-8u-sBV" secondAttribute="leading" type="default" id="8Ju-cH-1oy"/>
                             <constraint firstItem="MaY-Zp-fv3" firstAttribute="trailing" secondItem="3y6-8u-sBV" secondAttribute="trailing" type="default" id="CTT-Z5-O7n"/>
-                            <constraint firstItem="MaY-Zp-fv3" firstAttribute="top" secondItem="3y6-8u-sBV" secondAttribute="top" type="default" id="adY-yL-Tly"/>
+                            <constraint firstItem="Uz9-7x-Pkg" firstAttribute="trailing" secondItem="3y6-8u-sBV" secondAttribute="trailing" type="default" id="CyA-Of-mT2"/>
+                            <constraint firstItem="Uz9-7x-Pkg" firstAttribute="leading" secondItem="3y6-8u-sBV" secondAttribute="leading" type="default" id="aOe-J8-Vln"/>
+                            <constraint firstItem="MaY-Zp-fv3" firstAttribute="top" secondItem="Uz9-7x-Pkg" secondAttribute="bottom" type="default" id="lXM-Cx-BPh"/>
                             <constraint firstItem="MaY-Zp-fv3" firstAttribute="bottom" secondItem="3y6-8u-sBV" secondAttribute="bottom" type="default" id="zJP-93-RK5"/>
                         </constraints>
                     </view>
@@ -6522,9 +6676,14 @@ Cookies</string>
         <class className="MyCustomBar" superclassName="UINavigationBar">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyCustomBar.h"/>
         </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
         <class className="PDFViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PDFViewController.h"/>
             <relationships>
+                <relationship kind="action" name="searchBtn:"/>
+                <relationship kind="action" name="shieldBtn:"/>
                 <relationship kind="outlet" name="viewWeb" candidateClass="UIWebView"/>
             </relationships>
         </class>

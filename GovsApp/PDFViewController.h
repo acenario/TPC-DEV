@@ -13,4 +13,7 @@
 
 @property (strong, nonatomic) IBOutlet UIWebView *viewWeb;
 
+- (IBAction)searchBtn:(id)sender;
+- (IBAction)shieldBtn:(id)sender;
+
 @end

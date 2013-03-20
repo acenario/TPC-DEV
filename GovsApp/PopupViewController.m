@@ -15,6 +15,7 @@
 - (IBAction)close:(id)sender;
 
 @property (nonatomic, weak) IBOutlet UIView *backgroundView;
+@property (nonatomic, weak) IBOutlet UIButton *closeButton;
 
 @end
 
@@ -23,6 +24,7 @@
 }
 
 @synthesize backgroundView = _backgroundView;
+@synthesize closeButton = _closeButton;
 
 
 
@@ -68,11 +70,30 @@
      }];
 }
 
+-(void)layoutForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    CGRect rect = self.closeButton.frame;
+    if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
+        rect.origin = CGPointMake(28, 87);
+    } else {
+        rect.origin = CGPointMake(108, 7);
+    }
+    self.closeButton.frame = rect;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [self layoutForInterfaceOrientation:toInterfaceOrientation];
+}
+
 - (void)presentInParentViewController:(UIViewController *)parentViewController
 {
     comingSoon = [[ComingSoonViewController alloc]initWithFrame:parentViewController.view.bounds];
     [parentViewController.view addSubview:comingSoon];
     
+    //self.view.frame = parentViewController.view.bounds;
+    [self layoutForInterfaceOrientation:parentViewController.interfaceOrientation];
     [parentViewController.view addSubview:self.view];
     [parentViewController addChildViewController:self];
     CAKeyframeAnimation *bounceAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];

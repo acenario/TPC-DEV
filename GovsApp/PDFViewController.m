@@ -7,6 +7,9 @@
 //
 
 #import "PDFViewController.h"
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
+#import <Scringo/ScringoAgent.h>
 
 @interface PDFViewController ()
 
@@ -84,5 +87,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Sidebar Button Code
+- (IBAction)searchBtn:(id)sender {
+    
+    [ScringoAgent openSidebar];
+    
+}
+
+- (IBAction)shieldBtn:(id)sender {
+    [self.slidingViewController anchorTopViewTo:ECRight];
+    
+}
 
 @end

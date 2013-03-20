@@ -273,7 +273,7 @@
 		DCA6561416E0353B00209D5D /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DCA6561316E0353B00209D5D /* FacebookSDKResources.bundle */; };
 		DCA6561F16E0532300209D5D /* BuildingsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA6561E16E0531C00209D5D /* BuildingsClass.m */; };
 		DCA6562216E06E0B00209D5D /* BuildingInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA6562116E06E0300209D5D /* BuildingInfoViewController.m */; };
-		DCA6562C16E0872600209D5D /* pushpin.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6562B16E0872200209D5D /* pushpin.png */; };
+		DCA6562C16E0872600209D5D /* pushpin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6562B16E0872200209D5D /* pushpin@2x.png */; };
 		DCA6563716E0C9DF00209D5D /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6563516E0C9D500209D5D /* header.png */; };
 		DCA6563816E0C9DF00209D5D /* header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6563616E0C9D900209D5D /* header@2x.png */; };
 		DCA6563F16E0CD4500209D5D /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6563A16E0CD4500209D5D /* Icon-Small.png */; };
@@ -287,6 +287,9 @@
 		DCA6564B16E0D41800209D5D /* finder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564916E0D40E00209D5D /* finder@2x.png */; };
 		DCC86E4F16F942CD0069A94A /* ComingSoonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC86E4D16F942CC0069A94A /* ComingSoonViewController.m */; };
 		DCC86E5016F942CD0069A94A /* ComingSoonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC86E4E16F942CC0069A94A /* ComingSoonViewController.xib */; };
+		DCE9CA4516F96BC800A846B7 /* pushpin.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE9CA4416F96BC800A846B7 /* pushpin.png */; };
+		DCE9CA4816F9798300A846B7 /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE9CA4616F9798300A846B7 /* 07-map-marker.png */; };
+		DCE9CA4916F9798300A846B7 /* 07-map-marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE9CA4716F9798300A846B7 /* 07-map-marker@2x.png */; };
 		DCFA4A9616E5BAFD009496DD /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A8816E5BAFD009496DD /* bg-addbutton-highlighted.png */; };
 		DCFA4A9716E5BAFD009496DD /* bg-addbutton-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A8916E5BAFD009496DD /* bg-addbutton-highlighted@2x.png */; };
 		DCFA4A9816E5BAFD009496DD /* bg-addbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFA4A8A16E5BAFD009496DD /* bg-addbutton.png */; };
@@ -622,7 +625,7 @@
 		DCA6561E16E0531C00209D5D /* BuildingsClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingsClass.m; sourceTree = "<group>"; };
 		DCA6562016E06E0000209D5D /* BuildingInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingInfoViewController.h; sourceTree = "<group>"; };
 		DCA6562116E06E0300209D5D /* BuildingInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingInfoViewController.m; sourceTree = "<group>"; };
-		DCA6562B16E0872200209D5D /* pushpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushpin.png; sourceTree = "<group>"; };
+		DCA6562B16E0872200209D5D /* pushpin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pushpin@2x.png"; sourceTree = "<group>"; };
 		DCA6563516E0C9D500209D5D /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
 		DCA6563616E0C9D900209D5D /* header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header@2x.png"; sourceTree = "<group>"; };
 		DCA6563A16E0CD4500209D5D /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
@@ -637,6 +640,9 @@
 		DCC86E4C16F942CC0069A94A /* ComingSoonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComingSoonViewController.h; path = ../ComingSoonViewController.h; sourceTree = "<group>"; };
 		DCC86E4D16F942CC0069A94A /* ComingSoonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComingSoonViewController.m; path = ../ComingSoonViewController.m; sourceTree = "<group>"; };
 		DCC86E4E16F942CC0069A94A /* ComingSoonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComingSoonViewController.xib; path = ../ComingSoonViewController.xib; sourceTree = "<group>"; };
+		DCE9CA4416F96BC800A846B7 /* pushpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushpin.png; sourceTree = "<group>"; };
+		DCE9CA4616F9798300A846B7 /* 07-map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "07-map-marker.png"; path = "Govs Photos/07-map-marker.png"; sourceTree = "<group>"; };
+		DCE9CA4716F9798300A846B7 /* 07-map-marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "07-map-marker@2x.png"; path = "Govs Photos/07-map-marker@2x.png"; sourceTree = "<group>"; };
 		DCFA4A8816E5BAFD009496DD /* bg-addbutton-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted.png"; sourceTree = "<group>"; };
 		DCFA4A8916E5BAFD009496DD /* bg-addbutton-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted@2x.png"; sourceTree = "<group>"; };
 		DCFA4A8A16E5BAFD009496DD /* bg-addbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton.png"; sourceTree = "<group>"; };
@@ -691,6 +697,8 @@
 		DC0CF9FF16A6076B00F98CDB = {
 			isa = PBXGroup;
 			children = (
+				DCE9CA4616F9798300A846B7 /* 07-map-marker.png */,
+				DCE9CA4716F9798300A846B7 /* 07-map-marker@2x.png */,
 				DC246C3B16F2D18000B9D62D /* ios-linen.png */,
 				DC246C3716F2CAFA00B9D62D /* navbarL@2x.png */,
 				DC246C3816F2CAFA00B9D62D /* navbarL.png */,
@@ -754,7 +762,8 @@
 			children = (
 				DC6EA71E16E6C2AB00E20E4E /* AwesomeMenu */,
 				DCFA4A8716E5BAFD009496DD /* Images */,
-				DCA6562B16E0872200209D5D /* pushpin.png */,
+				DCA6562B16E0872200209D5D /* pushpin@2x.png */,
+				DCE9CA4416F96BC800A846B7 /* pushpin.png */,
 				DCA6552016DFF30900209D5D /* Scringo */,
 				DCA654FB16DF39FF00209D5D /* Meals */,
 				DCA654E316DEBD4C00209D5D /* Govs */,
@@ -1392,7 +1401,7 @@
 				DCA6560616DFF30B00209D5D /* temp_btn.png in Resources */,
 				DCA6560716DFF30B00209D5D /* Scringo.bundle in Resources */,
 				DCA6561416E0353B00209D5D /* FacebookSDKResources.bundle in Resources */,
-				DCA6562C16E0872600209D5D /* pushpin.png in Resources */,
+				DCA6562C16E0872600209D5D /* pushpin@2x.png in Resources */,
 				DCA6563716E0C9DF00209D5D /* header.png in Resources */,
 				DCA6563816E0C9DF00209D5D /* header@2x.png in Resources */,
 				DCA6563F16E0CD4500209D5D /* Icon-Small.png in Resources */,
@@ -1472,6 +1481,9 @@
 				DC58C87616F8EF18003555CA /* StoreButton@2x.png in Resources */,
 				DC58C87B16F8F4F0003555CA /* PopupViewController.xib in Resources */,
 				DCC86E5016F942CD0069A94A /* ComingSoonViewController.xib in Resources */,
+				DCE9CA4516F96BC800A846B7 /* pushpin.png in Resources */,
+				DCE9CA4816F9798300A846B7 /* 07-map-marker.png in Resources */,
+				DCE9CA4916F9798300A846B7 /* 07-map-marker@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -337,7 +337,7 @@
     
     
     //Building.pinColor = MKPinAnnotationColorGreen;
-    Building.image = [UIImage imageNamed:@"pushpin.png"];
+    Building.image = [UIImage imageNamed:@"pushpin"];
     
     Building.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     Building.draggable = NO;
@@ -525,6 +525,7 @@
     ann8.title = @"Dining Hall";
     ann8.subtitle = @"Campus Facility";
     ann8.coordinate = region8.center;
+    
     
     
     [mapView addAnnotation:ann8];
@@ -721,6 +722,7 @@
     ann22.title = @"ICC";
     ann22.subtitle = @"Dorm";
     ann22.coordinate = region22.center;
+    ann2.image = [UIImage imageNamed:@"Icon-Small.png"];
     
     
     [mapView addAnnotation:ann22];
