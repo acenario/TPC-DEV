@@ -13,13 +13,13 @@
 #import "BuildingsClass.h"
 #import "BuildingInfoViewController.h"
 
-
 @interface MapViewController ()
 
 @end
 
 @implementation MapViewController {
     CLLocationManager *locationManager;
+    
     //NSString *ann1;
     
 }
@@ -385,8 +385,7 @@
     mapView.showsUserLocation = YES;
     mapView.delegate = self;
     
-
-    
+        
     //[ScringoAgent setTestMode:YES];
     
     //42.749378,-70.898541 Center of campus
