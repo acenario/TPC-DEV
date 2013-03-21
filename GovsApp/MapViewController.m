@@ -727,7 +727,7 @@
     
     [mapView addAnnotation:ann22];
     
-    [self awesomemenu];
+    //[self awesomemenu];
  
     
     
