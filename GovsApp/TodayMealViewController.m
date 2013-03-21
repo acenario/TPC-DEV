@@ -10,7 +10,6 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import <Scringo/ScringoAgent.h>
-#import "PopupViewController.h"
 
 @interface TodayMealViewController ()
 
@@ -42,9 +41,13 @@
         self.slidingViewController.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
         
-    PopupViewController *controller = [[PopupViewController alloc] initWithNibName:@"PopupViewController" bundle:nil];
-    
-    [controller presentInParentViewController:self];
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"Important!"
+                              message:@"This page is under development, but feel feel free to provide feedback."
+                              delegate:nil
+                              cancelButtonTitle:@"Understood"
+                              otherButtonTitles:nil];
+    [alertView show];
 }
 
 
