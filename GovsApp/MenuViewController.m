@@ -8,7 +8,7 @@
 
 #import "MenuViewController.h"
 #import "ECSlidingViewController.h"
-
+#import "MenuLabels.h"
 
 
 @interface MenuViewController ()
@@ -34,12 +34,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.rowHeight = 63;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UINib *cellNib = [UINib nibWithNibName:@"MenuLabels" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:@"MenuCell"];
+    
     
     self.menu = [NSArray arrayWithObjects:@"Map", @"Academics", @"Athletics", @"Events", @"Govs", @"Dining", @"Settings",  nil];
     self.menuImages = [NSArray arrayWithObjects:@"103-map.png", @"187-pencil.png", @"63-runner.png", @"83-calendar.png", @"140-gradhat.png", @"48-fork-and-knife.png", @"20-gear2.png", nil];
@@ -73,12 +78,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    
+    MenuLabels *cell = (MenuLabels *)[tableView dequeueReusableCellWithIdentifier:@"MenuLabels"];
+    
+    /*static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
+    }*/
     
     // Configure the cell...
     
@@ -87,10 +95,10 @@
     
     UIImage * image = [UIImage imageNamed:[self.menuImages objectAtIndex:indexPath.row]];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.menu objectAtIndex:indexPath.row]];
-    cell.textLabel.textColor = [UIColor whiteColor];
-    
-    cell.imageView.image = image;
+    //cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.menu objectAtIndex:indexPath.row]];
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@", [self.menu objectAtIndex:indexPath.row]];
+    //cell.textLabel.textColor = [UIColor whiteColor];
+    cell.artworkImageView.image = image;
 
     
     NSInteger red   = 178;

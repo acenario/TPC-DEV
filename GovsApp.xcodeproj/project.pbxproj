@@ -22,6 +22,8 @@
 		DC128E7C16F5A48200FC89A5 /* PDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC128E7B16F5A48200FC89A5 /* PDFViewController.m */; };
 		DC128E7F16F5A62E00FC89A5 /* 113-navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = DC128E7D16F5A62E00FC89A5 /* 113-navigation.png */; };
 		DC128E8016F5A62E00FC89A5 /* 113-navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC128E7E16F5A62E00FC89A5 /* 113-navigation@2x.png */; };
+		DC174E3216FB75A500E20C35 /* MenuLabels.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC174E3116FB75A500E20C35 /* MenuLabels.xib */; };
+		DC174E3516FB792200E20C35 /* MenuLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = DC174E3416FB792100E20C35 /* MenuLabels.m */; };
 		DC19160316F8C9E100216E53 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC19160216F8C9E100216E53 /* DetailViewController.xib */; };
 		DC1CE00116F1135600F1E06C /* bigpin.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1CDFFF16F1135600F1E06C /* bigpin.png */; };
 		DC1CE00216F1135600F1E06C /* bigpin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1CE00016F1135600F1E06C /* bigpin@2x.png */; };
@@ -330,6 +332,9 @@
 		DC128E7B16F5A48200FC89A5 /* PDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFViewController.m; sourceTree = "<group>"; };
 		DC128E7D16F5A62E00FC89A5 /* 113-navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "113-navigation.png"; sourceTree = "<group>"; };
 		DC128E7E16F5A62E00FC89A5 /* 113-navigation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "113-navigation@2x.png"; sourceTree = "<group>"; };
+		DC174E3116FB75A500E20C35 /* MenuLabels.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuLabels.xib; sourceTree = "<group>"; };
+		DC174E3316FB792100E20C35 /* MenuLabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLabels.h; sourceTree = "<group>"; };
+		DC174E3416FB792100E20C35 /* MenuLabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLabels.m; sourceTree = "<group>"; };
 		DC19160216F8C9E100216E53 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		DC1CDFFF16F1135600F1E06C /* bigpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigpin.png; sourceTree = "<group>"; };
 		DC1CE00016F1135600F1E06C /* bigpin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bigpin@2x.png"; sourceTree = "<group>"; };
@@ -804,6 +809,9 @@
 				DC246C3D16F2DA4100B9D62D /* NewSidebar */,
 				DC31F2EB16CB58A500067E34 /* MenuViewController.h */,
 				DC31F2EC16CB58A500067E34 /* MenuViewController.m */,
+				DC174E3116FB75A500E20C35 /* MenuLabels.xib */,
+				DC174E3316FB792100E20C35 /* MenuLabels.h */,
+				DC174E3416FB792100E20C35 /* MenuLabels.m */,
 				DC31F2EE16CB58D700067E34 /* AcademicViewController.h */,
 				DC31F2EF16CB58D700067E34 /* AcademicViewController.m */,
 				DC31F2F116CB58EC00067E34 /* AthleticsViewController.h */,
@@ -1486,6 +1494,7 @@
 				DCE9CA4516F96BC800A846B7 /* pushpin.png in Resources */,
 				DCE9CA4816F9798300A846B7 /* 07-map-marker.png in Resources */,
 				DCE9CA4916F9798300A846B7 /* 07-map-marker@2x.png in Resources */,
+				DC174E3216FB75A500E20C35 /* MenuLabels.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1547,6 +1556,7 @@
 				DC68C0C216F80DC800A69D4E /* DetailViewController.m in Sources */,
 				DC58C87A16F8F4F0003555CA /* PopupViewController.m in Sources */,
 				DCC86E4F16F942CD0069A94A /* ComingSoonViewController.m in Sources */,
+				DC174E3516FB792200E20C35 /* MenuLabels.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
