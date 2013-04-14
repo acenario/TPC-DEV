@@ -440,7 +440,6 @@
 		DC9ACDBF16F520A700DD7C1F /* TableCellGradient2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableCellGradient2.png; sourceTree = "<group>"; };
 		DC9ACDC016F520A700DD7C1F /* TableCellGradient3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableCellGradient3.png; sourceTree = "<group>"; };
 		DC9ACDC916F5210500DD7C1F /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
-		DC9B829C16FA55E00079C484 /* GovsApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GovsApp.entitlements; sourceTree = "<group>"; };
 		DCA653C516D62DBD00209D5D /* book1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book1@2x.png"; sourceTree = "<group>"; };
 		DCA653C616D62DBD00209D5D /* book2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book2@2x.png"; sourceTree = "<group>"; };
 		DCA653C716D62DBD00209D5D /* events@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "events@2x.png"; sourceTree = "<group>"; };
@@ -761,7 +760,6 @@
 		DC0CFA1416A6076B00F98CDB /* GovsApp */ = {
 			isa = PBXGroup;
 			children = (
-				DC9B829C16FA55E00079C484 /* GovsApp.entitlements */,
 				DC6EA71E16E6C2AB00E20E4E /* AwesomeMenu */,
 				DCFA4A8716E5BAFD009496DD /* Images */,
 				DCA6562B16E0872200209D5D /* pushpin@2x.png */,
@@ -1641,7 +1639,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "<Multiple values>";
+				PROVISIONING_PROFILE = "5C731539-A058-4F4E-8569-C127BF4B1337";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5C731539-A058-4F4E-8569-C127BF4B1337";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1666,7 +1664,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "<Multiple values>";
+				PROVISIONING_PROFILE = "5C731539-A058-4F4E-8569-C127BF4B1337";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5C731539-A058-4F4E-8569-C127BF4B1337";
 				WRAPPER_EXTENSION = app;
 			};

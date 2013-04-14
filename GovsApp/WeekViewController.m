@@ -283,14 +283,14 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([searchResults count] == 0) {
         return nil;
     } else {
         return indexPath;
     }
-}
+}*/
 
 #pragma mark - Parsing Data info
 

@@ -239,6 +239,8 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         return [tableView dequeueReusableCellWithIdentifier:
                 NothingFoundCellIdentifier];
         
+        
+        
     } else {
         
         SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:SearchResultCellIdentifier];
@@ -286,14 +288,14 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([searchResults count] == 0) {
         return nil;
     } else {
         return indexPath;
     }
-}
+}*/
 
 #pragma mark - Parsing Data info
 
@@ -391,6 +393,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     NSError *error;
     
     id resultObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    
     if (resultObject == nil) {
         NSLog(@"JSON Error: %@", error);
         return nil;

@@ -264,14 +264,14 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([searchResults count] == 0) {
         return nil;
     } else {
         return indexPath;
     }
-}
+}*/
 
 
 
