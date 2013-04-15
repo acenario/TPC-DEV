@@ -7,8 +7,8 @@
 //
 
 #import "GovLifeViewController.h"
-#import "ECSlidingViewController.h"
 #import "MenuViewController.h"
+#import "ECSlidingViewController.h"
 #import <Scringo/ScringoAgent.h>
 
 @interface GovLifeViewController ()
@@ -54,13 +54,12 @@
 
 #pragma mark - Sidebar Button Code
 - (IBAction)searchBtn:(id)sender {
-    [self.slidingViewController anchorTopViewTo:ECLeft];
+    [ScringoAgent openSidebar];
     
 }
 
 - (IBAction)shieldBtn:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECRight];
-    
     
 }
 
