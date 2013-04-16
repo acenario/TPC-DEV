@@ -285,6 +285,7 @@
 		DCA6564716E0CF1400209D5D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564516E0CF1100209D5D /* Default@2x.png */; };
 		DCA6564A16E0D41800209D5D /* finder.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564816E0D40900209D5D /* finder.png */; };
 		DCA6564B16E0D41800209D5D /* finder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA6564916E0D40E00209D5D /* finder@2x.png */; };
+		DCA8C832171D116500B7CF2B /* VCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA8C831171D116500B7CF2B /* VCLoginViewController.m */; };
 		DCC86E4F16F942CD0069A94A /* ComingSoonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC86E4D16F942CC0069A94A /* ComingSoonViewController.m */; };
 		DCC86E5016F942CD0069A94A /* ComingSoonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC86E4E16F942CC0069A94A /* ComingSoonViewController.xib */; };
 		DCE9CA4516F96BC800A846B7 /* pushpin.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE9CA4416F96BC800A846B7 /* pushpin.png */; };
@@ -637,6 +638,8 @@
 		DCA6564516E0CF1100209D5D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Govs Photos/Default@2x.png"; sourceTree = "<group>"; };
 		DCA6564816E0D40900209D5D /* finder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finder.png; sourceTree = "<group>"; };
 		DCA6564916E0D40E00209D5D /* finder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finder@2x.png"; sourceTree = "<group>"; };
+		DCA8C830171D116500B7CF2B /* VCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCLoginViewController.h; sourceTree = "<group>"; };
+		DCA8C831171D116500B7CF2B /* VCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCLoginViewController.m; sourceTree = "<group>"; };
 		DCC86E4C16F942CC0069A94A /* ComingSoonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComingSoonViewController.h; path = ../ComingSoonViewController.h; sourceTree = "<group>"; };
 		DCC86E4D16F942CC0069A94A /* ComingSoonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComingSoonViewController.m; path = ../ComingSoonViewController.m; sourceTree = "<group>"; };
 		DCC86E4E16F942CC0069A94A /* ComingSoonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComingSoonViewController.xib; path = ../ComingSoonViewController.xib; sourceTree = "<group>"; };
@@ -789,6 +792,7 @@
 				DC0CFA1D16A6076B00F98CDB /* AppDelegate.h */,
 				DC0CFA1E16A6076B00F98CDB /* AppDelegate.m */,
 				DC0CFA2616A6076B00F98CDB /* MainStoryboard.storyboard */,
+				DCA8C82F171D114000B7CF2B /* VCData */,
 				DCA6563916E0CD4100209D5D /* Icons */,
 				DC0CFA2916A6076B00F98CDB /* ViewController.h */,
 				DC0CFA2A16A6076B00F98CDB /* ViewController.m */,
@@ -1190,6 +1194,15 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		DCA8C82F171D114000B7CF2B /* VCData */ = {
+			isa = PBXGroup;
+			children = (
+				DCA8C830171D116500B7CF2B /* VCLoginViewController.h */,
+				DCA8C831171D116500B7CF2B /* VCLoginViewController.m */,
+			);
+			name = VCData;
+			sourceTree = "<group>";
+		};
 		DCFA4A8716E5BAFD009496DD /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1545,6 +1558,7 @@
 				DC68C0C216F80DC800A69D4E /* DetailViewController.m in Sources */,
 				DC58C87A16F8F4F0003555CA /* PopupViewController.m in Sources */,
 				DCC86E4F16F942CD0069A94A /* ComingSoonViewController.m in Sources */,
+				DCA8C832171D116500B7CF2B /* VCLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
