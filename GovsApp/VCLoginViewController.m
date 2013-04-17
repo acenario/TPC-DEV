@@ -30,6 +30,20 @@
     return self;
 }
 
+- (NSString *)documentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
+}
+
+- (NSString *)dataFilePath
+{
+    return [[self documentsDirectory] stringByAppendingPathComponent:
+            @"Milestone.plist"];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -121,6 +135,12 @@
         currentString=nil;
         return;
     }
+    /*if([elementName isEqualToString:@"token"])
+    {
+        [elementsArray addObject:currentString];
+        currentString=nil;
+        return;
+    }*/
     
     currentString =nil;
 }
@@ -129,6 +149,21 @@
 - (void)parserDidEndDocument:(NSXMLParser *)parser
 {
     NSLog(@"Content of Elements Array: %@",elementsArray);
+    NSString *success = [elementsArray objectAtIndex:0];
+    
+    if ([success isEqualToString:@"fail"]) {
+        
+        NSLog(@"Failed!!!");
+    }
+    
+    if ([success isEqualToString:@"success"]) {
+        
+        NSLog(@"Success!!!");
+        [self dismissModalViewControllerAnimated:YES];
+    }
+    
+    [elementsArray writeToFile:[self dataFilePath] atomically:YES];
+    
     elementsArray=nil;
     
 }
