@@ -16,6 +16,8 @@
 
 
 - (IBAction)login:(id)sender;
+- (IBAction)exit:(id)sender;
+
 
 
 @end

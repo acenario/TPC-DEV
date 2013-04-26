@@ -411,6 +411,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeGradient];
     
+    
     searchResults = [NSMutableArray arrayWithCapacity:10];
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);

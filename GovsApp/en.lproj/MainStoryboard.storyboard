@@ -723,7 +723,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYl-i0-D5Q">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Login to Govs">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -734,28 +734,50 @@
                                     <segue destination="a9B-YP-hVU" kind="modal" id="cSp-85-dJp"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ul-Mm-Tu8">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="uWk-AW-QyN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOut:" destination="dnP-Nf-msU" eventType="touchUpInside" id="GKG-UK-YUI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uBh-v5-SiH" firstAttribute="trailing" secondItem="Grp-nh-Lg1" secondAttribute="trailing" type="default" id="5RD-Rz-Og1"/>
                             <constraint firstItem="DxK-Jp-SJF" firstAttribute="trailing" secondItem="Grp-nh-Lg1" secondAttribute="trailing" type="default" id="9hc-wI-eMx"/>
-                            <constraint firstItem="AYl-i0-D5Q" firstAttribute="centerX" secondItem="ZGC-0S-uqU" secondAttribute="centerX" type="default" id="A2n-ME-fwQ"/>
                             <constraint firstItem="ZGC-0S-uqU" firstAttribute="top" secondItem="Grp-nh-Lg1" secondAttribute="top" constant="92" id="B54-rZ-61h"/>
+                            <constraint firstItem="uBh-v5-SiH" firstAttribute="top" secondItem="dQ2-qH-RXx" secondAttribute="top" type="default" id="CuE-rp-1WV"/>
+                            <constraint firstItem="1ul-Mm-Tu8" firstAttribute="baseline" secondItem="AYl-i0-D5Q" secondAttribute="baseline" type="default" id="JS6-PD-3TP"/>
                             <constraint firstItem="uBh-v5-SiH" firstAttribute="leading" secondItem="Grp-nh-Lg1" secondAttribute="leading" type="default" id="LPM-f0-lwt"/>
                             <constraint firstItem="dQ2-qH-RXx" firstAttribute="leading" secondItem="Grp-nh-Lg1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="LUQ-Uj-jtf"/>
-                            <constraint firstItem="uBh-v5-SiH" firstAttribute="top" secondItem="DxK-Jp-SJF" secondAttribute="bottom" type="default" id="Nlr-Yd-nm9"/>
-                            <constraint firstItem="AYl-i0-D5Q" firstAttribute="top" secondItem="Grp-nh-Lg1" secondAttribute="top" constant="186" id="QHX-tR-zoR"/>
                             <constraint firstAttribute="trailing" secondItem="dQ2-qH-RXx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="RJ7-jo-8Gn"/>
+                            <constraint firstItem="1ul-Mm-Tu8" firstAttribute="leading" secondItem="AYl-i0-D5Q" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="UUm-7m-qPZ"/>
+                            <constraint firstItem="AYl-i0-D5Q" firstAttribute="centerX" secondItem="B88-k0-T24" secondAttribute="centerX" type="default" id="Vab-xl-Sjp"/>
                             <constraint firstAttribute="trailing" secondItem="ZGC-0S-uqU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bXB-Lg-HIi"/>
                             <constraint firstItem="dQ2-qH-RXx" firstAttribute="top" secondItem="DxK-Jp-SJF" secondAttribute="bottom" type="default" id="dYB-ly-KXT"/>
                             <constraint firstAttribute="bottom" secondItem="B88-k0-T24" secondAttribute="bottom" constant="81" id="dcl-a2-TDc"/>
+                            <constraint firstAttribute="trailing" secondItem="1ul-Mm-Tu8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fBB-Pf-thb"/>
                             <constraint firstItem="DxK-Jp-SJF" firstAttribute="leading" secondItem="Grp-nh-Lg1" secondAttribute="leading" type="default" id="iT4-7S-x93"/>
-                            <constraint firstItem="B88-k0-T24" firstAttribute="leading" secondItem="Grp-nh-Lg1" secondAttribute="leading" constant="89" id="sM2-Qm-pHf"/>
+                            <constraint firstItem="AYl-i0-D5Q" firstAttribute="top" secondItem="Grp-nh-Lg1" secondAttribute="top" constant="187" id="mrj-g5-3Oe"/>
                             <constraint firstItem="uBh-v5-SiH" firstAttribute="bottom" secondItem="Grp-nh-Lg1" secondAttribute="bottom" type="default" id="u7t-gl-5MT"/>
                             <constraint firstItem="DxK-Jp-SJF" firstAttribute="top" secondItem="Grp-nh-Lg1" secondAttribute="top" type="default" id="wBJ-ba-f7b"/>
                             <constraint firstItem="ZGC-0S-uqU" firstAttribute="leading" secondItem="Grp-nh-Lg1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wBV-Qv-rqV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="AYl-i0-D5Q" id="dG8-ON-7cG"/>
+                        <outlet property="logoutButton" destination="1ul-Mm-Tu8" id="OPO-KY-Cto"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uhx-1G-d8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1418,16 +1440,34 @@
                                     <action selector="login:" destination="a9B-YP-hVU" eventType="touchUpInside" id="jaO-rO-qWa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEN-e2-l5K">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="9zS-6G-tBI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="exit:" destination="a9B-YP-hVU" eventType="touchUpInside" id="qb9-SN-Jtw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ChB-t6-ej4" firstAttribute="trailing" secondItem="jzZ-DW-pka" secondAttribute="trailing" type="default" id="4wo-GA-V4B"/>
+                            <constraint firstItem="QEN-e2-l5K" firstAttribute="leading" secondItem="tlm-XV-CgK" secondAttribute="leading" constant="55" id="D5k-vk-Bkx"/>
                             <constraint firstItem="jzZ-DW-pka" firstAttribute="baseline" secondItem="QcQ-d3-9XO" secondAttribute="baseline" type="default" id="Jyh-0T-EaX"/>
                             <constraint firstItem="y5E-nT-Knl" firstAttribute="top" secondItem="tlm-XV-CgK" secondAttribute="top" constant="53" id="OUQ-ug-Kr6"/>
                             <constraint firstItem="QcQ-d3-9XO" firstAttribute="leading" secondItem="y5E-nT-Knl" secondAttribute="leading" type="default" id="PrV-9H-gcN"/>
                             <constraint firstItem="jYu-U9-EjU" firstAttribute="leading" secondItem="tlm-XV-CgK" secondAttribute="leading" constant="139" id="Pyd-PT-m8t"/>
-                            <constraint firstItem="ChB-t6-ej4" firstAttribute="top" secondItem="tlm-XV-CgK" secondAttribute="top" constant="185" id="aLC-Va-aQy"/>
                             <constraint firstItem="jzZ-DW-pka" firstAttribute="top" secondItem="tlm-XV-CgK" secondAttribute="top" constant="113" id="cFt-a6-ewf"/>
+                            <constraint firstItem="QEN-e2-l5K" firstAttribute="baseline" secondItem="ChB-t6-ej4" secondAttribute="baseline" type="default" id="evD-rf-LWA"/>
+                            <constraint firstItem="QEN-e2-l5K" firstAttribute="top" secondItem="tlm-XV-CgK" secondAttribute="top" constant="185" id="i77-5Z-0gP"/>
                             <constraint firstItem="jzZ-DW-pka" firstAttribute="leading" secondItem="jYu-U9-EjU" secondAttribute="leading" type="default" id="jVU-gR-Nmg"/>
                             <constraint firstItem="jYu-U9-EjU" firstAttribute="top" secondItem="tlm-XV-CgK" secondAttribute="top" constant="49" id="r3z-wY-kQf"/>
                             <constraint firstItem="jzZ-DW-pka" firstAttribute="trailing" secondItem="jYu-U9-EjU" secondAttribute="trailing" type="default" id="w1P-Ul-dCr"/>
@@ -6880,9 +6920,12 @@ Cookies</string>
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="logOut:"/>
                 <relationship kind="action" name="logOutButtonTapAction:"/>
                 <relationship kind="action" name="searchBtn:"/>
                 <relationship kind="action" name="shieldBtn:"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="logoutButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="TodayMealViewController" superclassName="UITableViewController">
@@ -6898,6 +6941,7 @@ Cookies</string>
         <class className="VCLoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VCLoginViewController.h"/>
             <relationships>
+                <relationship kind="action" name="exit:"/>
                 <relationship kind="action" name="login:"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>

@@ -15,10 +15,11 @@
 
 
 @property (strong, nonatomic) UIButton *govBtn;
+@property (strong, nonatomic) IBOutlet UIButton *loginButton;
+@property (strong, nonatomic) IBOutlet UIButton *logoutButton;
 
--(IBAction)logOutButtonTapAction:(id)sender;
 
-
+- (IBAction)logOut:(id)sender;
 - (IBAction)searchBtn:(id)sender;
 - (IBAction)shieldBtn:(id)sender;
 

@@ -15,6 +15,7 @@
 @implementation VCLoginViewController {
     NSMutableString *currentString;
     NSMutableArray *elementsArray;
+    NSMutableArray *contentArray;
     
 }
 
@@ -47,7 +48,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    contentArray = [NSArray arrayWithContentsOfFile:[self dataFilePath]];
+    
+    NSString *success = [contentArray objectAtIndex:0];
+    NSString *username = [contentArray objectAtIndex:1];
+    
+    if ([success isEqualToString:@"success"]) {
+        usernameField.text = username;
+        
+    } 
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,6 +71,8 @@
 
 - (IBAction)login:(id)sender {
 
+   
+    
     NSString *enteredUsername = usernameField.text;
     NSString *enteredPassword = passwordField.text;
     
@@ -76,6 +89,8 @@
     
     NSString *resultString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     
+    
+    
     if (resultString == nil) {
         NSLog(@"Download Error: %@", error);
         
@@ -88,14 +103,23 @@
     [xmlParser setDelegate:self]; // Set delegate for NSXMLParser
     [xmlParser parse];
     
+    
     //NSLog(@"Data: %@", resultString);
     
     
     
 }
 
+- (IBAction)exit:(id)sender {
+
+    [self dismissModalViewControllerAnimated:YES];
+
+}
+
 - (void)parserDidStartDocument:(NSXMLParser *)parser
 {
+    [SVProgressHUD showWithStatus:@"Connecting to Veracross..."];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     elementsArray = [[NSMutableArray alloc] init];
     
 }
@@ -148,30 +172,43 @@
 //Parsing has ended
 - (void)parserDidEndDocument:(NSXMLParser *)parser
 {
+    
+    
     NSLog(@"Content of Elements Array: %@",elementsArray);
     NSString *success = [elementsArray objectAtIndex:0];
     
     if ([success isEqualToString:@"fail"]) {
         
         NSLog(@"Failed!!!");
+        [SVProgressHUD showErrorWithStatus:@"Incorrect Login!"];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+
     }
     
     if ([success isEqualToString:@"success"]) {
         
+        [elementsArray writeToFile:[self dataFilePath] atomically:YES];
         NSLog(@"Success!!!");
+        [SVProgressHUD dismiss];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         [self dismissModalViewControllerAnimated:YES];
+        
     }
     
-    [elementsArray writeToFile:[self dataFilePath] atomically:YES];
     
     elementsArray=nil;
+    
     
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError
 {
     NSLog(@"Error");
+    [SVProgressHUD showErrorWithStatus:@"Check your connection!"];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
+
+
 
 - (void)viewDidUnload {
     [self setUsernameField:nil];

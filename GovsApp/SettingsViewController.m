@@ -16,9 +16,13 @@
 
 @end
 
-@implementation SettingsViewController 
+@implementation SettingsViewController {
+    NSMutableArray *contentArray;
+}
 
 @synthesize govBtn; //Not needed on Mountain Lion
+@synthesize loginButton;
+@synthesize logoutButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,20 +33,18 @@
     return self;
 }
 
-- (void)screenUpdate {
-   
-    
-    self.govBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    govBtn.frame = CGRectMake(8, 10, 34, 24);
-    [govBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
-    [govBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:self.govBtn];
+- (NSString *)documentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
 }
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+- (NSString *)dataFilePath
 {
-    //[self screenUpdate];
+    return [[self documentsDirectory] stringByAppendingPathComponent:
+            @"Milestone.plist"];
+    
 }
 
 - (void)viewDidLoad
@@ -50,7 +52,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    //[self screenUpdate];
+
     
     self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;
@@ -71,30 +73,39 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (![PFUser currentUser]) { // No user logged in
-        // Create the log in view controller
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-        [logInViewController setDelegate:self]; // Set ourselves as the delegate
+    
+    contentArray = [NSArray arrayWithContentsOfFile:[self dataFilePath]];
+    
+    NSString *success = [contentArray objectAtIndex:0];
+    
+    if ([success isEqualToString:@"success"]) {
         
-        // Create the sign up view controller
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+        loginButton.hidden = YES;
+        logoutButton.hidden = NO;
         
-        
-        
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
-        // Present the log in view controller
-        [self presentViewController:logInViewController animated:YES completion:NULL];
     }
+    
+    if (![success isEqualToString:@"success"]) {
+        
+        loginButton.hidden = NO;
+        logoutButton.hidden = YES;
+        
+    }
+    
 }
 
 
-/*- (IBAction)revealMenu:(id)sender
+- (IBAction)logOut:(id)sender
 {
-    [self.slidingViewController anchorTopViewTo:ECRight];
-}*/
+    contentArray = [NSMutableArray arrayWithObjects:@"fail", @"logged out",  nil];
+    [contentArray writeToFile:[self dataFilePath] atomically:YES];
+    [SVProgressHUD showSuccessWithStatus:@"Logged out!"];
+    
+    loginButton.hidden = NO;
+    logoutButton.hidden = YES;
+    
+    
+}
 
 - (IBAction)searchBtn:(id)sender {
     //[self.slidingViewController anchorTopViewTo:ECLeft];
@@ -213,4 +224,9 @@
     NSLog(@"User dismissed the signUpViewController");
 }
 
+- (void)viewDidUnload {
+    [self setLoginButton:nil];
+    [self setLogoutButton:nil];
+    [super viewDidUnload];
+}
 @end
