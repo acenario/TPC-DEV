@@ -19,6 +19,12 @@ typedef enum {
 
 @class ScringoLikeObject;
 @class ScringoFeedMessage;
+@class ScringoChatRoomsComment;
+@class ScringoChatRoomsTopic;
+
+@protocol ScringoLikeButtonDelegate
+-(void)likeButtonStateChanged:(ScringoLikeObject *)likeObject toMode:(BOOL)mode;
+@end
 
 @interface ScringoLikeButton : UIButton {
     IBOutlet UIView *topLevelView;
@@ -29,6 +35,7 @@ typedef enum {
     BOOL likeObjectIsReady;
 }
 
+@property (nonatomic, assign) id<ScringoLikeButtonDelegate> delegate;
 @property (nonatomic, retain) IBOutlet UIView *topLevelView;
 @property (nonatomic, retain) IBOutlet UIButton *likeOnButton;
 @property (nonatomic, retain) IBOutlet UIButton *likeOffButton;
@@ -38,6 +45,8 @@ typedef enum {
 -(IBAction)likeOffTapped:(id)sender;
 -(void)updateLikeObject:(ScringoLikeObject *)aLikeObject;
 -(void)updateLikeObjectFromFeed:(ScringoFeedMessage *)aFeedMessage;
+-(void)updateLikeObjectFromChatRoomsWithComment:(ScringoChatRoomsComment *)aChatRoomsComment;
+-(void)updateLikeObjectFromChatRoomsWithTopic:(ScringoChatRoomsTopic *)aChatRoomsTopic;
 -(void)updateLikeObject:(NSString *)data type:(ScringoAppLikeObjectType)type description:(NSString *)description;
 
 @end

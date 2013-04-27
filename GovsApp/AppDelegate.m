@@ -26,7 +26,12 @@
 {
     [Parse setApplicationId:@"t7rMlEolr6pOza7fd90EsIy8sesRg8jC5kKiMuh7"
                   clientKey:@"K3d8MExfCXwiVSlXznxGmKqil6KMLIEfy8SV4TJ4"];
-    [ScringoAgent startSession:@"qpzkhT0ZKFr8RZHfr4mOWuPAWX2mlhXI" locationManager:nil];
+    //[ScringoAgent startSession:@"qpzkhT0ZKFr8RZHfr4mOWuPAWX2mlhXI" locationManager:nil];
+    //Release Code
+    
+    [ScringoAgent startSession:@"3e39kCRzvUs5U5of3610UcvLhgtxhYeo" locationManager:nil];
+    
+    //End release code
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     
     [self customizeAppearance];

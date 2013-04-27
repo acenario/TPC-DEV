@@ -85,7 +85,6 @@
 						<string key="NSFrame">{{50, 9}, {16, 16}}</string>
 						<reference key="NSSuperview" ref="347396265"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage" id="525179067">
@@ -145,7 +144,6 @@
 						<string key="NSFrame">{{6, 6}, {95, 30}}</string>
 						<reference key="NSSuperview" ref="881827148"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -256,6 +254,14 @@
 						<reference key="destination" ref="881827148"/>
 					</object>
 					<int key="connectionID">28</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">connectButton</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="904060805"/>
+					</object>
+					<int key="connectionID">31</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -369,7 +375,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">30</int>
+			<int key="maxID">31</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -425,6 +431,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="anonymousUserView">UIImageView</string>
 						<string key="bgImageView">UIImageView</string>
+						<string key="connectButton">UIButton</string>
 						<string key="tapSignView">UIImageView</string>
 						<string key="toplevelSubview">UIView</string>
 						<string key="toplevelSubviewForAnonymousMe">UIView</string>
@@ -440,6 +447,10 @@
 						<object class="IBToOneOutletInfo" key="bgImageView">
 							<string key="name">bgImageView</string>
 							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="connectButton">
+							<string key="name">connectButton</string>
+							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="tapSignView">
 							<string key="name">tapSignView</string>

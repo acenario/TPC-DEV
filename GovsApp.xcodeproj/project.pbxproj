@@ -32,7 +32,6 @@
 		DC246C3616F2C15300B9D62D /* navbar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC246C3416F2C15300B9D62D /* navbar2@2x.png */; };
 		DC246C3916F2CAFA00B9D62D /* navbarL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC246C3716F2CAFA00B9D62D /* navbarL@2x.png */; };
 		DC246C3A16F2CAFA00B9D62D /* navbarL.png in Resources */ = {isa = PBXBuildFile; fileRef = DC246C3816F2CAFA00B9D62D /* navbarL.png */; };
-		DC246C3C16F2D18000B9D62D /* ios-linen.png in Resources */ = {isa = PBXBuildFile; fileRef = DC246C3B16F2D18000B9D62D /* ios-linen.png */; };
 		DC246C4E16F2DA4100B9D62D /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = DC246C3E16F2DA4100B9D62D /* 103-map.png */; };
 		DC246C4F16F2DA4100B9D62D /* 103-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC246C3F16F2DA4100B9D62D /* 103-map@2x.png */; };
 		DC246C5016F2DA4100B9D62D /* 140-gradhat.png in Resources */ = {isa = PBXBuildFile; fileRef = DC246C4016F2DA4100B9D62D /* 140-gradhat.png */; };
@@ -342,7 +341,6 @@
 		DC246C3416F2C15300B9D62D /* navbar2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbar2@2x.png"; path = "Govs Photos/navbar2@2x.png"; sourceTree = "<group>"; };
 		DC246C3716F2CAFA00B9D62D /* navbarL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbarL@2x.png"; path = "Govs Photos/navbarL@2x.png"; sourceTree = "<group>"; };
 		DC246C3816F2CAFA00B9D62D /* navbarL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navbarL.png; path = "Govs Photos/navbarL.png"; sourceTree = "<group>"; };
-		DC246C3B16F2D18000B9D62D /* ios-linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ios-linen.png"; path = "Govs Photos/ios-linen.png"; sourceTree = "<group>"; };
 		DC246C3E16F2DA4100B9D62D /* 103-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map.png"; sourceTree = "<group>"; };
 		DC246C3F16F2DA4100B9D62D /* 103-map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map@2x.png"; sourceTree = "<group>"; };
 		DC246C4016F2DA4100B9D62D /* 140-gradhat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "140-gradhat.png"; sourceTree = "<group>"; };
@@ -702,7 +700,6 @@
 			children = (
 				DCE9CA4616F9798300A846B7 /* 07-map-marker.png */,
 				DCE9CA4716F9798300A846B7 /* 07-map-marker@2x.png */,
-				DC246C3B16F2D18000B9D62D /* ios-linen.png */,
 				DC246C3716F2CAFA00B9D62D /* navbarL@2x.png */,
 				DC246C3816F2CAFA00B9D62D /* navbarL.png */,
 				DC246C3316F2C15300B9D62D /* navbar2.png */,
@@ -1448,7 +1445,6 @@
 				DC246C3616F2C15300B9D62D /* navbar2@2x.png in Resources */,
 				DC246C3916F2CAFA00B9D62D /* navbarL@2x.png in Resources */,
 				DC246C3A16F2CAFA00B9D62D /* navbarL.png in Resources */,
-				DC246C3C16F2D18000B9D62D /* ios-linen.png in Resources */,
 				DC246C4E16F2DA4100B9D62D /* 103-map.png in Resources */,
 				DC246C4F16F2DA4100B9D62D /* 103-map@2x.png in Resources */,
 				DC246C5016F2DA4100B9D62D /* 140-gradhat.png in Resources */,
@@ -1637,8 +1633,8 @@
 		DC0CFA2F16A6076B00F98CDB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Bhatnagar (QAT49SH6MC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Himanshu Bhatnagar (QAT49SH6MC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1653,8 +1649,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5C731539-A058-4F4E-8569-C127BF4B1337";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5C731539-A058-4F4E-8569-C127BF4B1337";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1662,8 +1658,8 @@
 		DC0CFA3016A6076B00F98CDB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Himanshu Bhatnagar (QAT49SH6MC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Himanshu Bhatnagar (QAT49SH6MC)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1678,8 +1674,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5C731539-A058-4F4E-8569-C127BF4B1337";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5C731539-A058-4F4E-8569-C127BF4B1337";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

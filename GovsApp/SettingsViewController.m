@@ -52,6 +52,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    //For Release code
+    loginButton.hidden = YES;
+    logoutButton.hidden = YES;
+    
+    
+    //End release code
+    
 
     
     self.view.layer.shadowOpacity = 0.75f;
