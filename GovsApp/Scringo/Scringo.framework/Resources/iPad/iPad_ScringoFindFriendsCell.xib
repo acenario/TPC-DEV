@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1536</int>
-		<string key="IBDocument.SystemVersion">11G63</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
-		<string key="IBDocument.AppKitVersion">1138.51</string>
-		<string key="IBDocument.HIToolboxVersion">569.00</string>
+		<int key="IBDocument.SystemTarget">1552</int>
+		<string key="IBDocument.SystemVersion">12D78</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1929</string>
+			<string key="NS.object.0">2083</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -47,7 +47,7 @@
 								<string key="NSFrame">{{5, 7}, {47, 47}}</string>
 								<reference key="NSSuperview" ref="825230660"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="782171882"/>
+								<reference key="NSNextKeyView" ref="36385769"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -58,13 +58,33 @@
 								<string key="NSFrame">{{5, 7}, {47, 48}}</string>
 								<reference key="NSSuperview" ref="825230660"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="105175258"/>
+								<reference key="NSNextKeyView" ref="782171882"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">Scringo.bundle/images/dark2/ScrImg_UserThumbMedium.png</string>
+								</object>
+							</object>
+							<object class="IBUIImageView" id="782171882">
+								<reference key="NSNextResponder" ref="825230660"/>
+								<int key="NSvFlags">-2147483356</int>
+								<string key="NSFrame">{{6, 7}, {47, 47}}</string>
+								<reference key="NSSuperview" ref="825230660"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="1037744065"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<object class="NSColor" key="IBUIBackgroundColor" id="385570827">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MCAwAA</bytes>
+								</object>
+								<int key="IBUIContentMode">4</int>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">Scringo.bundle/images/dark2/ScrImg_DashboardProfileArrow.png</string>
 								</object>
 							</object>
 							<object class="IBUILabel" id="1037744065">
@@ -75,10 +95,7 @@
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="868381480"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<object class="NSColor" key="IBUIBackgroundColor" id="385570827">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MCAwAA</bytes>
-								</object>
+								<reference key="IBUIBackgroundColor" ref="385570827"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -97,6 +114,7 @@
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
 								<int key="IBUIBaselineAdjustment">0</int>
+								<float key="IBUIMinimumFontSize">10</float>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">2</int>
 									<double key="pointSize">14</double>
@@ -106,7 +124,6 @@
 									<double key="NSSize">14</double>
 									<int key="NSfFlags">16</int>
 								</object>
-								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 							<object class="IBUILabel" id="766354463">
 								<reference key="NSNextResponder" ref="825230660"/>
@@ -140,10 +157,41 @@
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
+							<object class="IBUILabel" id="868381480">
+								<reference key="NSNextResponder" ref="825230660"/>
+								<int key="NSvFlags">-2147483354</int>
+								<string key="NSFrame">{{65, 20}, {114, 20}}</string>
+								<reference key="NSSuperview" ref="825230660"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="766354463"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<int key="IBUIContentMode">7</int>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<string key="IBUIText">More...</string>
+								<object class="NSColor" key="IBUITextColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MC42IDAuNiAwLjYAA</bytes>
+								</object>
+								<reference key="IBUIHighlightedColor" ref="666177495"/>
+								<int key="IBUIBaselineAdjustment">0</int>
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
+									<int key="type">1</int>
+									<double key="pointSize">11</double>
+								</object>
+								<object class="NSFont" key="IBUIFont">
+									<string key="NSName">Helvetica</string>
+									<double key="NSSize">11</double>
+									<int key="NSfFlags">16</int>
+								</object>
+								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+							</object>
 							<object class="IBUIButton" id="861130442">
 								<reference key="NSNextResponder" ref="825230660"/>
 								<int key="NSvFlags">289</int>
-								<string key="NSFrame">{{237, 16}, {70, 28}}</string>
+								<string key="NSFrame">{{240, 16}, {70, 28}}</string>
 								<reference key="NSSuperview" ref="825230660"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="879234291"/>
@@ -178,72 +226,10 @@
 									<int key="NSfFlags">16</int>
 								</object>
 							</object>
-							<object class="IBUIImageView" id="782171882">
-								<reference key="NSNextResponder" ref="825230660"/>
-								<int key="NSvFlags">-2147483356</int>
-								<string key="NSFrame">{{6, 7}, {47, 47}}</string>
-								<reference key="NSSuperview" ref="825230660"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="1037744065"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<reference key="IBUIBackgroundColor" ref="385570827"/>
-								<int key="IBUIContentMode">4</int>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">Scringo.bundle/images/dark2/ScrImg_DashboardProfileArrow.png</string>
-								</object>
-							</object>
-							<object class="IBUILabel" id="868381480">
-								<reference key="NSNextResponder" ref="825230660"/>
-								<int key="NSvFlags">-2147483354</int>
-								<string key="NSFrame">{{65, 20}, {114, 20}}</string>
-								<reference key="NSSuperview" ref="825230660"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="766354463"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClipsSubviews">YES</bool>
-								<int key="IBUIContentMode">7</int>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<string key="IBUIText">More...</string>
-								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC42IDAuNiAwLjYAA</bytes>
-								</object>
-								<reference key="IBUIHighlightedColor" ref="666177495"/>
-								<int key="IBUIBaselineAdjustment">0</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription">
-									<int key="type">1</int>
-									<double key="pointSize">11</double>
-								</object>
-								<object class="NSFont" key="IBUIFont">
-									<string key="NSName">Helvetica</string>
-									<double key="NSSize">11</double>
-									<int key="NSfFlags">16</int>
-								</object>
-								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-							</object>
-							<object class="IBUIImageView" id="70558899">
-								<reference key="NSNextResponder" ref="825230660"/>
-								<int key="NSvFlags">290</int>
-								<string key="NSFrame">{{0, 59}, {320, 2}}</string>
-								<reference key="NSSuperview" ref="825230660"/>
-								<reference key="NSWindow"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">Scringo.bundle/images/dark2/ScrImg_DashLine.png</string>
-								</object>
-							</object>
 							<object class="IBUIButton" id="879234291">
 								<reference key="NSNextResponder" ref="825230660"/>
 								<int key="NSvFlags">289</int>
-								<string key="NSFrame">{{237, 16}, {70, 28}}</string>
+								<string key="NSFrame">{{240, 16}, {70, 28}}</string>
 								<reference key="NSSuperview" ref="825230660"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="70558899"/>
@@ -267,11 +253,25 @@
 								<reference key="IBUIFontDescription" ref="723817199"/>
 								<reference key="IBUIFont" ref="461813325"/>
 							</object>
+							<object class="IBUIImageView" id="70558899">
+								<reference key="NSNextResponder" ref="825230660"/>
+								<int key="NSvFlags">290</int>
+								<string key="NSFrame">{{0, 59}, {320, 2}}</string>
+								<reference key="NSSuperview" ref="825230660"/>
+								<reference key="NSWindow"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">Scringo.bundle/images/dark2/ScrImg_DashLine.png</string>
+								</object>
+							</object>
 						</array>
 						<string key="NSFrameSize">{320, 59}</string>
 						<reference key="NSSuperview" ref="872217307"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="36385769"/>
+						<reference key="NSNextKeyView" ref="105175258"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<reference key="IBUIBackgroundColor" ref="385570827"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -404,10 +404,10 @@
 							<reference ref="1037744065"/>
 							<reference ref="766354463"/>
 							<reference ref="861130442"/>
-							<reference ref="868381480"/>
-							<reference ref="782171882"/>
 							<reference ref="70558899"/>
 							<reference ref="36385769"/>
+							<reference ref="782171882"/>
+							<reference ref="868381480"/>
 							<reference ref="879234291"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -592,6 +592,6 @@
 			<string key="Scringo.bundle/images/dark2/ScrImg_DefaultGreyBtnPressed.png">{29, 33}</string>
 			<string key="Scringo.bundle/images/dark2/ScrImg_UserThumbMedium.png">{47, 48}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1929</string>
+		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>

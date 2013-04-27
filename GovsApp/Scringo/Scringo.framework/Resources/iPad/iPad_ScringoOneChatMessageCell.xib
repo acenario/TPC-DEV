@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1280</int>
-		<string key="IBDocument.SystemVersion">11G63</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
-		<string key="IBDocument.AppKitVersion">1138.51</string>
+		<string key="IBDocument.SystemVersion">11E53</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2840</string>
+		<string key="IBDocument.AppKitVersion">1138.47</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1929</string>
+			<string key="NS.object.0">1926</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -68,7 +68,7 @@
 									<object class="IBUILabel" id="388494467">
 										<reference key="NSNextResponder" ref="612301971"/>
 										<int key="NSvFlags">291</int>
-										<string key="NSFrame">{{78, 22}, {225, 40}}</string>
+										<string key="NSFrame">{{78, 22}, {210, 30}}</string>
 										<reference key="NSSuperview" ref="612301971"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="121471266"/>
@@ -100,7 +100,7 @@
 											<int key="NSfFlags">16</int>
 										</object>
 										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-										<double key="preferredMaxLayoutWidth">225</double>
+										<double key="preferredMaxLayoutWidth">210</double>
 									</object>
 									<object class="IBUILabel" id="121471266">
 										<reference key="NSNextResponder" ref="612301971"/>
@@ -256,6 +256,7 @@
 										<string key="NSFrame">{{156, 67}, {100, 21}}</string>
 										<reference key="NSSuperview" ref="485076489"/>
 										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<reference key="IBUIBackgroundColor" ref="600501476"/>
 										<bool key="IBUIOpaque">NO</bool>
@@ -708,6 +709,6 @@
 			<string key="Scringo.bundle/images/dark2/ScrImg_MessageBubbleUser.png">{44, 34}</string>
 			<string key="Scringo.bundle/images/dark2/ScrImg_UserThumbMedium.png">{47, 48}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1929</string>
+		<string key="IBCocoaTouchPluginVersion">1926</string>
 	</data>
 </archive>
