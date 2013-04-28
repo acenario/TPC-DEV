@@ -112,7 +112,7 @@
 
 - (IBAction)exit:(id)sender {
 
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 
@@ -191,7 +191,7 @@
         NSLog(@"Success!!!");
         [SVProgressHUD dismiss];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        [self dismissModalViewControllerAnimated:YES];
+        //[self dismissModalViewControllerAnimated:YES];
         
     }
     

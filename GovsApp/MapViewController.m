@@ -13,13 +13,15 @@
 #import "BuildingsClass.h"
 #import "BuildingInfoViewController.h"
 
+#define kScringoSampleAppRiverFeedImageUrl @"http://drewhaninger.com/wp-content/uploads/2012/09/Papua-New-Guinea-menya-river_may12_1600.jpg"
+
 @interface MapViewController ()
 
 @end
 
 @implementation MapViewController {
     CLLocationManager *locationManager;
-    
+    NSString *buildingIn;
     //NSString *ann1;
     
 }
@@ -345,6 +347,7 @@
     //Building.animatesDrop = NO;
     Building.canShowCallout = YES;
     
+    
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
         return nil;
     }
@@ -358,22 +361,35 @@
     
     //NSLog(@"Button action");
     
+    NSString *buildingname = view.annotation.title;
+    buildingIn = buildingname;
+    
+    NSString *message = [NSString stringWithFormat:@"Would you like to check into: %@?", buildingname];
+    
     UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:@"Check in to Event!"
+                              initWithTitle:@"Check in to a Building!"
                               //message:@"This is my first app!"
-                              message:@"This is a demonstration of how students can check into buildings and events on campus"
+                              message:message
                               delegate:self
-                              cancelButtonTitle:@"Check In Here"
-                              otherButtonTitles:nil];
+                              cancelButtonTitle:@"Check In Here!"
+                              otherButtonTitles:@"Cancel", nil];
     [alertView show];
     
-    
-    
+    //NSLog(@"Building In: %@", buildingIn);
     
 }
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    [SVProgressHUD showSuccessWithStatus:@"Saved!"];
+    
+    if (buttonIndex == 0) {
+		NSLog(@"user pressed OK");
+        NSString *checkIn = [NSString stringWithFormat:@"Checked into %@", buildingIn];
+        [ScringoAgent postToFeed:checkIn];
+        [SVProgressHUD showSuccessWithStatus:@"Saved!"];
+	}
+	else {
+		NSLog(@"user pressed Cancel");
+	}
     
 }
 
