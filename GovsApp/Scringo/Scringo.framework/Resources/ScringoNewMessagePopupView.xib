@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1536</int>
-		<string key="IBDocument.SystemVersion">11G63</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
-		<string key="IBDocument.AppKitVersion">1138.51</string>
+		<string key="IBDocument.SystemVersion">11E53</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2840</string>
+		<string key="IBDocument.AppKitVersion">1138.47</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1929</string>
+			<string key="NS.object.0">1926</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -58,7 +58,7 @@
 						<string key="NSFrame">{{5, 9}, {32, 32}}</string>
 						<reference key="NSSuperview" ref="795203286"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="583511177"/>
+						<reference key="NSNextKeyView" ref="1003134605"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIRestorationIdentifier">s</string>
@@ -70,7 +70,7 @@
 						<string key="NSFrame">{{5, 9}, {32, 33}}</string>
 						<reference key="NSSuperview" ref="795203286"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="798785540"/>
+						<reference key="NSNextKeyView" ref="583511177"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -91,6 +91,7 @@
 						<string key="IBUIText">Name</string>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
+						<float key="IBUIMinimumFontSize">10</float>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
 							<double key="pointSize">13</double>
@@ -100,7 +101,6 @@
 							<double key="NSSize">13</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
 					<object class="IBUILabel" id="866792449">
 						<reference key="NSNextResponder" ref="795203286"/>
@@ -126,6 +126,7 @@
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
+						<float key="IBUIMinimumFontSize">9</float>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">1</int>
 							<double key="pointSize">12</double>
@@ -135,7 +136,6 @@
 							<double key="NSSize">12</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
 					<object class="IBUIButton" id="380171640">
 						<reference key="NSNextResponder" ref="795203286"/>
@@ -143,6 +143,7 @@
 						<string key="NSFrame">{{280, 10}, {30, 30}}</string>
 						<reference key="NSSuperview" ref="795203286"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -180,7 +181,7 @@
 						<string key="NSFrameSize">{280, 50}</string>
 						<reference key="NSSuperview" ref="795203286"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="1003134605"/>
+						<reference key="NSNextKeyView" ref="798785540"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="358965254"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -446,6 +447,6 @@
 			<string key="Scringo.bundle/images/dark2/ScrImg_PopupMsgBg.png">{320, 50}</string>
 			<string key="Scringo.bundle/images/dark2/ScrImg_PopupMsgClose.png">{16, 16}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1929</string>
+		<string key="IBCocoaTouchPluginVersion">1926</string>
 	</data>
 </archive>

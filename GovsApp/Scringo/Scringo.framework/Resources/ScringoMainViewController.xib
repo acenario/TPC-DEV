@@ -159,18 +159,18 @@
 											<bytes key="NSWhite">MAA</bytes>
 										</object>
 										<int key="IBUIBaselineAdjustment">0</int>
+										<float key="IBUIMinimumFontSize">10</float>
 										<int key="IBUINumberOfLines">2</int>
 										<int key="IBUITextAlignment">1</int>
 										<object class="IBUIFontDescription" key="IBUIFontDescription">
 											<int key="type">1</int>
-											<double key="pointSize">13</double>
+											<double key="pointSize">15</double>
 										</object>
 										<object class="NSFont" key="IBUIFont">
 											<string key="NSName">Helvetica</string>
-											<double key="NSSize">13</double>
+											<double key="NSSize">15</double>
 											<int key="NSfFlags">16</int>
 										</object>
-										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 										<double key="preferredMaxLayoutWidth">223</double>
 									</object>
 									<object class="IBUIButton" id="726026751">
@@ -334,6 +334,7 @@
 										<reference key="IBUIShadowColor" ref="293466050"/>
 										<string key="IBUIShadowOffset">{0, 1}</string>
 										<int key="IBUIBaselineAdjustment">0</int>
+										<float key="IBUIMinimumFontSize">12</float>
 										<object class="IBUIFontDescription" key="IBUIFontDescription">
 											<int key="type">2</int>
 											<double key="pointSize">20</double>
@@ -343,7 +344,6 @@
 											<double key="NSSize">20</double>
 											<int key="NSfFlags">16</int>
 										</object>
-										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 									</object>
 									<object class="IBUILabel" id="493720361">
 										<reference key="NSNextResponder" ref="825751107"/>
@@ -740,7 +740,6 @@
 								<string key="NSFrame">{{140, 5}, {116, 24}}</string>
 								<reference key="NSSuperview" ref="486266086"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -789,19 +788,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">panelView</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="459400472"/>
-					</object>
-					<int key="connectionID">62</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">poweredByView</string>
 						<reference key="source" ref="841351856"/>
 						<reference key="destination" ref="486266086"/>
 					</object>
 					<int key="connectionID">109</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">panelView</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="459400472"/>
+					</object>
+					<int key="connectionID">115</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -946,6 +945,46 @@
 						<reference key="destination" ref="729877970"/>
 					</object>
 					<int key="connectionID">112</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">facebookConnectButton</string>
+						<reference key="source" ref="459400472"/>
+						<reference key="destination" ref="726026751"/>
+					</object>
+					<int key="connectionID">120</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">twitterConnectButton</string>
+						<reference key="source" ref="459400472"/>
+						<reference key="destination" ref="689550916"/>
+					</object>
+					<int key="connectionID">116</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">followersLabel</string>
+						<reference key="source" ref="459400472"/>
+						<reference key="destination" ref="557094862"/>
+					</object>
+					<int key="connectionID">117</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">followingLabel</string>
+						<reference key="source" ref="459400472"/>
+						<reference key="destination" ref="422304415"/>
+					</object>
+					<int key="connectionID">118</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">postsLabel</string>
+						<reference key="source" ref="459400472"/>
+						<reference key="destination" ref="170072234"/>
+					</object>
+					<int key="connectionID">119</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -1324,7 +1363,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">114</int>
+			<int key="maxID">120</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1487,6 +1526,9 @@
 						<string key="anonymousView">UIView</string>
 						<string key="backgroundImageView">UIImageView</string>
 						<string key="commandsTable">UITableView</string>
+						<string key="facebookConnectButton">ScringoResizeableButton</string>
+						<string key="followersLabel">UILabel</string>
+						<string key="followingLabel">UILabel</string>
 						<string key="locationLabel">UILabel</string>
 						<string key="nameLabel">UILabel</string>
 						<string key="numFollowersButton">UIButton</string>
@@ -1495,12 +1537,14 @@
 						<string key="numFollowingLabel">UILabel</string>
 						<string key="numPostsButton">UIButton</string>
 						<string key="numPostsLabel">UILabel</string>
+						<string key="postsLabel">UILabel</string>
 						<string key="profileButton">UIButton</string>
 						<string key="profileOverlayImage">UIImageView</string>
 						<string key="profileOverlayShade">UIImageView</string>
 						<string key="profileScrollView">UIScrollView</string>
 						<string key="profileView">ScringoPanelProfileView</string>
 						<string key="toplevelView">UIView</string>
+						<string key="twitterConnectButton">ScringoResizeableButton</string>
 						<string key="userImage">UIImageView</string>
 						<string key="userImageFrame">UIImageView</string>
 						<string key="usersDetailsView">UIView</string>
@@ -1525,6 +1569,18 @@
 						<object class="IBToOneOutletInfo" key="commandsTable">
 							<string key="name">commandsTable</string>
 							<string key="candidateClassName">UITableView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="facebookConnectButton">
+							<string key="name">facebookConnectButton</string>
+							<string key="candidateClassName">ScringoResizeableButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="followersLabel">
+							<string key="name">followersLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="followingLabel">
+							<string key="name">followingLabel</string>
+							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="locationLabel">
 							<string key="name">locationLabel</string>
@@ -1558,6 +1614,10 @@
 							<string key="name">numPostsLabel</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="postsLabel">
+							<string key="name">postsLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="profileButton">
 							<string key="name">profileButton</string>
 							<string key="candidateClassName">UIButton</string>
@@ -1581,6 +1641,10 @@
 						<object class="IBToOneOutletInfo" key="toplevelView">
 							<string key="name">toplevelView</string>
 							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="twitterConnectButton">
+							<string key="name">twitterConnectButton</string>
+							<string key="candidateClassName">ScringoResizeableButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="userImage">
 							<string key="name">userImage</string>
@@ -1613,11 +1677,26 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="facebookConnectClicked:">id</string>
+						<string key="followersClicked:">id</string>
+						<string key="followingClicked:">id</string>
+						<string key="postsClicked:">id</string>
 						<string key="twitterConnectClicked:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="facebookConnectClicked:">
 							<string key="name">facebookConnectClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="followersClicked:">
+							<string key="name">followersClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="followingClicked:">
+							<string key="name">followingClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="postsClicked:">
+							<string key="name">postsClicked:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="twitterConnectClicked:">
@@ -1664,6 +1743,6 @@
 			<string key="Scringo.bundle/images/dark2/ScrImg_TwitterConnect.png">{16, 16}</string>
 			<string key="Scringo.bundle/images/dark2/ScrImg_TwitterConnectPressed.png">{16, 16}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1926</string>
+		<string key="IBCocoaTouchPluginVersion">1929</string>
 	</data>
 </archive>

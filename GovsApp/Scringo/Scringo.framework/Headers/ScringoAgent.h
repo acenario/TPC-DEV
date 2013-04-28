@@ -11,6 +11,7 @@
 
 #define kScringoNotificationActivityActionTapped        @"kScringoNotificationActivityActionTapped"
 #define kScringoCustomButtonClicked                     @"kScringoCustomButtonClicked"
+#define kNotificationScringoIsReady                     @"ScringoIsReady"
 
 @class Facebook;
 
@@ -47,6 +48,16 @@ typedef enum {
 +(void)setScringoActivationButtonType:(ScringoActivationButtonType)buttonType;
 +(UIBarButtonItem *)scringoActivationBarItem;
 +(UIButton *)scringoActivationButtonOpensToLeft:(BOOL)opensToLeft;
+
 +(void)openSidebar;
 +(void)closeSidebar;
+
++(void)pauseSwipe;
++(void)resumeSwipe;
++(BOOL)isSwipeEnalbed;
+
++(void)showPopInAdNow;
++(void)disablePopInAds:(BOOL)disablePopInAds;
++(void)disableSideBarAds:(BOOL)disableSideBarAds;
+
 @end
