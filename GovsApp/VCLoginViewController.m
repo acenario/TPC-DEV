@@ -16,6 +16,7 @@
     NSMutableString *currentString;
     NSMutableArray *elementsArray;
     NSMutableArray *contentArray;
+    CGPoint originalCenter;
     
 }
 
@@ -27,9 +28,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+         
     }
     return self;
 }
+
 
 - (NSString *)documentsDirectory
 {
@@ -45,6 +48,52 @@
     
 }
 
+- (void) hideKeyboard {
+    [self.view endEditing:YES];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.25];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    self.view.center = originalCenter;
+    [UIView commitAnimations];
+    
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    //NSLog(@"The x-coordinate is: %f and the y-coordinate is %f", originalCenter.x, originalCenter.y);
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.25];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    
+
+    
+    if (IS_IPHONE5) {
+        //NSLog(@"iPhone 5");
+        self.view.center = CGPointMake(originalCenter.x, 90);
+    } else {
+        //NSLog(@"iphone 4s or lower");
+        self.view.center = CGPointMake(originalCenter.x, 45);
+    }
+    [UIView commitAnimations];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    //[usernameField becomeFirstResponder];
+    //[passwordField becomeFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.usernameField) {
+        [self.passwordField becomeFirstResponder];
+    }
+    else if (textField == self.passwordField) {
+        [self login:nil];
+    }
+    
+    return YES;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -56,8 +105,25 @@
     if ([success isEqualToString:@"success"]) {
         usernameField.text = username;
         
-    } 
+    }
     
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+
+   
+    originalCenter = CGPointMake(self.view.center.x, self.view.center.y);
+    
+    usernameField.delegate = self;
+    passwordField.delegate = self;
+    
+    [ScringoAgent closeSidebar];
+
+
+}
+
+- (NSUInteger) supportedInterfaceOrientations {
+    
+    return UIInterfaceOrientationMaskPortrait;
     
 }
 
@@ -68,9 +134,10 @@
 }
 
 
-
 - (IBAction)login:(id)sender {
-
+    
+    [SVProgressHUD showWithStatus:@"Connecting to Veracross..."];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
    
     
     NSString *enteredUsername = usernameField.text;
@@ -93,6 +160,7 @@
     
     if (resultString == nil) {
         NSLog(@"Download Error: %@", error);
+        //[self showNetworkError];
         
     }
     
@@ -113,13 +181,14 @@
 - (IBAction)exit:(id)sender {
 
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser
 {
-    [SVProgressHUD showWithStatus:@"Connecting to Veracross..."];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //[SVProgressHUD showWithStatus:@"Connecting to Veracross..."];
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     elementsArray = [[NSMutableArray alloc] init];
     
 }
@@ -191,7 +260,14 @@
         NSLog(@"Success!!!");
         [SVProgressHUD dismiss];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        //[self dismissModalViewControllerAnimated:YES];
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.25];
+        [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+        self.view.center = originalCenter;
+        [UIView commitAnimations];
+        
+        [self dismissViewControllerAnimated:YES completion:NULL];
         
     }
     

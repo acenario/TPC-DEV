@@ -87,7 +87,7 @@
     
     if (![success isEqualToString:@"success"]) {
         
-        loginButton.hidden = YES;
+        loginButton.hidden = NO;
         logoutButton.hidden = YES;
         
     }
@@ -99,7 +99,10 @@
 {
     contentArray = [NSMutableArray arrayWithObjects:@"fail", @"logged out",  nil];
     [contentArray writeToFile:[self dataFilePath] atomically:YES];
+    
     [SVProgressHUD showSuccessWithStatus:@"Logged out!"];
+    
+    [self performSegueWithIdentifier:@"settingsLogin" sender:self];
     
     loginButton.hidden = NO;
     logoutButton.hidden = YES;

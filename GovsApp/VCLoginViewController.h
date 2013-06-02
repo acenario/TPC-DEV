@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Scringo/ScringoAgent.h>
 
-@interface VCLoginViewController : UIViewController <NSXMLParserDelegate>
+@interface VCLoginViewController : UIViewController <NSXMLParserDelegate, UITextFieldDelegate>
 
 
 @property (strong, nonatomic) IBOutlet UITextField *usernameField;

@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 The Productions Club. All rights reserved.
 //
 
+//Predesign so text can align && then open up to end of text
+
 #import "MenuViewController.h"
 #import "ECSlidingViewController.h"
 
@@ -46,7 +48,9 @@
     self.menuImages = [NSArray arrayWithObjects:@"103-map.png", @"187-pencil.png", @"63-runner.png", @"83-calendar.png", @"140-gradhat.png", @"48-fork-and-knife.png", @"20-gear2.png", nil];
     
     
-    [self.slidingViewController setAnchorRightRevealAmount:45.5f]; //Change this number to change sliding menu width
+    [self.slidingViewController setAnchorRightRevealAmount:165.0f];
+    
+    //[self.slidingViewController setAnchorRightRevealAmount:45.5f]; //Change this number to change sliding menu width
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
 }
 

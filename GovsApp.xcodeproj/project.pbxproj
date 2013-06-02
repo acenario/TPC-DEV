@@ -96,6 +96,18 @@
 		DC68C0C216F80DC800A69D4E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68C0C016F80DC800A69D4E /* DetailViewController.m */; };
 		DC6EA72316E6C2AB00E20E4E /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA72016E6C2AB00E20E4E /* AwesomeMenu.m */; };
 		DC6EA72416E6C2AB00E20E4E /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA72216E6C2AB00E20E4E /* AwesomeMenuItem.m */; };
+		DC71458B1740715600F42EB5 /* bckgnd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC71458A1740715600F42EB5 /* bckgnd@2x.png */; };
+		DC71458E1740725D00F42EB5 /* password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC71458C1740725D00F42EB5 /* password@2x.png */; };
+		DC71458F1740725D00F42EB5 /* username@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC71458D1740725D00F42EB5 /* username@2x.png */; };
+		DC7145921740746B00F42EB5 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7145901740746B00F42EB5 /* password.png */; };
+		DC7145931740746B00F42EB5 /* username.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7145911740746B00F42EB5 /* username.png */; };
+		DC714595174077DE00F42EB5 /* bckgnd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC714594174077DE00F42EB5 /* bckgnd.png */; };
+		DC7145981740798300F42EB5 /* headerL.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7145961740798300F42EB5 /* headerL.png */; };
+		DC7145991740798300F42EB5 /* headerL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7145971740798300F42EB5 /* headerL@2x.png */; };
+		DC7145A017407D6300F42EB5 /* loginBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = DC71459E17407D6300F42EB5 /* loginBtn.png */; };
+		DC7145A117407D6300F42EB5 /* loginBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC71459F17407D6300F42EB5 /* loginBtn@2x.png */; };
+		DC7145A417407FA500F42EB5 /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7145A217407FA400F42EB5 /* rock.png */; };
+		DC7145A517407FA500F42EB5 /* rock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7145A317407FA500F42EB5 /* rock@2x.png */; };
 		DC7D042416D4A03F005B238F /* UnderRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D042316D4A03F005B238F /* UnderRightViewController.m */; };
 		DC7D045416D6005F005B238F /* thegovernorsacademy_Shield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7D045316D6005F005B238F /* thegovernorsacademy_Shield@2x.png */; };
 		DC7D045716D60213005B238F /* thegovernorsacademy_Heading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7D045616D60213005B238F /* thegovernorsacademy_Heading@2x.png */; };
@@ -437,6 +449,18 @@
 		DC6EA72016E6C2AB00E20E4E /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
 		DC6EA72116E6C2AB00E20E4E /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
 		DC6EA72216E6C2AB00E20E4E /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenuItem.m; sourceTree = "<group>"; };
+		DC71458A1740715600F42EB5 /* bckgnd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bckgnd@2x.png"; sourceTree = "<group>"; };
+		DC71458C1740725D00F42EB5 /* password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password@2x.png"; sourceTree = "<group>"; };
+		DC71458D1740725D00F42EB5 /* username@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "username@2x.png"; sourceTree = "<group>"; };
+		DC7145901740746B00F42EB5 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
+		DC7145911740746B00F42EB5 /* username.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = username.png; sourceTree = "<group>"; };
+		DC714594174077DE00F42EB5 /* bckgnd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bckgnd.png; sourceTree = "<group>"; };
+		DC7145961740798300F42EB5 /* headerL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerL.png; sourceTree = "<group>"; };
+		DC7145971740798300F42EB5 /* headerL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headerL@2x.png"; sourceTree = "<group>"; };
+		DC71459E17407D6300F42EB5 /* loginBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBtn.png; sourceTree = "<group>"; };
+		DC71459F17407D6300F42EB5 /* loginBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginBtn@2x.png"; sourceTree = "<group>"; };
+		DC7145A217407FA400F42EB5 /* rock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock.png; sourceTree = "<group>"; };
+		DC7145A317407FA500F42EB5 /* rock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rock@2x.png"; sourceTree = "<group>"; };
 		DC7D042216D4A03F005B238F /* UnderRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderRightViewController.h; sourceTree = "<group>"; };
 		DC7D042316D4A03F005B238F /* UnderRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderRightViewController.m; sourceTree = "<group>"; };
 		DC7D045316D6005F005B238F /* thegovernorsacademy_Shield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thegovernorsacademy_Shield@2x.png"; sourceTree = "<group>"; };
@@ -1254,6 +1278,18 @@
 		DCA8C82F171D114000B7CF2B /* VCData */ = {
 			isa = PBXGroup;
 			children = (
+				DC7145A217407FA400F42EB5 /* rock.png */,
+				DC7145A317407FA500F42EB5 /* rock@2x.png */,
+				DC71459E17407D6300F42EB5 /* loginBtn.png */,
+				DC71459F17407D6300F42EB5 /* loginBtn@2x.png */,
+				DC7145961740798300F42EB5 /* headerL.png */,
+				DC7145971740798300F42EB5 /* headerL@2x.png */,
+				DC714594174077DE00F42EB5 /* bckgnd.png */,
+				DC7145901740746B00F42EB5 /* password.png */,
+				DC7145911740746B00F42EB5 /* username.png */,
+				DC71458C1740725D00F42EB5 /* password@2x.png */,
+				DC71458D1740725D00F42EB5 /* username@2x.png */,
+				DC71458A1740715600F42EB5 /* bckgnd@2x.png */,
 				DCA8C830171D116500B7CF2B /* VCLoginViewController.h */,
 				DCA8C831171D116500B7CF2B /* VCLoginViewController.m */,
 			);
@@ -1575,6 +1611,18 @@
 				DC81AE21172C5E5200B538F8 /* ScringoWelcomePopupView.xib in Resources */,
 				DC81AE22172C5E5200B538F8 /* temp_btn.png in Resources */,
 				DC81AE23172C5E5200B538F8 /* Scringo.bundle in Resources */,
+				DC71458B1740715600F42EB5 /* bckgnd@2x.png in Resources */,
+				DC71458E1740725D00F42EB5 /* password@2x.png in Resources */,
+				DC71458F1740725D00F42EB5 /* username@2x.png in Resources */,
+				DC7145921740746B00F42EB5 /* password.png in Resources */,
+				DC7145931740746B00F42EB5 /* username.png in Resources */,
+				DC714595174077DE00F42EB5 /* bckgnd.png in Resources */,
+				DC7145981740798300F42EB5 /* headerL.png in Resources */,
+				DC7145991740798300F42EB5 /* headerL@2x.png in Resources */,
+				DC7145A017407D6300F42EB5 /* loginBtn.png in Resources */,
+				DC7145A117407D6300F42EB5 /* loginBtn@2x.png in Resources */,
+				DC7145A417407FA500F42EB5 /* rock.png in Resources */,
+				DC7145A517407FA500F42EB5 /* rock@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,7 +28,7 @@
 - (void)loadWebView {
     //[SVProgressHUD showWithStatus:@"Loading Content" maskType:SVProgressHUDMaskTypeGradient];
     self.viewWeb.delegate = self;
-    NSString *fullURL = @"http://www.thegovernorsacademy.org/page.cfm?p=447";
+    NSString *fullURL = @"http://www.thegovernorsacademy.org/mobile.cfm?p=940";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     

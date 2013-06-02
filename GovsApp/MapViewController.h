@@ -12,6 +12,7 @@
 #import <MapKit/MapKit.h>
 #import "SVProgressHUD.h"
 #import "AwesomeMenu.h"
+#import "VCLoginViewController.h"
 
 
 @interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate, AwesomeMenuDelegate> {

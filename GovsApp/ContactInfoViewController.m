@@ -41,7 +41,7 @@
     [self.viewAdmissions loadHTMLString:@"<html><body><center><h3><a href='tel:978-499-3120'>978.499.3120</a></h3></center></body></html>" baseURL:nil];
     [self.viewHealth loadHTMLString:@"<html><body><center><h3><a href='tel:978-499-3126'>978.499.3126</a></h3></center></body></html>" baseURL:nil];
     [self.viewSecurity loadHTMLString:@"<html><body><center><h3><a href='tel:978-621-2784'>975.621.2784</a></h3></center></body></html>" baseURL:nil];
-    [self.viewAddress loadHTMLString:@"<html><h3><a href='http://maps.apple.com/?q=The+Governor's+Academy'>1 Elm Street, Byfield MA 01922</a></h3></html>" baseURL:nil];
+    [self.viewAddress loadHTMLString:@"<html><body><center><h4><a href='http://maps.apple.com/?q=The+Governor's+Academy'>1 Elm Street, Byfield MA 01922</a></h4></center></body></html>" baseURL:nil];
     
 }
 

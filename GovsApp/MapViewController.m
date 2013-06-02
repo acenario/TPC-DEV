@@ -22,6 +22,7 @@
 @implementation MapViewController {
     CLLocationManager *locationManager;
     NSString *buildingIn;
+    NSMutableArray *contentArray;
     //NSString *ann1;
     
 }
@@ -45,40 +46,19 @@
     return self;
 }
 
-- (void)screenUpdate {
-    CGFloat width = CGRectGetWidth(self.view.bounds);
-    
-    UINavigationBar *naviBarObj = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, width, 44)];
-    [self.view addSubview:naviBarObj];
-    
-    NSInteger red   = 178;
-    NSInteger green = 8;
-    NSInteger blue  = 56;
-    
-    
-    [naviBarObj setTintColor:[UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0]];
-    UINavigationItem *navigItem = [[UINavigationItem alloc] initWithTitle:@"Governors"];
-    naviBarObj.items = [NSArray arrayWithObjects: navigItem,nil];
-    
-    self.govBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    govBtn.frame = CGRectMake(8, 10, 34, 24);
-    [govBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
-    [govBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:self.govBtn];
+- (NSString *)documentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
 }
 
-- (void)screenUpdate2 {
+- (NSString *)dataFilePath
+{
+    return [[self documentsDirectory] stringByAppendingPathComponent:
+            @"Milestone.plist"];
     
-    self.govBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    govBtn.frame = CGRectMake(8, 10, 34, 24);
-    [govBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
-    [govBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:self.govBtn];
 }
-
-
 
 - (void)awesomemenu {
     
@@ -132,12 +112,37 @@
     NSArray *menus = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, starMenuItem3, starMenuItem4, starMenuItem5, starMenuItem6, starMenuItem7,starMenuItem8,starMenuItem9, nil];
     
     AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:CGRectMake(8, 10, 100, 100) menus:menus];
+    //AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:self.view.bounds menus:menus];
+    
     menu.tag = 22;
-     
+    
     
     menu.delegate = self;
     
+    //UIView *superview = self.view;
+    
     [self.view addSubview:menu];
+    
+    /*NSLayoutConstraint *cn = [NSLayoutConstraint constraintWithItem:menu
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:superview
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0
+                                                           constant:0.0];
+    [self.view addConstraint:cn];
+    
+    cn = [NSLayoutConstraint constraintWithItem:menu
+                                      attribute:NSLayoutAttributeBottom
+                                      relatedBy:NSLayoutRelationEqual
+                                         toItem:superview
+                                      attribute:NSLayoutAttributeBottom
+                                     multiplier:1.0
+                                       constant:-20.0];
+    
+    [self.view addConstraint:cn];*/
+    
+    
     //[menu setHidden:TRUE];
     
    
@@ -244,6 +249,14 @@
     
 }
 
+- (void)presentLogin {
+    
+    
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
+    
+    
+}
+
 
 
 - (void)AwesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
@@ -253,6 +266,8 @@
        //NSLog(@"Select the index : %d",idx);
        NSLog(@"Select the index : 0");
        [mapView setMapType:MKMapTypeHybrid];
+        
+        
         
     
     }
@@ -280,6 +295,8 @@
     }
     
 }
+
+
 - (void)AwesomeMenuDidFinishAnimationClose:(AwesomeMenu *)menu {
     NSLog(@"Menu was closed!");
 }
@@ -315,7 +332,7 @@
         }
             
     }
-        
+     
      
     
 
@@ -743,7 +760,7 @@
     [mapView addAnnotation:ann22];
     
     //[self awesomemenu];
- 
+    //[self presentLogin];
     
     
     
@@ -774,12 +791,26 @@
     
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
-   
-    
-    
 
     
    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    contentArray = [NSArray arrayWithContentsOfFile:[self dataFilePath]];
+    
+    NSString *success = [contentArray objectAtIndex:0];
+    
+    if (![success isEqualToString:@"success"]) {
+        
+        [self presentLogin];
+        
+    }
+    
+    
 }
 
 
