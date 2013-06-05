@@ -136,11 +136,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GovsApp/DayViewController.m"
-         timestampString = "387782501.688493"
+         timestampString = "391963683.515438"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "221"
-         endingLineNumber = "221"
+         startingLineNumber = "222"
+         endingLineNumber = "222"
          landmarkName = "-placeForDisplay:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -214,20 +214,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GovsApp/AppDelegate.m"
-         timestampString = "390259336.716403"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "36"
-         endingLineNumber = "36"
-         landmarkName = "-application:didFinishLaunchingWithOptions:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "GovsApp/AppDelegate.m"
-         timestampString = "390259336.716403"
+         timestampString = "391895207.440594"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "37"

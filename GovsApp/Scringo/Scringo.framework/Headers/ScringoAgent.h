@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <UIKit/UIKit.h>
 
 #define kScringoNotificationActivityActionTapped        @"kScringoNotificationActivityActionTapped"
 #define kScringoCustomButtonClicked                     @"kScringoCustomButtonClicked"
@@ -22,6 +23,20 @@ typedef enum {
     SCRINGO_BUTTON4,
 } ScringoActivationButtonType;
 
+@protocol ScringoImageFetcher;
+
+@protocol ScringoImageFetcherDelegate <NSObject>
+-(void)imageFetcherDidFinish:(id<ScringoImageFetcher>)imageFetcher withImage:(UIImage *)image;
+-(void)imageFetcherGotError:(id<ScringoImageFetcher>)imageFetcher withError:(NSError *)error;
+-(NSString *)imageFetcherDelegateId;
+@end
+
+@protocol ScringoImageFetcher <NSObject>
+-(BOOL)fetchImage:(NSString *)imageLocation withDelegate:(id<ScringoImageFetcherDelegate>)delegate;
+-(void)cancelDelegate:(id<ScringoImageFetcherDelegate>)delegate;
+-(BOOL)shouldEnableImageShare:(NSString *)imageLocation;
+-(NSString *)shareUrlForImage:(NSString *)imageLocation;
+@end
 
 @interface ScringoAgent : NSObject {
 
@@ -56,8 +71,11 @@ typedef enum {
 +(void)resumeSwipe;
 +(BOOL)isSwipeEnalbed;
 
++(BOOL)isPopInAdsEnabled;
 +(void)showPopInAdNow;
 +(void)disablePopInAds:(BOOL)disablePopInAds;
 +(void)disableSideBarAds:(BOOL)disableSideBarAds;
+
++(void)setCustomImageFetcher:(id<ScringoImageFetcher>)customImageFetcher;
 
 @end

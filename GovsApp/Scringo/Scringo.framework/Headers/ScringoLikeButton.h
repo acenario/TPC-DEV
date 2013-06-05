@@ -23,7 +23,7 @@ typedef enum {
 @class ScringoChatRoomsTopic;
 
 @protocol ScringoLikeButtonDelegate
--(void)likeButtonStateChanged:(ScringoLikeObject *)likeObject toMode:(BOOL)mode;
+-(void)likeObject:(ScringoLikeObject *)likeObject withData:(NSString *)data newMode:(BOOL)mode;
 @end
 
 @interface ScringoLikeButton : UIButton {

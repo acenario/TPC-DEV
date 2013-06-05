@@ -273,7 +273,7 @@
 										<reference key="IBUINormalTitleShadowColor" ref="566946676"/>
 										<object class="NSCustomResource" key="IBUINormalImage">
 											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">Scringo.bundle/images/dark2/ScrImg_ShareIcon.png</string>
+											<string key="NSResourceName">Scringo.bundle/images/dark2/ScrImg_DownArrow2.png</string>
 										</object>
 										<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage">
 											<string key="NSClassName">NSImage</string>
@@ -425,14 +425,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">shareButton</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="433332490"/>
-					</object>
-					<int key="connectionID">53</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">topicTitleLineImageView</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="914321845"/>
@@ -450,12 +442,12 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">shareClicked:</string>
+						<string key="label">scrollToLastCommentClicked:</string>
 						<reference key="source" ref="433332490"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">49</int>
+					<int key="connectionID">57</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -612,7 +604,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">56</int>
+			<int key="maxID">57</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -621,11 +613,16 @@
 					<string key="superclassName">UIView</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="commentsClicked:">id</string>
+						<string key="scrollToLastCommentClicked:">id</string>
 						<string key="shareClicked:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="commentsClicked:">
 							<string key="name">commentsClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="scrollToLastCommentClicked:">
+							<string key="name">scrollToLastCommentClicked:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="shareClicked:">
@@ -760,7 +757,7 @@
 			<string key="Scringo.bundle/images/dark2/ScrImg_DashLine.png">{16, 16}</string>
 			<string key="Scringo.bundle/images/dark2/ScrImg_DefaultGreyBtn.png">{16, 16}</string>
 			<string key="Scringo.bundle/images/dark2/ScrImg_DefaultGreyBtnPressed.png">{16, 16}</string>
-			<string key="Scringo.bundle/images/dark2/ScrImg_ShareIcon.png">{16, 16}</string>
+			<string key="Scringo.bundle/images/dark2/ScrImg_DownArrow2.png">{16, 16}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

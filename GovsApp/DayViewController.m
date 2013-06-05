@@ -22,6 +22,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 @implementation DayViewController {
     NSMutableArray *searchResults;
     NSArray *myJSON;
+    
 }
 
 @synthesize tableView = _tableView;

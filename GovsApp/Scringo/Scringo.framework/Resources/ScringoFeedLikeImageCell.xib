@@ -352,7 +352,6 @@
 								<string key="NSFrame">{{0, 269}, {320, 2}}</string>
 								<reference key="NSSuperview" ref="1005612963"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -467,6 +466,14 @@
 						<reference key="destination" ref="20708196"/>
 					</object>
 					<int key="connectionID">33</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">shareButton</string>
+						<reference key="source" ref="116246623"/>
+						<reference key="destination" ref="898074670"/>
+					</object>
+					<int key="connectionID">34</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -652,7 +659,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">33</int>
+			<int key="maxID">34</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -701,6 +708,7 @@
 						<string key="dashLineView">UIImageView</string>
 						<string key="likeButton">ScringoLikeButton</string>
 						<string key="playButton">UIButton</string>
+						<string key="shareButton">UIButton</string>
 						<string key="theImageView">ScringoLazyImageView</string>
 						<string key="timeLabel">UILabel</string>
 						<string key="userPhotoFrameImage">UIImageView</string>
@@ -729,6 +737,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="playButton">
 							<string key="name">playButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="shareButton">
+							<string key="name">shareButton</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="theImageView">
