@@ -307,6 +307,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     
     NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=%@&date_to=%@",escapedSearchText,escapedSearchText];
+    //NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=2013-05-25&date_to=2013-05-25"];
     NSURL *url = [NSURL URLWithString:urlString];
     return url;
 }
