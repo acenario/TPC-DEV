@@ -19,6 +19,7 @@
     [[UISearchBar appearance] setBackgroundImage:barImage];
     
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar2.png"] forBarMetrics:UIBarMetricsDefault];
+    //[[UIBarButtonItem appearance] setTintColor:[UIColor redColor]];
     /*[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar2.png"] forBarMetrics:UIBarMetricsLandscapePhone];*/
 }
 

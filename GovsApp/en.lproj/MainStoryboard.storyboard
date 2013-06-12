@@ -354,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3k-ge-w7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3067" y="733"/>
+            <point key="canvasLocation" x="2931" y="661"/>
         </scene>
         <!--Athletics View Controller - Athletics-->
         <scene sceneID="5pK-wf-Pub">
@@ -1704,7 +1704,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="My Academics" id="9Uo-oD-Smt">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ZqC-oz-NAu">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ZqC-oz-NAu">
                                         <rect key="frame" x="0.0" y="358" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1871,7 +1871,48 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NI-xe-ek8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3874" y="484"/>
+            <point key="canvasLocation" x="3978" y="228"/>
+        </scene>
+        <!--Table View Controller - My Schedule-->
+        <scene sceneID="YU2-lV-RfP">
+            <objects>
+                <tableViewController id="1CG-Dh-XFf" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tJW-cL-uHx">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Lv2-wQ-gig">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Schedule" id="YJG-9G-efN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KN7-JP-zuR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4529" y="-446"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aFO-iv-nKo">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="GXL-97-Mlq" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ubo-4I-cEg">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1CG-Dh-XFf" kind="relationship" relationship="rootViewController" id="jTL-Sf-SfI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvC-Oh-c6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3995" y="-446"/>
         </scene>
         <!--English View Controller - English-->
         <scene sceneID="x94-xM-NG2">
@@ -1901,7 +1942,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sv-EM-zwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4083" y="132"/>
+            <point key="canvasLocation" x="3995" y="2396"/>
         </scene>
         <!--Math View Controller - Mathematics-->
         <scene sceneID="obH-it-9iH">
@@ -1931,7 +1972,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YfZ-I4-JA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4609" y="746"/>
+            <point key="canvasLocation" x="4453" y="1592"/>
         </scene>
         <!--History View Controller - History-->
         <scene sceneID="IEW-iJ-kf9">
@@ -1961,7 +2002,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDh-7b-6Tf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4491" y="132"/>
+            <point key="canvasLocation" x="4023" y="1552"/>
         </scene>
         <!--Foreign Language View Controller - Foreign Language-->
         <scene sceneID="Nlx-VA-gdB">
@@ -1991,7 +2032,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zam-rx-MSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5017" y="746"/>
+            <point key="canvasLocation" x="4869" y="2437"/>
         </scene>
         <!--Science View Controller - Science-->
         <scene sceneID="NcJ-Sp-naT">
@@ -2021,7 +2062,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RkC-H5-dVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4083" y="1342"/>
+            <point key="canvasLocation" x="4411" y="2402"/>
         </scene>
         <!--Fine Arts View Controller - Fine Arts-->
         <scene sceneID="qCC-gg-TgG">
@@ -2051,7 +2092,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0r-Mg-bSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4491" y="1342"/>
+            <point key="canvasLocation" x="4855" y="1538"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Bp-BD-qdl">
@@ -2066,7 +2107,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dem-ns-6qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3469" y="471"/>
+            <point key="canvasLocation" x="3485" y="383"/>
         </scene>
         <!--Week View Controller - Week-->
         <scene sceneID="Uci-S7-YcA">
