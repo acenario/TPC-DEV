@@ -21,6 +21,8 @@
 {
     self = [super initWithStyle:style];
     if (self) {
+        
+        
         // Custom initialization
     }
     return self;
@@ -36,9 +38,20 @@
     //self.tableView.layer.shadowRadius = 10.0f;
     //self.tableView.layer.shadowColor = [UIColor blackColor].CGColor;
     
+    NSInteger red   = 178;
+    NSInteger green = 8;
+    NSInteger blue  = 56;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0];
+    
+    //self.view.layer.masksToBounds = NO;
+    
+
+    
     self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    
     
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];

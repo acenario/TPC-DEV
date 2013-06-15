@@ -383,7 +383,6 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
             [searchResults addObject:searchResult];
         }
         
-        
         /*NSLog(@"name: %@, start_time: %@, location: %@", [resultDict objectForKey:@"description"], [resultDict objectForKey:@"start_time"], [resultDict objectForKey:@"location"]);*/
     }
 }

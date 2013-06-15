@@ -97,6 +97,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [ScringoAgent pauseSwipe];
     contentArray = [NSArray arrayWithContentsOfFile:[self dataFilePath]];
     
     NSString *success = [contentArray objectAtIndex:0];
@@ -228,12 +230,12 @@
         currentString=nil;
         return;
     }
-    /*if([elementName isEqualToString:@"token"])
+    if([elementName isEqualToString:@"security_roles"])
     {
         [elementsArray addObject:currentString];
         currentString=nil;
         return;
-    }*/
+    }
     
     currentString =nil;
 }
