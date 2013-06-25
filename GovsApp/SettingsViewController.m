@@ -9,7 +9,6 @@
 #import "SettingsViewController.h"
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
-#import <Parse/Parse.h>
 #import <Scringo/ScringoAgent.h>
 
 @interface SettingsViewController ()

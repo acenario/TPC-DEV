@@ -8,8 +8,8 @@
 
 #import "ScheduleResultCell.h"
 
-@implementation ScheduleResultCell
 
+@implementation ScheduleResultCell 
 @synthesize nameLabel = _nameLabel;
 @synthesize idLabel = _idLabel;
 @synthesize blockLabel = _blockLabel;
@@ -38,7 +38,7 @@
     self.selectedBackgroundView = selectedBackgroundImageView;
     
     //_nameLabel.text = @"Hello";
-    
+  
     
     
 }

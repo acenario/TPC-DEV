@@ -8,6 +8,8 @@
 
 #import "DailyScheduleViewController.h"
 #import "ScheduleResultCell.h"
+#import "JSONModelLib.h"
+#import "ClassFeed.h"
 
 static NSString *const SearchResultCellIdentifier = @"SearchResultCell";
 static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
@@ -23,8 +25,10 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 @implementation DailyScheduleViewController {
     NSMutableArray *searchResults;
-    NSArray *myJSON;
+    NSMutableArray *contentArray;
     NSString *sendClassfk;
+    
+    
 }
 
 @synthesize tableView = _tableView;
@@ -38,6 +42,21 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     return self;
 }
 
+- (NSString *)documentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
+}
+
+- (NSString *)dataFilePath
+{
+    return [[self documentsDirectory] stringByAppendingPathComponent:
+            @"Milestone.plist"];
+    
+}
+
+
 - (void) hideKeyboard {
     [self.view endEditing:YES];
 }
@@ -47,6 +66,10 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    contentArray = [NSArray arrayWithContentsOfFile:[self dataFilePath]];
+    
+    
     
     self.tableView.rowHeight = 80;
 	
@@ -109,6 +132,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     
     [ScringoAgent openSidebar];
     
+    
 }
 
 - (IBAction)shieldBtn:(id)sender {
@@ -116,92 +140,6 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     
 }
 
-- (NSString *)userVisibleDateTimeStringForRFC3339DateTimeString:(NSString *)rfc3339DateTimeString
-// Returns a user-visible date time string that corresponds to the
-// specified RFC 3339 date time string. Note that this does not handle
-// all possible RFC 3339 date time strings, just one of the most common
-// styles.
-{
-    NSString *          userVisibleDateTimeString;
-    NSDateFormatter *   rfc3339DateFormatter;
-    NSLocale *          enUSPOSIXLocale;
-    NSDate *            date;
-    NSDateFormatter *   userVisibleDateFormatter;
-    
-    userVisibleDateTimeString = nil;
-    
-    // Convert the RFC 3339 date time string to an NSDate.
-    
-    rfc3339DateFormatter = [[NSDateFormatter alloc] init];
-    
-    enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    
-    [rfc3339DateFormatter setLocale:enUSPOSIXLocale];
-    [rfc3339DateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
-    //[rfc3339DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-    
-    date = [rfc3339DateFormatter dateFromString:rfc3339DateTimeString];
-    if (date != nil) {
-        
-        // Convert the NSDate to a user-visible date string.
-        
-        userVisibleDateFormatter = [[NSDateFormatter alloc] init];
-        assert(userVisibleDateFormatter != nil);
-        
-        
-        //[userVisibleDateFormatter setDateStyle:NSDateFormatterShortStyle];
-        [userVisibleDateFormatter setTimeStyle:NSDateFormatterShortStyle];
-        
-        userVisibleDateTimeString = [userVisibleDateFormatter stringFromDate:date];
-    }
-    
-    if (date == nil) {
-        userVisibleDateTimeString = @"Not provided";
-    }
-    
-    return userVisibleDateTimeString;
-}
-
-- (NSString *)userVisibleDateStringForDateString:(NSString *)rfc3339DateTimeString
-// Returns a user-visible date time string that corresponds to the
-// specified RFC 3339 date time string. Note that this does not handle
-// all possible RFC 3339 date time strings, just one of the most common
-// styles.
-{
-    NSString *          userVisibleDateTimeString;
-    NSDateFormatter *   rfc3339DateFormatter;
-    NSLocale *          enUSPOSIXLocale;
-    NSDate *            date;
-    NSDateFormatter *   userVisibleDateFormatter;
-    
-    userVisibleDateTimeString = nil;
-    
-    // Convert the RFC 3339 date time string to an NSDate.
-    
-    rfc3339DateFormatter = [[NSDateFormatter alloc] init];
-    
-    enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    
-    [rfc3339DateFormatter setLocale:enUSPOSIXLocale];
-    [rfc3339DateFormatter setDateFormat:@"yyyy-MM-dd"];
-    //[rfc3339DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-    
-    date = [rfc3339DateFormatter dateFromString:rfc3339DateTimeString];
-    if (date != nil) {
-        
-        // Convert the NSDate to a user-visible date string.
-        
-        userVisibleDateFormatter = [[NSDateFormatter alloc] init];
-        assert(userVisibleDateFormatter != nil);
-        
-        
-        //[userVisibleDateFormatter setDateFormat:@"MM'/'dd'/'YY"];
-        [userVisibleDateFormatter setDateStyle:NSDateFormatterFullStyle];
-        
-        userVisibleDateTimeString = [userVisibleDateFormatter stringFromDate:date];
-    }
-    return userVisibleDateTimeString;
-}
 
 #pragma mark - Segue Editing
 
@@ -215,7 +153,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         controller.delegate = self;
         
         controller.idValue = sendClassfk;
-        NSLog(@"sending value numero dos: %@", controller.idValue);
+        //NSLog(@"sending value numero dos: %@", controller.idValue);
         
     }
     
@@ -235,25 +173,6 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     }
 }
 
-- (NSString *)placeForDisplay:(NSString *)place
-{
-    //if (place == (NSString *)@"Frost Library") {
-    //if ([place isEqualToString:@"Wilkie Ctr., Remis Lobby"]) {
-    if ([[NSString stringWithFormat:@"%@", place] isEqualToString:@"Wilkie Ctr., Remis Lobby"]) {
-        
-        
-        return @"Wilkie Performing Arts Center";
-        
-    } else if ([[NSString stringWithFormat:@"%@", place] isEqualToString:@"Wilkie Ctr., Auditorium"]) {
-        return @"Wilkie Performing Arts Center";
-        
-        /*} else if ([place isEqualToString:@"audiobook"]) {
-         return @"Audio Book";*/
-    } else {
-        return place;
-    }
-    
-}
 
 
 
@@ -272,12 +191,13 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         
         ScheduleResult *searchResult = [searchResults objectAtIndex:indexPath.row];
         
+            
         NSString *classFormat = @"%@";
         NSString *classfks = searchResult.class_fk;
         NSString *classfk = [NSString stringWithFormat:classFormat, classfks];
+       
         
-        //cell.nameLabel.text = classfk;
-        
+    
         /*NSString *place = [self placeForDisplay:searchResult.place];
         if (place == (NSString *)[NSNull null]) {
             place = @"Not provided";
@@ -296,8 +216,13 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         
         //NSString *dateConverted = [self userVisibleDateStringForDateString:dateValue];
         
-        
+        cell.blockLabel.text = searchResult.block;
+        cell.nameLabel.text = searchResult.name;
         cell.idLabel.text = classfk;
+        cell.teacherLabel.text = searchResult.teacher;
+        
+        
+       // NSLog(@"cell text: %@", cell.idLabel.text);
         //cell.placeLabel.text = [NSString stringWithFormat:@"%@", place];
         //cell.timeLabel.text = [NSString stringWithFormat:@"%@", timeConverted];
         //cell.dateLabel.text = [NSString stringWithFormat:@"%@", dateConverted];
@@ -316,6 +241,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+   /*
     EditClassViewController *controller = [[EditClassViewController alloc] init];
     
     ScheduleResult *searchResult = [searchResults objectAtIndex:indexPath.row];
@@ -328,8 +254,10 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     
     sendClassfk = classfk;
     
+    */
     
-    [self performSegueWithIdentifier:@"editClass" sender:self];
+    
+    //[self performSegueWithIdentifier:@"editClass" sender:self];
 }
 
 
@@ -344,27 +272,6 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 #pragma mark - Parsing Data info
 
-- (NSURL *)urlWithSearchText:(NSString *)searchText
-
-{
-    
-    NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/enrollments.json?student=%@",escapedSearchText];
-    //NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/events.json?date_from=2013-05-25&date_to=2013-05-25"];
-    NSURL *url = [NSURL URLWithString:urlString];
-    return url;
-}
-
-- (NSString *)performStoreRequestWithURL:(NSURL *)url
-{
-    NSError *error;
-    NSString *resultString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
-    if (resultString == nil) {
-        NSLog(@"Download Error: %@", error);
-        return nil;
-    }
-    return resultString;
-}
 
 - (void)showNetworkError
 {
@@ -383,141 +290,119 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     
 }
 
-- (ScheduleResult *)parseName:(NSDictionary *)dictionary
-{
-    ScheduleResult *searchResult = [[ScheduleResult alloc] init];
-    
-    searchResult.class_fk = [dictionary objectForKey:@"class_fk"];
-    
-    
-    
-    //NSLog(@"start date: %@", searchResult.startDate);
-    
-    
-    
-    return searchResult;
-}
 
-- (void)parseArray:(NSArray *)array
-{
-    
-    
-    if (myJSON == nil) {
-        NSLog(@"Expected an array");
-        return;
-    }
-    
-    for (NSDictionary *resultDict in myJSON) {
-        ScheduleResult *searchResult;
-        
-        //NSString *description = [resultDict objectForKey:@"description"];
-        
-        
-        //if ([description isEqualToString:@"March Break"]) {
-        searchResult = [self parseName:resultDict];
-        
-        //}
-        
-        
-        if (searchResult != nil) {
-            
-            [searchResults addObject:searchResult];
-        }
-        
-        /*NSLog(@"name: %@, start_time: %@, location: %@", [resultDict objectForKey:@"description"], [resultDict objectForKey:@"start_time"], [resultDict objectForKey:@"location"]);*/
-    }
-}
 
-- (NSDictionary *)parseJSON:(NSString *)jsonString
-{
-    NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+-(void)pullData {
     
-    
-    NSError *error;
-    
-    id resultObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    
-    if (resultObject == nil) {
-        NSLog(@"JSON Error: %@", error);
-        return nil;
-    }
-    
-    NSArray *parsedJSON = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    myJSON = parsedJSON;
-    
-    
-    
-    if (![resultObject isKindOfClass:[NSArray class]]) {
-        NSLog(@"JSON Error: Expected array!");
-        return nil;
-    }
-    
-    
-    return resultObject;
-}
 
-- (void)pullData {
-    
-    NSDate *currDate = [NSDate date];
-    NSDate *currDateAddedbySeven = [NSDate date];
-    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
-    dayComponent.day = 7;
-    
-    
-    NSCalendar *theCalendar = [NSCalendar currentCalendar];
-    currDateAddedbySeven = [theCalendar dateByAddingComponents:dayComponent toDate:currDate options:0];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    
-    [dateFormatter setDateFormat:@"YYYY-MM-dd"]; //HH:mm:ss
-    
-    NSString *today = @"132664";
-    //[dateFormatter stringFromDate:currDate];
-    //NSString *nextWeek = [dateFormatter stringFromDate:currDateAddedbySeven];
-    
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeGradient];
     
     searchResults = [NSMutableArray arrayWithCapacity:10];
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
+       
         
-        NSURL *url = [self urlWithSearchText:today];
-        NSString *jsonString = [self performStoreRequestWithURL:url];
+        NSString *studentID = [contentArray objectAtIndex:2];
         
+        NSString *urlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/enrollments.json?student=%@", studentID];
+        NSURL *Url = [NSURL URLWithString:urlString];
+        NSURLRequest *request = [NSURLRequest requestWithURL:Url];
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        NSArray *classes = [NSJSONSerialization JSONObjectWithData:data
+                                                           options:NSJSONReadingMutableContainers
+                                                             error:nil];
+        //NSLog(@"classes array: %@", classes);
         
-        if (jsonString == nil) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self showNetworkError];
-            });
-            return;
-        }
-        
-        NSDictionary *dictionary = [self parseJSON:jsonString];
-        
-        if (dictionary == nil) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self showNetworkError];
-            });
-            return;
+        //now we loop through all classes
+        for (NSMutableDictionary *class in classes) {
+            
+            //we get individual data for each class
+            
+            NSString *classID = class[@"class_fk"];
+            //NSLog(@"classID: %@", classID);
+            NSString *classUrlString = [NSString stringWithFormat:@"https://api.gda:phevarE3r@api.veracross.com/gda/v1/classes/%@.json", classID];
+            NSURL *classUrl = [NSURL URLWithString:classUrlString];
+            NSURLRequest *classRequest = [NSURLRequest requestWithURL:classUrl];
+            
+            
+            NSData *classData = [NSURLConnection sendSynchronousRequest:classRequest returningResponse:nil error:nil];
+            NSDictionary *classDictionary = [NSJSONSerialization JSONObjectWithData:classData
+                                                                            options:NSJSONReadingMutableContainers
+                                                                              error:nil];
+            //NSLog(@"classes dictionary: %@", classDictionary);
+            if (classes == nil) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self showNetworkError];
+                });
+                return;
+                
+            } else {
+                if (classDictionary == nil) {
+                    NSLog(@"classes dictionary: %@", classDictionary);
+                } else {
+            //probably should check here if array is empty before accessing first object
+            //we shove the data from a classDictionary into class
+            //class[@"teacher_full_name"] = classDictionary[@"teacher"][0];
+                    if (classDictionary[@"teacher_full_name"] == nil) {
+                        class[@"teacher_full_name"] = @"Not Provided";
+                    } else {
+                        class[@"teacher_full_name"] = classDictionary[@"teacher_full_name"];
+                    }
+                    
+                    if (classDictionary[@"course"] == (NSString *)[NSNull null]) {
+                        class[@"course"] = @"Not Provided";
+                    } else {
+                        class[@"course"] = classDictionary[@"course"];
+                    }
+                    
+                    if (classDictionary[@"class_pk"] == (NSString *)[NSNull null]) {
+                        class[@"class_pk"] = @"Not Provided";
+                    } else {
+                        class[@"class_pk"] = classDictionary[@"class_pk"];
+                    }
+            
+                    if (classDictionary[@"teachers"][0][@"person_fk"] == (NSString *)[NSNull null]) {
+                        class[@"person_fk"] = @"Not Provided";
+                    } else {
+                     class[@"person_fk"] = classDictionary[@"teachers"][0][@"person_fk"];   
+                    }
+                    
+                    if (classDictionary[@"meeting_times"][0][@"block_abbreviation"] == (NSString *)[NSNull null]) {
+                        class[@"block_abbreviation"] = @"Not Provided";
+                    } else {
+                        class[@"block_abbreviation"] = classDictionary[@"meeting_times"][0][@"block_abbreviation"];
+                        
+                    }
+            
+            ScheduleResult *searchResult = [[ScheduleResult alloc] init];
+            searchResult.name = class[@"course"];
+            searchResult.teacher = class[@"teacher_full_name"];
+            searchResult.class_fk = class[@"class_pk"];
+            searchResult.block = class[@"block_abbreviation"];
+            
+            [searchResults addObject:searchResult];
+                    
+            [searchResults sortUsingSelector:@selector(compareBlock:)];
+                    
+                    
+            //NSLog(@"searchresult: %@", searchResult.block);
+            //NSLog(@"course: %@ and teacher: %@", class[@"course"], class[@"teacher_full_name"] );
+                }
+            }
             
         }
-        
-        //NSLog(@"Dictionary '%@'", dictionary);
-        [self parseArray:myJSON];
-        //[searchResults sortUsingSelector:@selector(compareName:)];
         
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            //NSLog(@"dictionary: %@", classes);
             [self.tableView reloadData];
             [SVProgressHUD dismiss];
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         });
         //NSLog(@"Done Initial Load!");
     });
-    
     
 }
 

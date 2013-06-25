@@ -11,10 +11,14 @@
 @implementation ScheduleResult
 
 @synthesize class_fk = _class_fk;
+@synthesize name = _name;
+@synthesize teacher = _teacher;
+@synthesize block = _block;
 
-- (NSComparisonResult)compareName:(ScheduleResult *)other
+
+- (NSComparisonResult)compareBlock:(ScheduleResult *)other
 {
-    return [self.class_fk localizedStandardCompare:other.class_fk];
+    return [self.block localizedStandardCompare:other.block];
 }
 
 

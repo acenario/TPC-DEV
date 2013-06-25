@@ -11,9 +11,14 @@
 @interface ScheduleResult : NSObject
 
 @property (nonatomic, copy) NSString *class_fk;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *teacher;
+@property (nonatomic, copy) NSString *block;
 
 
-- (NSComparisonResult)compareName:(ScheduleResult *)other;
+
+
+- (NSComparisonResult)compareBlock:(ScheduleResult *)other;
 
 
 
