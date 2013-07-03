@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <EventKit/EventKit.h>
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import <Scringo/ScringoAgent.h>
@@ -14,8 +15,9 @@
 #import "SVProgressHUD.h"
 
 
-@interface DayViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface DayViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
+@property (strong, nonatomic) EKEventStore *eventStore;
 
 - (IBAction)searchBtn:(id)sender;
 - (IBAction)shieldBtn:(id)sender;

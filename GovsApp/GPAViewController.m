@@ -8,9 +8,7 @@
 
 #import "GPAViewController.h"
 #import <Scringo/ScringoAgent.h>
-#import "FUIButton.h"
-#import "UIColor+FlatUI.h"
-#import "UIFont+FlatUI.h"
+
 
 @interface GPAViewController () {
     double gpa1;
@@ -210,7 +208,7 @@
     row = [GPAPickerView selectedRowInComponent:0];
     value = [pickerArray objectAtIndex:row];
     none = NO;
-    if ([class1.text isEqualToString:@"Class 1"]) {
+    if ([class1.text isEqualToString:@"Class 1"] || @"None") {
         out += 1;
     }
     
@@ -259,6 +257,7 @@
         gpa1 = 0.0;
     }
     else if ([value isEqualToString:@"None"]) {
+        gpa1 = 0.0;
         out -= 1;
     }
 
@@ -270,7 +269,7 @@
     row = [GPAPickerView selectedRowInComponent:0];
     value = [pickerArray objectAtIndex:row];
     none = NO;
-    if ([class2.text isEqualToString:@"Class 2"]) {
+    if ([class2.text isEqualToString:@"Class 2"] || @"None") {
         out += 1;
     }
     
@@ -319,6 +318,7 @@
         gpa2 = 0.0;
     }
     else if ([value isEqualToString:@"None"]) {
+        gpa2 = 0.0;
         out -= 1;
     }
 }
@@ -329,7 +329,7 @@
     row = [GPAPickerView selectedRowInComponent:0];
     value = [pickerArray objectAtIndex:row];
     none = NO;
-    if ([class3.text isEqualToString:@"Class 3"]) {
+    if ([class3.text isEqualToString:@"Class 3"] || @"None" ) {
         out += 1;
     }
     
@@ -378,6 +378,7 @@
         gpa3 = 0.0;
     }
     else if ([value isEqualToString:@"None"]) {
+        gpa3 = 0.0;
         out -= 1;
     }
     
@@ -390,7 +391,7 @@
     row = [GPAPickerView selectedRowInComponent:0];
     value = [pickerArray objectAtIndex:row];
     none = NO;
-    if ([class4.text isEqualToString:@"Class 4"]) {
+    if ([class4.text isEqualToString:@"Class 4"] || @"None") {
         out += 1;
     }
     
@@ -436,6 +437,7 @@
         gpa4 = 0.0;
     }
     else if ([value isEqualToString:@"None"]) {
+        gpa4 = 0.0;
         out -= 1;
     }
     
@@ -447,7 +449,7 @@
     row = [GPAPickerView selectedRowInComponent:0];
     value = [pickerArray objectAtIndex:row];
     none = NO;
-    if ([class5.text isEqualToString:@"Class 5"]) {
+    if ([class5.text isEqualToString:@"Class 5"] || @"None") {
         out += 1;
     }
     
@@ -493,6 +495,7 @@
         gpa5 = 0.0;
     }
     else if ([value isEqualToString:@"None"]) {
+        gpa5 = 0.0;
         out -= 1;
     }
 
@@ -505,7 +508,7 @@
     row = [GPAPickerView selectedRowInComponent:0];
     value = [pickerArray objectAtIndex:row];
     none = NO;
-    if ([class6.text isEqualToString:@"Class 6"]) {
+    if ([class6.text isEqualToString:@"Class 6"] || @"None") {
         out += 1;
     }
     
@@ -551,6 +554,7 @@
         gpa6 = 0.0;
     }
     else if ([value isEqualToString:@"None"]) {
+        gpa6 = 0.0;
         out -= 1;
     }
 }
@@ -575,6 +579,14 @@
     class5.text = @"Class 5";
     class6.text = @"Class 6";
     out = 0;
+    points = 0;
+    none = YES;
+    gpa1 = 0.0;
+    gpa2 = 0.0;
+    gpa3 = 0.0;
+    gpa4 = 0.0;
+    gpa5 = 0.0;
+    gpa6 = 0.0;
 }
 
 - (IBAction)calcGPA:(id)sender {
@@ -582,17 +594,36 @@
     points = 0;
     gpa = 0;
     if (none == NO) {
-        points += gpa1;
+        /*points += gpa1;
+        NSLog(@"points 1 %f", points);
         points += gpa2;
+        NSLog(@"points 2 %f", points);
         points += gpa3;
+        NSLog(@"points 3 %f", points);
         points += gpa4;
+        NSLog(@"points 4 %f", points);
         points += gpa5;
+        NSLog(@"points 5 %f", points);
         points += gpa6;
+        NSLog(@"points 6 %f", points);*/
+        
+        points = gpa1 + gpa2 + gpa3 + gpa4 + gpa5 + gpa6;
         gpa = points/out;
+        if (gpa == INFINITY) {
+            GPA.text = [NSString stringWithFormat:@"Error!"];
+        } else {
         GPA.text = [NSString stringWithFormat:@"%.3f",gpa];
+        }
+        
+        //NSLog(@"points final %f", points);
+        //NSLog(@"out: %d", out);
+        //NSLog(@"gpa: %f", gpa);
+        //NSLog(@"None = %s", none ? "true" : "false");
         [self reset];
     } else {
+        //NSLog(@"None = %s", none ? "true" : "false");
         [self showError];
+        
         
     }
     

@@ -11,6 +11,7 @@
 #import <Scringo/ScringoAgent.h>
 
 
+
 @implementation AppDelegate
 
 - (void)customizeAppearance
@@ -68,7 +69,19 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     NSLog(@"didReceiveLocalNotification %@", notification);
+    
+    //self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Departments"];
+    
 }
+
+/*- (void)saveData
+{
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UINavigationController *navigationController = (UINavigationController *)[tabBarController.viewControllers objectAtIndex:0];
+    AllListsViewController *controller = (AllListsViewController *)[navigationController.viewControllers objectAtIndex:0];
+    [controller.dataModel saveChecklists];
+    
+}*/
 
 
 
@@ -79,9 +92,10 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
+
+
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-
 
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
@@ -99,6 +113,8 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    
+    
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     
 }

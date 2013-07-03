@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <EventKit/EventKit.h>
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import <Scringo/ScringoAgent.h>
@@ -14,7 +15,9 @@
 #import "SVProgressHUD.h"
 
 
-@interface WeekViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface WeekViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+
+@property (strong, nonatomic) EKEventStore *eventStore;
 
 
 - (IBAction)searchBtn:(id)sender;

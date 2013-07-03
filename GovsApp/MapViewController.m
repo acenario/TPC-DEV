@@ -405,7 +405,7 @@
         [SVProgressHUD showSuccessWithStatus:@"Saved!"];
 	}
 	else {
-		NSLog(@"user pressed Cancel");
+		//NSLog(@"user pressed Cancel");
 	}
     
 }

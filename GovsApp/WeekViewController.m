@@ -22,9 +22,23 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     NSMutableArray *searchResults;
     NSArray *myJSON;
     NSString *addedDate;
+    
+    //Check in code
+    NSString *noTimeAndPlace;
+    NSString *noPlace;
+    NSString *NoTime;
+    NSString *attendingEvent;
+    
+    //Reminders Code
+    NSString *title;
+    NSDate *remindersDate;
+    
+    id setReminder;
+    id createReminder;
 }
 
 @synthesize tableView = _tableView;
+@synthesize eventStore = _eventStore;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -136,6 +150,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     //[rfc3339DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     date = [rfc3339DateFormatter dateFromString:rfc3339DateTimeString];
     
+    
     if (date != nil) {
         
         // Convert the NSDate to a user-visible date string.
@@ -182,6 +197,9 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     //[rfc3339DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     
     date = [rfc3339DateFormatter dateFromString:rfc3339DateTimeString];
+    //reminders code
+    remindersDate = date;
+    
     if (date != nil) {
         
         // Convert the NSDate to a user-visible date string.
@@ -280,7 +298,210 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    SearchResult *searchResult = [searchResults objectAtIndex:indexPath.row];
+    
+    
+    NSString *place = [self placeForDisplay:searchResult.place];
+    if (place == (NSString *)[NSNull null]) {
+        place = @"Not provided";
+    }
+    
+    
+    NSString *timeValue = searchResult.time;
+    if (timeValue == (NSString *)[NSNull null]) {
+        timeValue = nil;
+    }
+    NSString *timeConverted = [self userVisibleDateTimeStringForRFC3339DateTimeString:timeValue];
+    
+    
+    NSString *dateValue = searchResult.startDate;
+    NSString *dateConverted = [self userVisibleDateStringForDateString:dateValue];
+    
+    title = searchResult.name;
+    
+    
+    
+    if ((place == (NSString *)[NSNull null]) && (timeValue == (NSString *)[NSNull null])) {
+     NSString *attendingNoTimeAndPlace = [NSString stringWithFormat:@"is Attending %@ on %@", searchResult.name, dateConverted];
+     noTimeAndPlace = attendingNoTimeAndPlace;
+     NSString *message = [NSString stringWithFormat:@"Would you like to check into: %@?", searchResult.name];
+     
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Check in to an Event!"
+                                  message:message
+                                  delegate:self
+                                  cancelButtonTitle:@"Cancel"
+                                  otherButtonTitles:@"Check In Here!", @"Add to Reminders", nil];
+     [alertView setTag:0];
+     [alertView show];
+     
+     } else if (place == (NSString *)[NSNull null]) {
+     NSString *attendingNoPlace = [NSString stringWithFormat:@"is Attending %@ at %@", searchResult.name, searchResult.time];
+     noPlace = attendingNoPlace;
+     
+     NSString *message = [NSString stringWithFormat:@"Would you like to check into: %@?", searchResult.name];
+     
+     
+         UIAlertView *alertView = [[UIAlertView alloc]
+                                   initWithTitle:@"Check in to an Event!"
+                                   message:message
+                                   delegate:self
+                                   cancelButtonTitle:@"Cancel"
+                                   otherButtonTitles:@"Check In Here!", @"Add to Reminders", nil];
+     [alertView setTag:1];
+     [alertView show];
+     
+     
+     } else if (timeValue == (NSString *)[NSNull null]) {
+     NSString *attendingNoTime = [NSString stringWithFormat:@"is Attending %@ in %@", searchResult.name, searchResult.place];
+     NoTime = attendingNoTime;
+     
+     NSString *message = [NSString stringWithFormat:@"Would you like to check into: %@?", searchResult.name];
+     
+     
+         UIAlertView *alertView = [[UIAlertView alloc]
+                                   initWithTitle:@"Check in to an Event!"
+                                   message:message
+                                   delegate:self
+                                   cancelButtonTitle:@"Cancel"
+                                   otherButtonTitles:@"Check In Here!", @"Add to Reminders", nil];
+     [alertView setTag:2];
+     [alertView show];
+     
+     } else {
+     NSString *attending = [NSString stringWithFormat:@"is Attending %@ at %@ in %@", searchResult.name, timeConverted, searchResult.place];
+     attendingEvent = attending;
+     
+     NSString *message = [NSString stringWithFormat:@"Would you like to check into: %@?", searchResult.name];
+     
+     
+     UIAlertView *alertView = [[UIAlertView alloc]
+     initWithTitle:@"Check in to an Event!"
+     message:message
+     delegate:self
+     cancelButtonTitle:@"Cancel"
+     otherButtonTitles:@"Check In Here!", @"Add to Reminders", nil];
+     [alertView setTag:3];
+     [alertView show];
+     
+     }
+    
+    
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if(alertView.tag == 0) //No Time and Place
+    {
+        if (buttonIndex == 0) {
+            //NSLog(@"user pressed Cancel");
+            
+        }
+        else if (buttonIndex == 1) {
+            [ScringoAgent postToFeed:noTimeAndPlace];
+            [SVProgressHUD showSuccessWithStatus:@"Saved!"];
+        }
+        else if (buttonIndex == 2) {
+            
+            [SVProgressHUD showSuccessWithStatus:@"Reminder Added!"];
+        }
+    }
+    
+    else if(alertView.tag == 1)
+    {
+        if (buttonIndex == 0) {
+            //NSLog(@"user pressed Cancel");
+            
+        }
+        else if (buttonIndex == 1) {
+            [ScringoAgent postToFeed:noPlace];
+            [SVProgressHUD showSuccessWithStatus:@"Saved!"];
+        }
+        else if (buttonIndex == 2) {
+            [SVProgressHUD showSuccessWithStatus:@"Reminder Added!"];
+        }
+    }
+    
+    else if(alertView.tag == 2)
+    {
+        if (buttonIndex == 0) {
+            //NSLog(@"user pressed Cancel");
+            
+        }
+        else if (buttonIndex == 1) {
+            [ScringoAgent postToFeed:NoTime];
+            [SVProgressHUD showSuccessWithStatus:@"Saved!"];
+        }
+        else if (buttonIndex == 2) {
+            [SVProgressHUD showSuccessWithStatus:@"Reminder Added!"];
+        }
+    }
+    
+    else if(alertView.tag == 3)
+    {
+        if (buttonIndex == 0) {
+            //NSLog(@"user pressed Cancel");
+            
+        }
+        else if (buttonIndex == 1) {
+            [ScringoAgent postToFeed:attendingEvent];
+            [SVProgressHUD showSuccessWithStatus:@"Saved!"];
+        }
+        else if (buttonIndex == 2) {
+            [SVProgressHUD showSuccessWithStatus:@"Reminder Added!"];
+        }
+    }
+    
+    setReminder = @"set";
+    [self setReminder];
+    
+}
+
+-(void)createReminder
+{
+    EKReminder *reminder = [EKReminder reminderWithEventStore:self.eventStore];
+    
+        
+        reminder.title = title;
+        
+        reminder.calendar = [_eventStore defaultCalendarForNewReminders];
+        
+        NSDate *date = remindersDate;
+        
+        EKAlarm *alarm = [EKAlarm alarmWithAbsoluteDate:date];
+        
+        [reminder addAlarm:alarm];
+        
+        NSLog(@"hello from %@ and date: %@", title, remindersDate);
+    
+    NSError *error = nil;    
+    
+    [_eventStore saveReminder:reminder commit:YES error:&error];
+    
+    if (error)
+        NSLog(@"error = %@", error);
+    
+}
+
+- (void)setReminder {
+    
+    if (_eventStore == nil)
+    {
+        _eventStore = [[EKEventStore alloc]init];
+        
+        [_eventStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
+            
+            if (!granted)
+                NSLog(@"Access to store not granted");
+        }];
+    }
+    
+    if (_eventStore != nil) {
+        
+    
+        [self createReminder];
+    }
 }
 
 /*- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath

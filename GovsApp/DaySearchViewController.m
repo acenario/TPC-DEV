@@ -26,6 +26,8 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     NSArray *myJSON;
     BOOL isLoading;
     
+    
+    
 }
 
 @synthesize searchBar = _searchBar;
@@ -69,6 +71,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     [self.tableView addGestureRecognizer:gestureRecognizer];
+    
     
     
 }
@@ -260,9 +263,12 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+        
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
 }
+
+
 
 /*- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
