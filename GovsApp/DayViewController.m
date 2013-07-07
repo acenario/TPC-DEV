@@ -506,6 +506,7 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     }
 }
 
+
 /*- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([searchResults count] == 0) {

@@ -399,7 +399,6 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
             //NSLog(@"dictionary: %@", classes);
             [self.tableView reloadData];
             [SVProgressHUD dismiss];
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         });
         //NSLog(@"Done Initial Load!");
     });
